@@ -4,7 +4,7 @@ author: "Tobi, Lukas"
 date: "Rendered at `r format(Sys.time(), '%F %H:%M')`"
 output:
   xaringan::moon_reader:
-    css: ["default", "styles.css", "example.css"]
+    css: ["default", "assets/styles.css"]
     lib_dir: "assets"
     self_contained: false
     chakra: "assets/remark-latest.min.js"
