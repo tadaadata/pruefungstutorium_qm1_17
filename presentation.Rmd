@@ -6,11 +6,16 @@ output:
   xaringan::moon_reader:
     css: ["default", "styles.css", "example.css"]
     lib_dir: "assets"
+    self_contained: false
+    chakra: "assets/remark-latest.min.js"
     nature:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
       ratio: "16:9"
+      navigation:
+        touch: false
+        scroll: false
   ioslides_presentation:
     css: styles.css
     fig_height: 4
@@ -126,7 +131,7 @@ $$.036^2 - 0.1^2 - 0.311^2 + 0.053^2 + ... = `r sum(a01$K3^2)`$$
 
 ![](assets/plots/ladungen.png)
 
-## Aufgabe 1
+---
 
 > Auf welche Faktoren laden die durch „A1“ bis „A15“ gekennzeichneten Merkmale jeweils am höchsten?
 
