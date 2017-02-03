@@ -3,6 +3,14 @@ title: "Prüfungstutorium QM1"
 author: "Tobi, Lukas"
 date: "Rendered at `r format(Sys.time(), '%F %H:%M')`"
 output:
+  xaringan::moon_reader:
+    css: ["default", "styles.css", "example.css"]
+    lib_dir: "assets"
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
   ioslides_presentation:
     css: styles.css
     fig_height: 4
@@ -43,3 +51,90 @@ fkv <- haven::read_sav("./data/fkv.sav")
 # 3 digits are enough
 options(digits = 3)
 ```
+
+# Agenda
+
+1. Aufgaben besprechen
+2. Fragen klären
+3. Angrenzende Theorie besprechen
+
+- Erfahrungsgemäß reicht die Zeit …
+    - … **entweder** für alle **Aufgaben**…
+    - … **oder** für alle **Fragen**.  
+- Choose wisely.
+
+---
+
+# Aufgabe 1 — Faktorenanalyse
+
+Im Rahmen einer Hauptkomponentenanalyse wurde die folgende Komponenten-Matrix ermittelt:
+
+```{r A01_data, echo = F}
+a01 <- data.frame(Merkmal = paste0("A", 1:15),
+           K1 = c(-.724, -.294, .665, .639, -.599, .388, .643, -.544,
+                  -.274, .571, -.230, .737, .789, .672, .630),
+           K2 = c(.351, .642, .310, .2, .622, .39, .398, .429, .407, .334, 
+                  .177, 0, .256, -.024, .134),
+           K3 = c(.036, -.01, -.311, .053, .001, -.530, -.003, .349, .266,
+                  -.323, .412, .389, .104, .520, .366)) 
+
+a01 %>% kable(format = "html")
+```
+
+---
+
+- a) Was bedeuten die drei Werte innerhalb der zweiten Zeile?
+- b) Wie groß ist die Kommunalität des durch „A10“ gekennzeichneten Merkmals?
+- c) Welchen Wert besitzt der drittgrößte Eigenwert?
+- d) Wie viel Prozent der Gesamtvarianz aller 15 in die Faktorenanalyse einbezogenen (standardisierten) Merkmale wird durch den 3. Faktor erklärt?
+- e) Warum enthält die Komponenten-Matrix vermutlich nur drei Spalten?
+- f) Auf welche Faktoren laden die durch „A1“ bis „A15“ gekennzeichneten Merkmale jeweils am höchsten?
+- g) Gibt es bei den - im Rahmen der Suche nach einer Einfachstruktur - innerhalb von „f)“ vorgenommenen Zuordnungen an irgendeiner Stelle ein Problem, sodass es sinnvoll erscheinen könnte, eine Rotation durchzuführen?
+
+---
+
+> Was bedeuten die drei Werte innerhalb der zweiten Zeile?
+
+```{r A01_a}
+cols <- with(a01, ifelse(Merkmal == "A2", 'green', 'white'))
+
+htmlTable(as.matrix(a01), col.rgroup = cols)
+```
+
+---
+
+> Wie groß ist die Kommunalität des durch „A10“ gekennzeichneten Merkmals?
+
+$$0.571^2 +  0.334^2 - 0.323^2 = 0.333$$
+
+> Welchen Wert besitzt der drittgrößte Eigenwert?
+
+Faktor 1 | Faktor 2 | Faktor 3 
+---------|----------|---------
+`r sum(a01$K1^2)` | `r sum(a01$K2^2)` | `r sum(a01$K3^2)`
+
+
+> Wie viel Prozent der Gesamtvarianz aller 15 in die Faktorenanalyse einbezogenen (standardisierten) Merkmale wird durch den 3. Faktor erklärt?
+
+$$.036^2 - 0.1^2 - 0.311^2 + 0.053^2 + ... = `r sum(a01$K3^2)`$$
+
+---
+
+> Warum enthält die Komponenten-Matrix vermutlich nur drei Spalten?
+
+> Auf welche Faktoren laden die durch „A1“ bis „A15“ gekennzeichneten Merkmale jeweils am höchsten?
+
+![](assets/plots/ladungen.png)
+
+## Aufgabe 1
+
+> Auf welche Faktoren laden die durch „A1“ bis „A15“ gekennzeichneten Merkmale jeweils am höchsten?
+
+![](assets/plots/ladungen_max.png)
+
+---
+
+> Gibt es bei den - im Rahmen der Suche nach einer Einfachstruktur - innerhalb von „f)“ vorgenommenen Zuordnungen an irgendeiner Stelle ein Problem, sodass es sinnvoll erscheinen könnte, eine Rotation durchzuführen?
+
+![](assets/plots/ladungen_pcor.png)
+  
