@@ -1,18 +1,13 @@
 #! /usr/bin/env Rscript
 
 rmarkdown::render(input         = "presentation.Rmd",
-                  output_format = "ioslides_presentation",
-                  output_file   = "presentation_ioslides.html")
-
-rmarkdown::render(input         = "presentation.Rmd",
-                  output_format = "xaringan::moon_reader",
+                  output_format = "revealjs::revealjs_presentation:",
                   output_file   = "presentation.html")
-
 
 # html_document themes
 rmarkdown::render(input         = "presentation.Rmd",
                   output_format = "html_document",
-                  output_file   = "presentation_web.html")
+                  output_file   = "index.html")
 
 current_user <- system(command = "whoami", intern = T)
 

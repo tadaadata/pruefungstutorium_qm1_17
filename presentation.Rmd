@@ -3,29 +3,17 @@ title: "Prüfungstutorium QM1"
 author: "Tobi, Lukas"
 date: "Rendered at `r format(Sys.time(), '%F %H:%M')`"
 output:
-  xaringan::moon_reader:
-    css: ["default", "assets/styles.css"]
-    lib_dir: "assets"
+  revealjs::revealjs_presentation:
+    theme: blood
+    center: true
+    incremental: true
+    transition: convex
+    background_transition: slide
     self_contained: false
-    chakra: "assets/remark-latest.min.js"
-    nature:
-      highlightStyle: github
-      highlightLines: true
-      countIncrementalSlides: false
-      ratio: "16:9"
-      navigation:
-        touch: false
-        scroll: false
-  ioslides_presentation:
-    css: styles.css
-    fig_height: 4
-    fig_width: 8
-    incremental: yes
-    self_contained: no
     lib_dir: "assets"
-    smaller: yes
-    transition: slower
-    widescreen: yes
+    reveal_options:
+      slideNumber: false
+      history: true
   html_document:
     fig_caption: yes
     fig_width: 9
@@ -63,6 +51,8 @@ options(digits = 3)
 
 # Agenda
 
+## 
+
 1. Aufgaben besprechen
 2. Fragen klären
 3. Angrenzende Theorie besprechen
@@ -71,8 +61,6 @@ options(digits = 3)
     - … **entweder** für alle **Aufgaben**…
     - … **oder** für alle **Fragen**.  
 - Choose wisely.
-
----
 
 # Aufgabe 1 — Faktorenanalyse
 
@@ -90,7 +78,7 @@ a01 <- data.frame(Merkmal = paste0("A", 1:15),
 a01 %>% kable(format = "html")
 ```
 
----
+##
 
 - a) Was bedeuten die drei Werte innerhalb der zweiten Zeile?
 - b) Wie groß ist die Kommunalität des durch „A10“ gekennzeichneten Merkmals?
@@ -100,7 +88,7 @@ a01 %>% kable(format = "html")
 - f) Auf welche Faktoren laden die durch „A1“ bis „A15“ gekennzeichneten Merkmale jeweils am höchsten?
 - g) Gibt es bei den - im Rahmen der Suche nach einer Einfachstruktur - innerhalb von „f)“ vorgenommenen Zuordnungen an irgendeiner Stelle ein Problem, sodass es sinnvoll erscheinen könnte, eine Rotation durchzuführen?
 
----
+##
 
 > Was bedeuten die drei Werte innerhalb der zweiten Zeile?
 
@@ -110,7 +98,7 @@ cols <- with(a01, ifelse(Merkmal == "A2", 'green', 'white'))
 htmlTable(as.matrix(a01), col.rgroup = cols)
 ```
 
----
+##
 
 > Wie groß ist die Kommunalität des durch „A10“ gekennzeichneten Merkmals?
 
@@ -127,7 +115,7 @@ Faktor 1 | Faktor 2 | Faktor 3
 
 $$.036^2 - 0.1^2 - 0.311^2 + 0.053^2 + ... = `r sum(a01$K3^2)`$$
 
----
+##
 
 > Warum enthält die Komponenten-Matrix vermutlich nur drei Spalten?
 
@@ -135,13 +123,13 @@ $$.036^2 - 0.1^2 - 0.311^2 + 0.053^2 + ... = `r sum(a01$K3^2)`$$
 
 ![](assets/plots/ladungen.png)
 
----
+##
 
 > Auf welche Faktoren laden die durch „A1“ bis „A15“ gekennzeichneten Merkmale jeweils am höchsten?
 
 ![](assets/plots/ladungen_max.png)
 
----
+##
 
 > Gibt es bei den - im Rahmen der Suche nach einer Einfachstruktur - innerhalb von „f)“ vorgenommenen Zuordnungen an irgendeiner Stelle ein Problem, sodass es sinnvoll erscheinen könnte, eine Rotation durchzuführen?
 
