@@ -36,3 +36,4 @@ vignettes/*.pdf
 # Presentation output
 *.html
 *_files
+assets
