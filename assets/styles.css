@@ -4,7 +4,7 @@ table {
   max-width: 100%;
   /* border: 1px solid #e5e5e5; looks bad if table is less than full width bc of display: block */
   border-collapse: collapse;
-  display: block;
+  /*display: block;*/
   overflow-x: auto;
 }
 td,
