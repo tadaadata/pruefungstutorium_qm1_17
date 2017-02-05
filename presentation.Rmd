@@ -20,6 +20,7 @@ output:
       slideNumber: true
       progress: true
       history: true
+      center: true
   html_document:
     fig_caption: yes
     fig_width: 9
@@ -61,18 +62,18 @@ theme_set(theme_tut(style = "dark"))
 
 # Agenda
 
-## 
+##
 
 1. Aufgaben besprechen
 2. Fragen klären
 3. Angrenzende Theorie besprechen
 
+##
 
 - Erfahrungsgemäß reicht die Zeit …
     - … **entweder** für alle **Aufgaben**…
     - … **oder** für alle **Fragen**.  
 - Choose wisely.
-
 
 # Aufgabe 1 <br><br> Faktorenanalyse
 
