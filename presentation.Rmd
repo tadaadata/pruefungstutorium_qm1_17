@@ -1,18 +1,25 @@
 ---
-title: "Prüfungstutorium QM1"
-author: "Tobi, Lukas"
+title: "Prüfungstutorium QM I"
+author: "mit Tobi & Lukas"
 date: "Rendered at `r format(Sys.time(), '%F %H:%M')`"
 output:
   revealjs::revealjs_presentation:
-    theme: blood
+    css: assets/styles.css
+    theme: night
+    highlight: pygments
     center: true
-    incremental: true
-    transition: convex
+    incremental: false
+    transition: slide
+    widescreen: yes
     background_transition: slide
     self_contained: false
+    fig_height: 7
+    fig_retina: 2
+    fig_width: 12
     lib_dir: "assets"
     reveal_options:
-      slideNumber: false
+      slideNumber: true
+      progress: true
       history: true
   html_document:
     fig_caption: yes
@@ -93,7 +100,7 @@ a01 %>% kable(format = "html")
 > Was bedeuten die drei Werte innerhalb der zweiten Zeile?
 
 ```{r A01_a}
-cols <- with(a01, ifelse(Merkmal == "A2", 'green', 'white'))
+cols <- with(a01, ifelse(Merkmal == "A2", '#A67E3E', '#111111'))
 
 htmlTable(as.matrix(a01), col.rgroup = cols)
 ```
