@@ -1,7 +1,7 @@
 #! /usr/bin/env Rscript
 
 rmarkdown::render(input         = "presentation.Rmd",
-                  output_format = "revealjs::revealjs_presentation:",
+                  output_format = "revealjs::revealjs_presentation",
                   output_file   = "presentation.html")
 
 # html_document themes
