@@ -73,7 +73,9 @@ theme_set(theme_tut(style = "dark"))
     - … **oder** für alle **Fragen**.  
 - Choose wisely.
 
-# Aufgabe 1 — Faktorenanalyse
+# Aufgabe 1 <br><br> Faktorenanalyse
+
+##
 
 Im Rahmen einer Hauptkomponentenanalyse wurde die folgende Komponenten-Matrix ermittelt:
 
@@ -101,17 +103,17 @@ g) Gibt es bei den - im Rahmen der Suche nach einer Einfachstruktur - innerhalb 
 
 ##
 
-> Was bedeuten die drei Werte innerhalb der zweiten Zeile?
+Was bedeuten die drei Werte innerhalb der zweiten Zeile?
 
 ```{r A01_a}
-cols <- with(a01, ifelse(Merkmal == "A2", '#A67E3E', '#111111'))
+cols <- with(a01, ifelse(Merkmal == "A2", '#009D20', '#111111'))
 
 htmlTable(as.matrix(a01), col.rgroup = cols)
 ```
 
 ##
 
-> Wie groß ist die Kommunalität des durch „A10“ gekennzeichneten Merkmals?
+Wie groß ist die Kommunalität des durch „A10“ gekennzeichneten Merkmals?
 
 $$0.571^2 +  0.334^2 - 0.323^2 = 0.333$$
 
@@ -126,13 +128,10 @@ Faktor 1 | Faktor 2 | Faktor 3
 
 $$.036^2 - 0.1^2 - 0.311^2 + 0.053^2 + ... = `r sum(a01$K3^2)`$$
 
-##
+##{data-background="assets/plots/ladungen.png" data-background-size="60%" data-background-position="50% 70%"}
 
-> Warum enthält die Komponenten-Matrix vermutlich nur drei Spalten?
-
-> Auf welche Faktoren laden die durch „A1“ bis „A15“ gekennzeichneten Merkmale jeweils am höchsten?
-
-![](assets/plots/ladungen.png)
+Warum enthält die Komponenten-Matrix vermutlich nur drei Spalten?
+Auf welche Faktoren laden die durch „A1“ bis „A15“ gekennzeichneten Merkmale jeweils am höchsten?
 
 ##
 
