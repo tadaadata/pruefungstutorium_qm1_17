@@ -46,7 +46,7 @@ library(mosaic)
 library(magrittr)
 library(car)
 library(formattable)
-# library(htmlTable)
+library(htmlTable)
 library(tidyr)
 
 # NGO & FKV Datensatz einlesen
@@ -57,7 +57,7 @@ options(digits = 3)
 
 # selfmade ggplot-Theme laden und global setzen
 source("./assets/theme_tut.R")
-theme_set(theme_tut(style = "dark"))
+theme_set(theme_tut(style = "light"))
 ```
 
 # Agenda
@@ -105,7 +105,7 @@ g) Gibt es bei den - im Rahmen der Suche nach einer Einfachstruktur - innerhalb 
 
 Was bedeuten die drei Werte innerhalb der zweiten Zeile?
 
-```{r A01_a, eval=FALSE, include=FALSE}
+```{r A01_a}
 cols <- with(a01, ifelse(Merkmal == "A2", '#58FF4F', 'white'))
 
 htmlTable(as.matrix(a01[c(1:5),]), col.rgroup = cols)
