@@ -5,9 +5,8 @@ date: "Rendered at `r format(Sys.time(), '%F %H:%M')`"
 output:
   revealjs::revealjs_presentation:
     css: assets/styles.css
-    theme: night
+    theme: simple
     highlight: pygments
-    center: true
     incremental: false
     transition: slide
     widescreen: yes
@@ -46,7 +45,7 @@ library(mosaic)
 library(magrittr)
 library(car)
 library(formattable)
-library(htmlTable)
+# library(htmlTable)
 library(tidyr)
 
 # NGO & FKV Datensatz einlesen
@@ -68,14 +67,16 @@ theme_set(theme_tut(style = "dark"))
 2. Fragen klären
 3. Angrenzende Theorie besprechen
 
+
 - Erfahrungsgemäß reicht die Zeit …
     - … **entweder** für alle **Aufgaben**…
     - … **oder** für alle **Fragen**.  
 - Choose wisely.
 
+
 # Aufgabe 1 <br><br> Faktorenanalyse
 
-##
+##{data-background="assets/plots/ladungen.png" data-background-size="70%" data-background-position="50% 80%"}
 
 Im Rahmen einer Hauptkomponentenanalyse wurde die folgende Komponenten-Matrix ermittelt:
 
@@ -87,8 +88,6 @@ a01 <- data.frame(Merkmal = paste0("A", 1:15),
                   .177, 0, .256, -.024, .134),
            K3 = c(.036, -.01, -.311, .053, .001, -.530, -.003, .349, .266,
                   -.323, .412, .389, .104, .520, .366)) 
-
-a01 %>% kable(format = "html")
 ```
 
 ##
@@ -105,10 +104,10 @@ g) Gibt es bei den - im Rahmen der Suche nach einer Einfachstruktur - innerhalb 
 
 Was bedeuten die drei Werte innerhalb der zweiten Zeile?
 
-```{r A01_a}
-cols <- with(a01, ifelse(Merkmal == "A2", '#009D20', '#111111'))
+```{r A01_a, eval=FALSE, include=FALSE}
+cols <- with(a01, ifelse(Merkmal == "A2", '#58FF4F', 'white'))
 
-htmlTable(as.matrix(a01), col.rgroup = cols)
+htmlTable(as.matrix(a01[c(1:5),]), col.rgroup = cols)
 ```
 
 ##
@@ -128,14 +127,14 @@ Faktor 1 | Faktor 2 | Faktor 3
 
 $$.036^2 - 0.1^2 - 0.311^2 + 0.053^2 + ... = `r sum(a01$K3^2)`$$
 
-##{data-background="assets/plots/ladungen.png" data-background-size="60%" data-background-position="50% 70%"}
+##{data-background="assets/plots/ladungen.png" data-background-size="70%" data-background-position="50% 80%"}
 
-Warum enthält die Komponenten-Matrix vermutlich nur drei Spalten?
+Warum enthält die Komponenten-Matrix vermutlich nur drei Spalten?  
 Auf welche Faktoren laden die durch „A1“ bis „A15“ gekennzeichneten Merkmale jeweils am höchsten?
 
 ##
 
-> Auf welche Faktoren laden die durch „A1“ bis „A15“ gekennzeichneten Merkmale jeweils am höchsten?
+Auf welche Faktoren laden die durch „A1“ bis „A15“ gekennzeichneten Merkmale jeweils am höchsten?
 
 ![](assets/plots/ladungen_max.png)
 
