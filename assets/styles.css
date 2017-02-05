@@ -17,12 +17,12 @@ td, th {
 
 tbody tr:nth-child(odd) td,
 tbody tr:nth-child(odd) th {
-  background-color: #efefef;
+  background-color: white;
 }
 
 .reveal table th {
-  background: #aaa;
-  color: black;
+  background: #404040;
+  color: white;
 }
 
 
