@@ -3,7 +3,6 @@ table {
   max-width: 100%;
   /* border: 1px solid #e5e5e5; looks bad if table is less than full width bc of display: block */
   border-collapse: collapse;
-  /* display: block; */
   overflow-x: auto;
 }
 
@@ -27,30 +26,36 @@ tbody tr:nth-child(odd) th {
 
 
 /* reveal.js options */
+/* dotted lists */
 .reveal section ul li {
   text-align: left;
   font-size: 0.8em;
 }
 
-.reveal section p {
-  text-align: left;
-  font-size: 0.8em;
-}
-
-.reveal p code {
-  font-size: 0.7em;
-}
-
+/* dotted lists; probably merge this and the one above? */
 .reveal ul li {
   size: 90%;
   font-size: 0.8em;
 }
 
+/* numbered lists */
 .reveal ol li {
   size: 90%;
   font-size: 0.8em;
 }
 
+/* plain text */
+.reveal section p {
+  text-align: center;
+  font-size: 0.8em;
+}
+
+/* code blocks */
+.reveal p code {
+  font-size: 0.7em;
+}
+
+/* headers */
 .reveal section h1 {
   font-size: 1.5em;
 }

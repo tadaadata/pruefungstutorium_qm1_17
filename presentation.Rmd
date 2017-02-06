@@ -70,10 +70,12 @@ theme_set(theme_tut(style = "light"))
 
 ##
 
-- Erfahrungsgemäß reicht die Zeit …
-    - … **entweder** für alle **Aufgaben**…
-    - … **oder** für alle **Fragen**.  
-- Choose wisely.
+Erfahrungsgemäß reicht die Zeit …  
+
+- … **entweder** für alle **Aufgaben**…  
+- … **oder** für alle **Fragen**.  
+
+<p class="fragment">Choose wisely.</p>
 
 # Aufgabe 1 <br><br> Faktorenanalyse
 
@@ -82,16 +84,18 @@ theme_set(theme_tut(style = "light"))
 Im Rahmen einer Hauptkomponentenanalyse wurde die folgende Komponenten-Matrix ermittelt:
 
 ```{r A01_data, echo = F}
-a01 <- data.frame(Merkmal = paste0("A", 1:15),
+a01 <- data.frame(
+      Merkmal = paste0("A", 1:15),
            K1 = c(-.724, -.294, .665, .639, -.599, .388, .643, -.544,
                   -.274, .571, -.230, .737, .789, .672, .630),
            K2 = c(.351, .642, .310, .2, .622, .39, .398, .429, .407, .334, 
                   .177, 0, .256, -.024, .134),
            K3 = c(.036, -.01, -.311, .053, .001, -.530, -.003, .349, .266,
-                  -.323, .412, .389, .104, .520, .366)) 
+                  -.323, .412, .389, .104, .520, .366)
+      ) 
 ```
 
-##
+## Beantwrten Sie folgende Fragen
 
 a) Was bedeuten die drei Werte innerhalb der zweiten Zeile?
 b) Wie groß ist die Kommunalität des durch „A10“ gekennzeichneten Merkmals?
@@ -115,16 +119,23 @@ htmlTable(as.matrix(a01[c(1:5),]), col.rgroup = cols)
 
 Wie groß ist die Kommunalität des durch „A10“ gekennzeichneten Merkmals?
 
-$$0.571^2 +  0.334^2 - 0.323^2 = 0.333$$
+```{r A01_b}
+htmlTable(as.matrix(a01[c(9:12),]), col.rgroup = cols)
+```
 
-> Welchen Wert besitzt der drittgrößte Eigenwert?
+<p class="fragment">$$0.571^2 +  0.334^2 - 0.323^2 \approx 0.333$$</p>
+
+
+## Welchen Wert besitzt der drittgrößte Eigenwert?
 
 Faktor 1 | Faktor 2 | Faktor 3 
 ---------|----------|---------
 `r sum(a01$K1^2)` | `r sum(a01$K2^2)` | `r sum(a01$K3^2)`
 
 
-> Wie viel Prozent der Gesamtvarianz aller 15 in die Faktorenanalyse einbezogenen (standardisierten) Merkmale wird durch den 3. Faktor erklärt?
+##
+
+Wie viel Prozent der Gesamtvarianz aller 15 in die Faktorenanalyse einbezogenen (standardisierten) Merkmale wird durch den 3. Faktor erklärt?
 
 $$.036^2 - 0.1^2 - 0.311^2 + 0.053^2 + ... = `r sum(a01$K3^2)`$$
 
@@ -141,7 +152,7 @@ Auf welche Faktoren laden die durch „A1“ bis „A15“ gekennzeichneten Merk
 
 ##
 
-> Gibt es bei den - im Rahmen der Suche nach einer Einfachstruktur - innerhalb von „f)“ vorgenommenen Zuordnungen an irgendeiner Stelle ein Problem, sodass es sinnvoll erscheinen könnte, eine Rotation durchzuführen?
+Gibt es bei den - im Rahmen der Suche nach einer Einfachstruktur - innerhalb von „f)“ vorgenommenen Zuordnungen an irgendeiner Stelle ein Problem, sodass es sinnvoll erscheinen könnte, eine Rotation durchzuführen?
 
 ![](assets/plots/ladungen_pcor.png)
   
