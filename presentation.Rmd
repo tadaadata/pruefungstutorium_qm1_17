@@ -4,7 +4,7 @@ author: "mit Tobi & Lukas"
 date: "Rendered at `r format(Sys.time(), '%F %H:%M')`"
 output:
   revealjs::revealjs_presentation:
-    css: assets/styles.css
+    css: "assets/styles.css"
     theme: simple
     highlight: pygments
     incremental: false
@@ -72,16 +72,18 @@ theme_set(theme_tut(style = "light"))
 
 Erfahrungsgemäß reicht die Zeit …  
 
-- … **entweder** für alle **Aufgaben**…  
-- … **oder** für alle **Fragen**.  
+> - … **entweder** für alle **Aufgaben**…  
+> - … **oder** für alle **Fragen**.  
 
 <p class="fragment">Choose wisely.</p>
 
 # Aufgabe 1 <br><br> Faktorenanalyse
 
-##{data-background="assets/plots/ladungen.png" data-background-size="70%" data-background-position="50% 80%"}
+##
 
 Im Rahmen einer Hauptkomponentenanalyse wurde die folgende Komponenten-Matrix ermittelt:
+
+![](assets/plots/ladungen.png)
 
 ```{r A01_data, echo = F}
 a01 <- data.frame(
@@ -95,7 +97,7 @@ a01 <- data.frame(
       ) 
 ```
 
-## Beantwrten Sie folgende Fragen
+## Beantworten Sie folgende Fragen
 
 a) Was bedeuten die drei Werte innerhalb der zweiten Zeile?
 b) Wie groß ist die Kommunalität des durch „A10“ gekennzeichneten Merkmals?
@@ -137,12 +139,14 @@ Faktor 1 | Faktor 2 | Faktor 3
 
 Wie viel Prozent der Gesamtvarianz aller 15 in die Faktorenanalyse einbezogenen (standardisierten) Merkmale wird durch den 3. Faktor erklärt?
 
-$$.036^2 - 0.1^2 - 0.311^2 + 0.053^2 + ... = `r sum(a01$K3^2)`$$
+<p class="fragment">$$0.036^2 - 0.1^2 - 0.311^2 + 0.053^2 + \ldots = `r sum(a01$K3^2)`$$</p>
 
-##{data-background="assets/plots/ladungen.png" data-background-size="70%" data-background-position="50% 80%"}
+##
 
 Warum enthält die Komponenten-Matrix vermutlich nur drei Spalten?  
 Auf welche Faktoren laden die durch „A1“ bis „A15“ gekennzeichneten Merkmale jeweils am höchsten?
+
+![](assets/plots/ladungen.png)
 
 ##
 
@@ -152,7 +156,7 @@ Auf welche Faktoren laden die durch „A1“ bis „A15“ gekennzeichneten Merk
 
 ##
 
-Gibt es bei den - im Rahmen der Suche nach einer Einfachstruktur - innerhalb von „f)“ vorgenommenen Zuordnungen an irgendeiner Stelle ein Problem, sodass es sinnvoll erscheinen könnte, eine Rotation durchzuführen?
+Gibt es bei den - im Rahmen der Suche nach einer Einfachstruktur - innerhalb von „6)“ vorgenommenen Zuordnungen an irgendeiner Stelle ein Problem, sodass es sinnvoll erscheinen könnte, eine Rotation durchzuführen?
 
 ![](assets/plots/ladungen_pcor.png)
   
