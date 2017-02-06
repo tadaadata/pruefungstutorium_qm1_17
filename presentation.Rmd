@@ -198,3 +198,98 @@ z-Standardisierung: $$z_i = \frac{x_i - \bar{x}}{\sigma}$$
 >* $27 \rightarrow \frac{27 - 29.52}{5.78158} \approx -0.4358670$
 >* $31 \rightarrow \frac{31 - 29.52}{5.78158} \approx 0.2559854$
 
+# Aufgabe 6 <br /><br />Normalverteilung
+
+##
+
+Ein Merkmal ist $N(3, 2)$ - verteilt. Berechnen Sie die Wahrscheinlichkeit dafür, dass Merkmalsträger Werte zwischen `2` und `4.5` besitzen und die Wahrscheinlichkeit dafür, dass Merkmalsträger Werte besitzen, die kleiner als `4` sind.  
+<small>(Anmerkung: Sollte in der Klausur eine solche Frage auftauchen, erhalten Sie eine Standardnormalverteilungstabelle)</small>
+
+# Aufgabe 7 <br /><br />z-Standardisierung<br /><small>Schon wieder</small>
+
+##
+
+Eine Person hat in drei Tests (T1, T2 und T3) folgende drei Punktzahlen erreicht:
+
+    T1=10 T2=10 T3=10
+  
+Als Mittelwert wurde für T1 der Wert 10, für T2 der Wert 15 und für T3 der Wert 20 ermittelt. Die Standardabweichungen betragen bei T1=2, T2=1 und bei T3=1,5.
+
+a) In welchem der Tests hat die Person am besten abgeschnitten? Und warum?
+b) Welchen Wert könnte man der Person als Gesamttestwert sinnvoll zuordnen? Und welche Informationen sind wichtig für Sie, um eine geeignete Zuordnung zu wählen?
+
+# Aufgabe 8 <br /><br />$\chi^2$, $C$, Cramver's $V$
+
+##
+
+Erstellen Sie eine Kontingenztabelle mit dem Zeilenmerkmal „abschalt“ (Abschalten“) und dem Spaltenmerkmal „jahrgang“ („Jahrgangsstufe“). Berechnen Sie die Indifferenztabelle und den Chi-Quadrat Wert sowie C und V per Hand. Interpretieren Sie diese Ergebnisse.
+
+# Aufgabe 9 <br /><br />Ordinalskalierte Statistiken
+
+##
+
+Sie haben die Werte der Variablen „Begabung“ klassiert, indem die Werte 1, 2 und 3 in den neuen Wert 1, die Werte 4, 5 und 6 in den neuen Wert 2 und die Werte 7, 8 und 9 in den neuen Wert 3 rekodiert wurden.
+
+Berechnen Sie auf Basis einer Kontingenztabelle der rekodierten Variablen „Begabung“ und „Jahrgang“ Folgendes per Hand:
+
+a) Die Anzahl der konkordanten Paare
+b) Die Anzahl der diskordanten Paare
+c) Die Anzahl der Bindungen
+d) Welche Schlüsse kann man nur aufgrund a) und b) und c) bzgl. der statistischen Beziehung ziehen? e) Berechnen Sie aufgrund a) und b) den Wert für Gamma. Besteht ein statistischer Zusammenhang? 
+f) Wäre eine andere Statistik geeigneter?
+
+# Aufgabe 10 <br /><br />Regression
+
+##
+
+Beantworten Sie folgende Fragen:
+
+a) Was versteht man unter einem Residuum, der Niveaukonstante und dem Steigungskoeffizienten?
+b) Welche formale Beziehung besteht zwischen der Kovarianz und dem Steigungskoeffizienten?
+c) Was bedeutet es, wenn die Regressionsgerade parallel zur X-Achse verläuft?
+d) Welche Eigenschaften besitzt die Regressionsgerade?
+
+# Aufgabe 11 <br /><br />Korrelationskoeffizient $r$
+
+##
+
+Geben Sie die Formel des Korrelationskoeffizienten von Pearson an. Reflektieren Sie nochmals die Herleitung. Berechnen Sie die Korrelation aus folgenden Diät-Daten von Männern:
+
+- Gewicht erster Messzeitpunkt: 120, 95, 100, 110, 90 
+- Gewicht zweiter Messzeitpunkt: 110, 90, 110, 115, 100
+
+# Aufgabe 12 <br /><br />Kappa
+
+##
+
+27 Patienten sind von zwei Ärzten untersucht und im Hinblick auf ihren Gesundheitszustand in der folgenden Form als krank bzw. gesund eingestuft worden
+
+![](https://dump.jemu.name/2017-02-c9i8aaz73my1664.png)
+
+Es ist die Statistik „Kappa“ -ohne Software- zu ermitteln und anschließend zu interpretieren.
+
+# Aufgabe 13 <br /><br />Kovariation
+
+##
+
+Wie fällt die Kovariation in den Streudiagrammen 1 bis 3 tendenziell aus (im Vergleich zu dem Wert 0):
+
+![](https://dump.jemu.name/2017-02-b6g4ggt5gpy9n36.png)
+ 
+# Aufgabe 14<br /><br />Kovariation<br /><br /><small>…Immer noch</small>
+
+## 
+
+Versuchen Sie das Prinzip der Kovariation grafisch in einem Streudiagramm zu veranschaulichen. Zeichnen Sie hierfür ein beliebiges Streudiagramm. Die Grafik setzt sich von der Aufgabe 13 ab (Tipp: denken Sie daran, wie die Variation damals grafisch auf Basis von Quadraten erklärt wurde).
+
+# Aufgabe 15<br /><br />Multiple Regression
+
+##
+
+Erläutern Sie die Probleme, die im Rahmen einer multiplen Regression auftreten können. 
+
+# Aufgabe 16<br /><br />Partialkorrelation
+
+##
+
+Was versteht man unter dem Begriff „Partialkorrelation“? Geben Sie ein Beispiel.
