@@ -184,12 +184,41 @@ Schauen Sie sich den **FKV** Fragebogen an und überlegen Sie, welche Items zu w
 
 Sie haben Werte des Merkmals „**Unterrichtsstunden**“ u.a. zur Berechnung der Variabilitätsmaße und Zentralmaße verwendet. Reflektieren Sie die Zentral- und Variabilitätsmaße. Sind alle Statistiken gut geeignet?
 
+## Varia…tions…abweichung…dings
+
+* Variation $= \sum^n_{i=1} (x_i - \bar{x})^2$ = `r var(ngo$stunzahl) * (length(ngo$stunzahl) + 1)`
+* Varianz $\sigma^2 = \frac{1}{n-1} \sum^n_{i=1} (x_i - \bar{x})^2$ = `r var(ngo$stunzahl)`
+* Standardabweichung $\sigma = \sqrt{\frac{1}{n-1} \sum^n_{i=1} (x_i - \bar{x})^2}$ = `r sd(ngo$stunzahl)`
+
+##
+
+```{r a03, eval = F}
+mvalues <- data.frame(Zentralmaß = factor(c("Mittelwert", "Median", "Modus")),
+                      Wert = c(mean(ngo$stunzahl), median(ngo$stunzahl), modus(ngo$stunzahl)))
+
+ggplot() +
+  geom_histogram(data = ngo, aes(x = stunzahl), binwidth = 1) +
+  geom_vline(data = mvalues, aes(xintercept = Wert), size = 2) +
+  labs(x = "Unterrichtsstunden", y = "Häufigkeit")
+```
+
 # Aufgabe 4 <br /><br />Standardabweichung
 
 ##
 
 Sie haben folgende Zahlen vorliegen: **7, 9, 10, 11, 11, 14, 15, 16**.  
 Berechnen Sie für diese Werte die Standardabweichung per Hand.
+
+Standardabweichung: 
+
+<div class = "fragment">
+$$\sigma = \sqrt{\frac{1}{n-1} \sum^n_{i = 1} (x_i - \bar{x})^2}$$
+</div>
+
+>* $\bar{x} = 11.625$
+>* $\sigma = \sqrt{\frac{1}{8-1} \cdot (7-11.625)^2 + (9-11.625)^2 + \ldots + (16-11.625)^2}$
+>* $\sigma = \sqrt{\frac{1}{7} \cdot 21.39 + 6.89 + \ldots + 19.14} = \sqrt{\frac{1}{7} \cdot 67.875}$
+>* $\sigma = \sqrt{9.696} \approx 3.114$
 
 # Aufgabe 5 <br /><br />z-Standardisierung
 
