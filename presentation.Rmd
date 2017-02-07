@@ -180,7 +180,8 @@ Sie haben Werte des Merkmals „**Unterrichtsstunden**“ u.a. zur Berechnung de
 
 ##
 
-Sie haben folgende Zahlen vorliegen: 7, 9, 10, 11, 11, 14, 15, 16. Berechnen Sie für diese Werte die Standardabweichung per Hand.
+Sie haben folgende Zahlen vorliegen: **7, 9, 10, 11, 11, 14, 15, 16**.  
+Berechnen Sie für diese Werte die Standardabweichung per Hand.
 
 # Aufgabe 5 <br /><br />z-Standardisierung
 
@@ -206,7 +207,7 @@ z-Standardisierung: $$z_i = \frac{x_i - \bar{x}}{\sigma}$$
 
 ##
 
-Ein Merkmal ist $N(3, 2)$ - verteilt. Berechnen Sie die Wahrscheinlichkeit dafür, dass Merkmalsträger Werte zwischen `2` und `4.5` besitzen und die Wahrscheinlichkeit dafür, dass Merkmalsträger Werte besitzen, die kleiner als `4` sind.  
+Ein Merkmal ist $N(3, 2)$ - verteilt. Berechnen Sie die Wahrscheinlichkeit dafür, dass Merkmalsträger Werte zwischen **2** und **4.5** besitzen und die Wahrscheinlichkeit dafür, dass Merkmalsträger Werte besitzen, die kleiner als **4** sind.  
 <small>(Anmerkung: Sollte in der Klausur eine solche Frage auftauchen, erhalten Sie eine Standardnormalverteilungstabelle)</small>
 
 # Aufgabe 7 <br /><br />z-Standardisierung<br /><small>Schon wieder</small>
@@ -220,13 +221,15 @@ Eine Person hat in drei Tests (T1, T2 und T3) folgende drei Punktzahlen erreicht
 Als Mittelwert wurde für T1 der Wert 10, für T2 der Wert 15 und für T3 der Wert 20 ermittelt. Die Standardabweichungen betragen bei T1=2, T2=1 und bei T3=1,5.
 
 a) In welchem der Tests hat die Person am besten abgeschnitten? Und warum?
-b) Welchen Wert könnte man der Person als Gesamttestwert sinnvoll zuordnen? Und welche Informationen sind wichtig für Sie, um eine geeignete Zuordnung zu wählen?
+b) Welchen Wert könnte man der Person als Gesamttestwert sinnvoll zuordnen?  
+Und welche Informationen sind wichtig für Sie, um eine geeignete Zuordnung zu wählen?
 
-# Aufgabe 8 <br /><br />$\chi^2$, $C$, Cramver's $V$
+# Aufgabe 8 <br /><br />$\chi^2$, $C$, Cramer's $V$
 
 ##
 
-Erstellen Sie eine Kontingenztabelle mit dem Zeilenmerkmal „abschalt“ (Abschalten“) und dem Spaltenmerkmal „jahrgang“ („Jahrgangsstufe“). Berechnen Sie die Indifferenztabelle und den Chi-Quadrat Wert sowie C und V per Hand. Interpretieren Sie diese Ergebnisse.
+Erstellen Sie eine Kontingenztabelle mit dem Zeilenmerkmal „abschalt“ (Abschalten“) und dem Spaltenmerkmal „jahrgang“ („Jahrgangsstufe“). Berechnen Sie die Indifferenztabelle und den $\chi^2$ Wert sowie $C$ und $V$ per Hand.  
+Interpretieren Sie diese Ergebnisse.
 
 # Aufgabe 9 <br /><br />Ordinalskalierte Statistiken
 
