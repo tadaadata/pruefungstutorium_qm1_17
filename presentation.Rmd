@@ -194,11 +194,11 @@ Sie haben Werte des Merkmals „**Unterrichtsstunden**“ u.a. zur Berechnung de
 
 ```{r a03, eval = F}
 mvalues <- data.frame(Zentralmaß = factor(c("Mittelwert", "Median", "Modus")),
-                      Wert = c(mean(ngo$stunzahl), median(ngo$stunzahl), modus(ngo$stunzahl)))
+                      Wert = as.numeric(c(mean(ngo$stunzahl), median(ngo$stunzahl), modus(ngo$stunzahl))))
 
 ggplot() +
   geom_histogram(data = ngo, aes(x = stunzahl), binwidth = 1) +
-  geom_vline(data = mvalues, aes(xintercept = Wert), size = 2) +
+  geom_vline(data = mvalues, aes(xintercept = Wert, color = Zentralmaß), size = 2) +
   labs(x = "Unterrichtsstunden", y = "Häufigkeit")
 ```
 
