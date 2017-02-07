@@ -64,6 +64,14 @@ source("./assets/theme_tut.R")
 theme_set(theme_tut(style = "light"))
 ```
 
+# Na, auch hier?
+
+##
+
+- Slides: https://link.jemu.name/qmpW17
+- Alles auf einmal: https://link.jemu.name/qmpW17w
+- Langer Link: https://public.tadaa-data.de/QM/pruefungstutorien/qm1_wise_17/
+
 # Agenda
 
 ##
