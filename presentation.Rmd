@@ -16,11 +16,15 @@ output:
     fig_retina: 2
     fig_width: 12
     lib_dir: "assets"
+    reveal_plugins: ["notes", "chalkboard"]
     reveal_options:
       slideNumber: true
       progress: true
       history: true
       center: true
+      chalkboard:
+        theme: whiteboard
+        toggleNotesButton: true
   html_document:
     fig_caption: yes
     fig_width: 9
