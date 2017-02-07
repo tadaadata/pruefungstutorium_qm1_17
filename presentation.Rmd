@@ -268,7 +268,12 @@ Geben Sie die Formel des Korrelationskoeffizienten von Pearson an. Reflektieren 
 
 27 Patienten sind von zwei Ärzten untersucht und im Hinblick auf ihren Gesundheitszustand in der folgenden Form als krank bzw. gesund eingestuft worden
 
-![](https://dump.jemu.name/2017-02-c9i8aaz73my1664.png)
+| Einschätzung 	|        	| Arzt A 	|        	|
+|--------------	|--------	|--------	|--------	|
+|              	|        	| krank  	| gesund 	|
+| Arzt B       	| krank  	| 8      	| 3      	|
+|              	| gesund 	| 4      	| 12     	|
+
 
 Es ist die Statistik „Kappa“ -ohne Software- zu ermitteln und anschließend zu interpretieren.
 
