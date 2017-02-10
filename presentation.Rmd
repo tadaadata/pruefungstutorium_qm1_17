@@ -42,6 +42,7 @@ output:
 knitr::opts_chunk$set(fig.path = "assets/plots/", fig.align = "center", 
                       fig.retina = 2, echo = F, warning = F, message = F)
 library(sjPlot)
+library(sjmisc)
 library(dplyr)
 library(knitr)
 library(ggplot2)
@@ -54,7 +55,8 @@ library(htmlTable)
 library(tidyr)
 
 # NGO & FKV Datensatz einlesen
-fkv <- haven::read_sav("./data/fkv.sav")
+fkv   <- haven::read_sav("./data/fkv.sav")
+zombo <- readRDS("./data/zombo.rds")
 data(ngo)
 
 # 3 digits are enough
@@ -237,9 +239,9 @@ z-Standardisierung: $$z_i = \frac{x_i - \bar{x}}{\sigma}$$
 </div>
 
 >* Werte: $\bar{x} = `r values$mean`$ und $\sigma = `r values$sd`$
->* $23 \rightarrow \frac{23 - 29.52}{5.78158} \approx -1.1277194$
->* $27 \rightarrow \frac{27 - 29.52}{5.78158} \approx -0.4358670$
->* $31 \rightarrow \frac{31 - 29.52}{5.78158} \approx 0.2559854$
+>* $23 \rightarrow \frac{23 - 29.52}{5.78} \approx -1.13$
+>* $27 \rightarrow \frac{27 - 29.52}{5.78} \approx -0.44$
+>* $31 \rightarrow \frac{31 - 29.52}{5.78} \approx 0.26$
 
 # Aufgabe 6 <br /><br />Normalverteilung
 
@@ -285,14 +287,46 @@ f) Wäre eine andere Statistik geeigneter?
 
 # Aufgabe 10 <br /><br />Regression
 
-##
-
-Beantworten Sie folgende Fragen:
+## Beantworten Sie folgende Fragen:
 
 a) Was versteht man unter einem Residuum, der Niveaukonstante und dem Steigungskoeffizienten?
 b) Welche formale Beziehung besteht zwischen der Kovarianz und dem Steigungskoeffizienten?
 c) Was bedeutet es, wenn die Regressionsgerade parallel zur X-Achse verläuft?
 d) Welche Eigenschaften besitzt die Regressionsgerade?
+
+## Wie geht so 'ne Regression?
+
+<div class="columns-2">
+aus $y = mx + b$ wird $y = a + bx$
+</div><br>
+
+> - y = der Wert, den wir voraussagen wollen  
+> - x = den kennen wir schon  
+> - a = der y-Wert bei _x = 0_ (_Niveaukonstante_)    
+> - b = der Wert, um den sich $y$ verändert, wenn sich $x$ um 1 erhöht (_Steigungskoeffizient_)  
+> - e = der vertikale Abstand zur Regressionsgeraden (_Residuum_)
+
+## Beispiel gefällig?
+
+```{r a10_01, echo=F, fig.height=7, fig.width=12}
+ggplot(zombo, aes(x = Skill_03, y = Skill_08)) +
+  geom_ribbon(aes(x = seq(2, 3, 0.009434067), ymin = 3.1189,
+                  ymax = seq(3.1189, 3.826, 0.006670755)),
+              fill = "blue", alpha = 0.3) +
+  geom_hline(yintercept = mean(zombo$Skill_08, na.rm = T), linetype = "longdash", color = "green") +
+  geom_vline(xintercept = mean(zombo$Skill_03, na.rm = T), linetype = "longdash", color = "green") +
+  geom_jitter(color = "black", alpha = 0.7, height = .3, width = .3) +
+  geom_smooth(method = "lm", se = F, color = "red", size = 0.5, fullrange = T) +
+  scale_x_continuous(breaks = seq(0, 10, 2), minor_breaks = 1:10, limits = c(0, 10)) +
+  scale_y_continuous(breaks = seq(0, 10, 2), minor_breaks = 1:10, limits = c(0, 10)) +
+  labs(title = "Zusammenhang zwischen körperlicher Fitness und Ausdauer",
+       subtitle = paste("r =", round(cor(zombo$Skill_08, 
+                                         zombo$Skill_03, 
+                                         use = "complete.obs"), 2),
+                        "| a = 1.71 | b = 0.71"),
+       x = get_label(zombo$Skill_03),
+       y = get_label(zombo$Skill_08))
+```
 
 # Aufgabe 11 <br /><br />Korrelationskoeffizient $r$
 
