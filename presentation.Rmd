@@ -246,6 +246,53 @@ z-Standardisierung: $$z_i = \frac{x_i - \bar{x}}{\sigma}$$
 Ein Merkmal ist $N(3, 2)$ - verteilt. Berechnen Sie die Wahrscheinlichkeit dafür, dass Merkmalsträger Werte zwischen **2** und **4.5** besitzen und die Wahrscheinlichkeit dafür, dass Merkmalsträger Werte besitzen, die kleiner als **4** sind.  
 <small>(Anmerkung: Sollte in der Klausur eine solche Frage auftauchen, erhalten Sie eine Standardnormalverteilungstabelle)</small>
 
+## Refresher: Normalverteilung
+
+```{r a06_normplot}
+label_norm <- function(x) {
+  if (length(x) > 1) {
+    return(sapply(x, label_norm))
+  }
+  if (x != 0) {
+    if (abs(x) == 1) {
+      return(paste0(sub("1", "", sign(x)), "σ"))
+    } else {
+      return(paste0(x, "σ"))
+    }
+  } else {
+    return("µ")
+  }
+}
+
+ggplot(data = NULL, aes(x = -4:4)) + 
+  stat_function(fun = dnorm) +
+  geom_area(aes(x = seq(-3, 3, .1), y = dnorm(seq(-3, 3, .1))), fill = "gray", alpha = .5) +
+  geom_area(aes(x = seq(-2, 2, .1), y = dnorm(seq(-2, 2, .1))), fill = "gray", alpha = .5) +
+  geom_area(aes(x = seq(-1, 1, .1), y = dnorm(seq(-1, 1, .1))), fill = "gray", alpha = .5) +
+  scale_x_continuous(breaks = seq(-4, 4, 1), labels = label_norm) + 
+  labs(x = "x", y = expression(P(x)), title = expression(N(mu, sigma))) + 
+  theme(panel.grid.major = element_line(size = 0.1), 
+        panel.grid.minor = element_line(linetype = "blank"),
+        axis.text.x = element_text(size = rel(2)),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank())
+```
+
+## $N(3, 2)$
+
+```{r a2_nor_n32}
+ggplot(data = NULL, aes(x = -4:10)) + 
+  stat_function(fun = dnorm, args = list(mean = 3, sd = 2)) +
+  scale_x_continuous(breaks = seq(-4, 10, 1)) + 
+  labs(x = "x", y = expression(P(x)), title = expression(N(3, 2))) + 
+  theme(panel.grid.major = element_line(size = 0.1), 
+        panel.grid.minor = element_line(linetype = "blank"),
+        axis.text.x = element_text(size = rel(1.3)),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank())
+```
+
+
 # Aufgabe 7 <br /><br />z-Standardisierung<br /><small>Schon wieder</small>
 
 ##
