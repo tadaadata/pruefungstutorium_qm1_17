@@ -38,7 +38,7 @@ output:
       after_body: "assets/_footer.html"
 ---
 
-```{r global_options, include=FALSE}
+```{r setup, include=FALSE}
 knitr::opts_chunk$set(fig.path = "assets/plots/", fig.align = "center", 
                       fig.retina = 2, echo = F, warning = F, message = F)
 library(sjPlot)
@@ -64,7 +64,7 @@ options(digits = 3)
 
 # selfmade ggplot-Theme laden und global setzen
 source("./assets/theme_tut.R")
-theme_set(theme_tut(style = "light"))
+theme_set(theme_readthedown())
 ```
 
 # Na, auch hier?
@@ -75,17 +75,13 @@ theme_set(theme_tut(style = "light"))
 - Alles auf einmal: https://link.jemu.name/qmpW17w
 - Langer Link: https://public.tadaa-data.de/QM/pruefungstutorien/qm1_wise_17/
 
-# Agenda
-
-##
+## Agenda
 
 1. Aufgaben besprechen
 2. Fragen klären
 3. Angrenzende Theorie besprechen
 
-##
-
-Erfahrungsgemäß reicht die Zeit …  
+## Erfahrungsgemäß reicht die Zeit …  
 
 > - … **entweder** für alle **Aufgaben**…  
 > - … **oder** für alle **Fragen**.  
@@ -296,27 +292,28 @@ d) Welche Eigenschaften besitzt die Regressionsgerade?
 
 ## Wie geht so 'ne Regression?
 
-<div class="columns-2">
-aus $y = mx + b$ wird $y = a + bx$
-</div><br>
+Unser Modell: $$y = a + bx$$
 
-> - y = der Wert, den wir voraussagen wollen  
-> - x = den kennen wir schon  
-> - a = der y-Wert bei _x = 0_ (_Niveaukonstante_)    
-> - b = der Wert, um den sich $y$ verändert, wenn sich $x$ um 1 erhöht (_Steigungskoeffizient_)  
-> - e = der vertikale Abstand zur Regressionsgeraden (_Residuum_)
+Und tadaa, Regressionsgleichung: $$y' = a + bx + e$$
+
+> - $y$ = der Wert, den wir voraussagen wollen
+> - $y'$ = Der y-Wert der Regressionsgeraden
+> - $x$ = den kennen wir schon  
+> - $a$ = der y-Wert bei _x = 0_ (_Niveaukonstante_)    
+> - $b$ = der Wert, um den sich $y$ verändert, wenn sich $x$ um 1 erhöht (_Steigungskoeffizient_)  
+> - $e$ = der vertikale Abstand zur Regressionsgeraden (_Residuum_)
 
 ## Beispiel gefällig?
 
-```{r a10_01, echo=F, fig.height=7, fig.width=12}
+```{r a10_01, echo=F, fig.height=3.5, fig.width=6}
 ggplot(zombo, aes(x = Skill_03, y = Skill_08)) +
   geom_ribbon(aes(x = seq(2, 3, 0.009434067), ymin = 3.1189,
                   ymax = seq(3.1189, 3.826, 0.006670755)),
               fill = "blue", alpha = 0.3) +
   geom_hline(yintercept = mean(zombo$Skill_08, na.rm = T), linetype = "longdash", color = "green") +
   geom_vline(xintercept = mean(zombo$Skill_03, na.rm = T), linetype = "longdash", color = "green") +
-  geom_jitter(color = "black", alpha = 0.7, height = .3, width = .3) +
-  geom_smooth(method = "lm", se = F, color = "red", size = 0.5, fullrange = T) +
+  geom_jitter(color = "black", alpha = 0.7, height = .3, width = .3, size = 1.5) +
+  geom_smooth(method = "lm", se = F, color = "red", size = 1, fullrange = T) +
   scale_x_continuous(breaks = seq(0, 10, 2), minor_breaks = 1:10, limits = c(0, 10)) +
   scale_y_continuous(breaks = seq(0, 10, 2), minor_breaks = 1:10, limits = c(0, 10)) +
   labs(title = "Zusammenhang zwischen körperlicher Fitness und Ausdauer",
@@ -345,9 +342,17 @@ Geben Sie die Formel des Korrelationskoeffizienten von Pearson an. Reflektieren 
 - Gewicht erster Messzeitpunkt: **120, 95, 100, 110, 90**  
 - Gewicht zweiter Messzeitpunkt: **110, 90, 110, 115, 100**
 
-## In bunt
+## Also ungefähr so…
 
-```{r a11_02}
+```{r a11_02a}
+a11 %>% 
+  ggplot(aes(x = T1, y = T2)) +
+    geom_point(size = 3)
+```
+
+## …Oder besser so?
+
+```{r a11_02b}
 a11 %>% 
   gather(Zeitpunkt, Gewicht, T1, T2) %>% 
   ggplot(aes(x = Zeitpunkt, y = Gewicht, group = ID, color = ID)) +
