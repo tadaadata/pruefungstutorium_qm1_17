@@ -372,10 +372,10 @@ $$r = \frac { s_{x, y} }{ \sigma_{x} \cdot \sigma_{y} }$$
 In lang: <br />
 
 $$ r = \frac 
-        { \sum_{i=1}^n \frac { \left( y_{i} - \bar{y}\right) \left( x_{i} - \bar{x}\right) }{ n-1} }
-        { \sum_{i=1}^n \sqrt{ \frac {\left( {x_i} - \bar{x} \right)^2}{n-1} } 
+        { \frac{1}{n-1} \sum_{i=1}^n  \left( y_{i} - \bar{y}\right) \left( x_{i} - \bar{x}\right)}
+        { \sqrt{\frac{1}{n-1} \sum_{i=1}^n\frac {\left( {x_i} - \bar{x} \right)^2}{n-1}} 
           \cdot 
-          \sum_{i=1}^n \sqrt{ \frac {\left( {y_i} - \bar{y} \right)^2}{n-1} } }$$
+          \sqrt{\frac{1}{n-1} \sum_{i=1}^n \frac {\left( {y_i} - \bar{y} \right)^2}{n-1}}}$$
 
 
 
