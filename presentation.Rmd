@@ -330,12 +330,32 @@ ggplot(zombo, aes(x = Skill_03, y = Skill_08)) +
 
 # Aufgabe 11 <br /><br />Korrelationskoeffizient $r$
 
+```{r a11_01}
+a11 <- data.frame(
+  ID = factor(c(1:5)),
+  T1 = c(120, 95, 100, 110, 90),
+  T2 = c(110, 90, 110, 115, 100)
+)
+```
+
 ##
 
 Geben Sie die Formel des Korrelationskoeffizienten von Pearson an. Reflektieren Sie nochmals die Herleitung. Berechnen Sie die Korrelation aus folgenden Diät-Daten von Männern:
 
-- Gewicht erster Messzeitpunkt: 120, 95, 100, 110, 90 
-- Gewicht zweiter Messzeitpunkt: 110, 90, 110, 115, 100
+- Gewicht erster Messzeitpunkt: **120, 95, 100, 110, 90**  
+- Gewicht zweiter Messzeitpunkt: **110, 90, 110, 115, 100**
+
+## In bunt
+
+```{r a11_02}
+a11 %>% 
+  gather(Zeitpunkt, Gewicht, T1, T2) %>% 
+  ggplot(aes(x = Zeitpunkt, y = Gewicht, group = ID, color = ID)) +
+    geom_line() +
+    geom_jitter(width = .05, height = 0, size = 3) +
+    scale_color_brewer(palette = "Set1") +
+    theme(legend.position = "none")
+```
 
 ## Pearson's $r$
 
