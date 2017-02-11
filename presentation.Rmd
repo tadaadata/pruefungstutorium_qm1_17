@@ -367,7 +367,7 @@ a11 %>%
 
 In kurz: <br />
 
-$$r = \frac { s_{x, y} }{ \sigma_{x} \cdot \sigma_{y} }$$
+$$r = \frac { s_{x, y} }{ s_{x} \cdot s_{y} }$$
 
 In lang: <br />
 
