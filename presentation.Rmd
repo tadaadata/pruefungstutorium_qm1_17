@@ -292,12 +292,12 @@ d) Welche Eigenschaften besitzt die Regressionsgerade?
 
 ## Wie geht so 'ne Regression?
 
-Unser Modell: $$y = a + bx$$
+Unser Modell: $$y = a + bx$$ bzw $$y = a + bx + e$$
 
-Und tadaa, Regressionsgleichung: $$y' = a + bx + e$$
+Regressionsgerade: $$y' = a + bx$$
 
 > - $y$ = der Wert, den wir voraussagen wollen
-> - $y'$ = Der y-Wert der Regressionsgeraden
+> - $y'$ = Der y-Wert der Regressionsgeraden (Prognosewert)
 > - $x$ = den kennen wir schon  
 > - $a$ = der y-Wert bei _x = 0_ (_Niveaukonstante_)    
 > - $b$ = der Wert, um den sich $y$ verändert, wenn sich $x$ um 1 erhöht (_Steigungskoeffizient_)  
@@ -305,7 +305,7 @@ Und tadaa, Regressionsgleichung: $$y' = a + bx + e$$
 
 ## Beispiel gefällig?
 
-```{r a10_01, echo=F, fig.height=3.5, fig.width=6}
+```{r a10_01, echo=F, fig.height=6, fig.width=11}
 ggplot(zombo, aes(x = Skill_03, y = Skill_08)) +
   geom_ribbon(aes(x = seq(2, 3, 0.009434067), ymin = 3.1189,
                   ymax = seq(3.1189, 3.826, 0.006670755)),
@@ -322,7 +322,8 @@ ggplot(zombo, aes(x = Skill_03, y = Skill_08)) +
                                          use = "complete.obs"), 2),
                         "| a = 1.71 | b = 0.71"),
        x = get_label(zombo$Skill_03),
-       y = get_label(zombo$Skill_08))
+       y = get_label(zombo$Skill_08)) +
+  theme_readthedown(base_size = 24)
 ```
 
 # Aufgabe 11 <br /><br />Korrelationskoeffizient $r$
