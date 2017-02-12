@@ -374,10 +374,11 @@ Sie haben die Werte der Variablen „Begabung“ klassiert, indem die Werte 1, 2
 
 Berechnen Sie auf Basis einer Kontingenztabelle der rekodierten Variablen „Begabung“ und „Jahrgang“ Folgendes per Hand:
 
-a) Die Anzahl der konkordanten Paare
-b) Die Anzahl der diskordanten Paare
-c) Die Anzahl der Bindungen
-d) Welche Schlüsse kann man nur aufgrund a) und b) und c) bzgl. der statistischen Beziehung ziehen? e) Berechnen Sie aufgrund a) und b) den Wert für Gamma. Besteht ein statistischer Zusammenhang? 
+a) Die Anzahl der **konkordanten** Paare
+b) Die Anzahl der **diskordanten** Paare
+c) Die Anzahl der **Bindungen**
+d) Welche Schlüsse kann man nur aufgrund 1-3) bzgl. der statistischen Beziehung ziehen?
+e) Berechnen Sie aufgrund 1) und 2) den Wert für Gamma. Besteht ein statistischer Zusammenhang? 
 f) Wäre eine andere Statistik geeigneter?
 
 # Aufgabe 10 <br /><br />Regression
@@ -395,12 +396,12 @@ Unser Modell: $$y = a + bx$$ bzw $$y = a + bx + e$$
 
 Regressionsgerade: $$y' = a + bx$$
 
-> - $y$ = der Wert, den wir voraussagen wollen
-> - $y'$ = Der y-Wert der Regressionsgeraden (Prognosewert)
-> - $x$ = den kennen wir schon  
-> - $a$ = der y-Wert bei _x = 0_ (_Niveaukonstante_)    
-> - $b$ = der Wert, um den sich $y$ verändert, wenn sich $x$ um 1 erhöht (_Steigungskoeffizient_)  
-> - $e$ = der vertikale Abstand zur Regressionsgeraden (_Residuum_)
+> - $y$ = Der Wert, den wir voraussagen wollen
+> - $y'$ = Der y-Wert der Regressionsgeraden (_Prognosewert_)
+> - $x$ = Den kennen wir schon  
+> - $a$ = Der $y$-Wert bei $x = 0$ (_Niveaukonstante_)
+> - $b$ = Der Wert, um den sich $y$ verändert, wenn sich $x$ um 1 erhöht (_Steigungskoeffizient_)  
+> - $e$ = Der vertikale Abstand zur Regressionsgeraden (_Residuum_)
 
 ## Beispiel gefällig?
 
@@ -478,7 +479,7 @@ $$ r = \frac
 
 
 
-# Aufgabe 12 <br /><br />Kappa
+# Aufgabe 12 <br /><br />Kappa $\kappa$
 
 ##
 
@@ -495,7 +496,7 @@ Es ist die Statistik „Kappa“ -ohne Software- zu ermitteln und anschließend 
 
 ##
 
-$$ Kappa = \frac{h_b - h_e}{1 - h_e} $$
+$$ \kappa = \frac{h_b - h_e}{1 - h_e} $$
 $$ h_b = \frac{1}{n} \sum^m_{j = 1} f_{j,j} $$
 $$ h_e = \frac{1}{n} \sum^m_{j = 1} f_{e_{j,j}} $$
 
@@ -504,7 +505,7 @@ Werte einsetzen für Fortgeschrittene… <br />
 >- $n = 27$
 >- $h_b = \frac{1}{27} \cdot (8 + 12) \approx 0,741$
 >- $h_e = \frac{1}{27} \cdot (4,\bar{8} + 8,\bar{8}) \approx 0,51$
->- $Kappa = \frac{h_b - h_e}{1 - h_e} = \frac{0,741 - 0,51}{1 - 0,51} \approx 0,47$
+>- $\kappa = \frac{h_b - h_e}{1 - h_e} = \frac{0,741 - 0,51}{1 - 0,51} \approx 0,47$
 
 
 # Aufgabe 13 <br /><br />Kovariation
