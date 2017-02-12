@@ -348,7 +348,9 @@ Geben Sie die Formel des Korrelationskoeffizienten von Pearson an. Reflektieren 
 ```{r a11_02a}
 a11 %>% 
   ggplot(aes(x = T1, y = T2)) +
-    geom_point(size = 3)
+    geom_point(size = 3) +
+    labs(x = "Gewicht (in kg) zu Messzeitpunkt 1",
+         y = "Gewicht (in kg) zu Messzeitpunkt 2")
 ```
 
 ## …Oder besser so?
@@ -360,6 +362,7 @@ a11 %>%
     geom_line() +
     geom_jitter(width = .05, height = 0, size = 3) +
     scale_color_brewer(palette = "Set1") +
+    labs(y = "Gewicht (in kg)") +
     theme(legend.position = "none")
 ```
 
