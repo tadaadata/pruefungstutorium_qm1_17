@@ -47,10 +47,8 @@ library(dplyr)
 library(knitr)
 library(ggplot2)
 library(tadaatoolbox)
-library(mosaic)
 library(magrittr)
 library(car)
-library(formattable)
 library(htmlTable)
 library(tidyr)
 
@@ -246,6 +244,91 @@ z-Standardisierung: $$z_i = \frac{x_i - \bar{x}}{\sigma}$$
 Ein Merkmal ist $N(3, 2)$ - verteilt. Berechnen Sie die Wahrscheinlichkeit dafür, dass Merkmalsträger Werte zwischen **2** und **4.5** besitzen und die Wahrscheinlichkeit dafür, dass Merkmalsträger Werte besitzen, die kleiner als **4** sind.  
 <small>(Anmerkung: Sollte in der Klausur eine solche Frage auftauchen, erhalten Sie eine Standardnormalverteilungstabelle)</small>
 
+## Refresher: Normalverteilung
+
+$$\frac{1}{\sqrt{2\sigma^2\pi} } \; e^{ -\frac{(x-\mu)^2}{2\sigma^2} }$$
+
+```{r a06_normplot}
+label_norm <- function(x) {
+  if (length(x) > 1) {
+    return(sapply(x, label_norm))
+  }
+  if (x != 0) {
+    if (abs(x) == 1) {
+      return(paste0(sub("1", "", sign(x)), "σ"))
+    } else {
+      return(paste0(x, "σ"))
+    }
+  } else {
+    return("µ")
+  }
+}
+
+ggplot(data = NULL, aes(x = -4:4)) + 
+  stat_function(fun = dnorm) +
+  geom_area(aes(x = seq(-3, 3, .1), y = dnorm(seq(-3, 3, .1))), fill = "gray", alpha = .5) +
+  geom_area(aes(x = seq(-2, 2, .1), y = dnorm(seq(-2, 2, .1))), fill = "gray", alpha = .5) +
+  geom_area(aes(x = seq(-1, 1, .1), y = dnorm(seq(-1, 1, .1))), fill = "gray", alpha = .5) +
+  scale_x_continuous(breaks = seq(-4, 4, 1), labels = label_norm) + 
+  labs(x = "x", y = expression(P(x)), title = expression(N(mu, sigma))) + 
+  theme(panel.grid.major = element_line(size = 0.1), 
+        panel.grid.minor = element_line(linetype = "blank"),
+        axis.text.x = element_text(size = rel(2)),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank())
+```
+
+## $\mathcal{N}(3, 2)$— $[2, 4.5]$
+
+```{r a2_norm_teil1}
+ggplot(data = NULL, aes(x = -4:10)) + 
+  stat_function(fun = dnorm, args = list(mean = 3, sd = 2)) +
+  geom_area(aes(x = seq(2, 4.5, .1), y = dnorm(seq(2, 4.5, .1), 3, 2)), fill = "gray", alpha = .75) +
+  scale_x_continuous(breaks = seq(-4, 10, 1)) + 
+  labs(x = "x", y = expression(P(x)), title = expression(N(3, 2))) + 
+  theme(panel.grid.major = element_line(size = 0.1), 
+        panel.grid.minor = element_line(linetype = "blank"),
+        axis.text.x = element_text(size = rel(1.3)),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank())
+```
+
+## "Kann man das ausrechnen?"
+
+<span class = "fragment"> Well… </span>
+
+<div class = "fragment">
+$$\int_2^{4.5} \frac{1}{\sqrt{2\sigma^2\pi} } \; e^{ -\frac{(x-\mu)^2}{2\sigma^2} } dx$$
+</div>
+
+>- In R: `pnorm(4.5, mean = 3, sd = 2) - pnorm(2, mean = 3, sd = 2)`
+
+## Oder für SozialwissenschaftlerInnen…
+
+>- Werte z-Standardisieren: 
+>- $\frac{2-3}{4.5} = -0.5$
+>- $\frac{4.5-3}{4.5} = 0.75$
+>- In SNV-Tabelle nachgucken…
+>- Arithmetik
+>- Boom: $0.465$
+
+## $\mathcal{N}(3, 2)$ — $(-\infty, 4]$
+
+```{r a2_norm_teil2}
+ggplot(data = NULL, aes(x = -4:10)) + 
+  stat_function(fun = dnorm, args = list(mean = 3, sd = 2)) +
+  geom_area(aes(x = seq(-4, 4, .1), y = dnorm(seq(-4, 4, .1), 3, 2)), fill = "gray", alpha = .75) +
+  scale_x_continuous(breaks = seq(-4, 10, 1)) + 
+  labs(x = "x", y = expression(P(x)), title = expression(N(3, 2))) + 
+  theme(panel.grid.major = element_line(size = 0.1), 
+        panel.grid.minor = element_line(linetype = "blank"),
+        axis.text.x = element_text(size = rel(1.3)),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank())
+```
+
+You get the idea.
+
 # Aufgabe 7 <br /><br />z-Standardisierung<br /><small>Schon wieder</small>
 
 ##
@@ -259,6 +342,20 @@ Als Mittelwert wurde für T1 der Wert 10, für T2 der Wert 15 und für T3 der We
 a) In welchem der Tests hat die Person am besten abgeschnitten? Und warum?
 b) Welchen Wert könnte man der Person als Gesamttestwert sinnvoll zuordnen?  
 Und welche Informationen sind wichtig für Sie, um eine geeignete Zuordnung zu wählen?
+
+## Oh glob so langweilig
+
+### Test 1
+
+>- Mittelwert: 10; Standardabweichung 2; z-Wert: $\frac{10 - 10}{2} = 0$
+
+### Test 2
+
+>- Mittelwert: 15; Standardabweichung 1; z-Wert: $\frac{10 - 15}{1} = -5$
+
+### Test 3
+
+>- Mittelwert: 20; Standardabweichung 1.5; z-Wert: $\frac{10 - 20}{1.5} = -6.6\bar{6}$
 
 # Aufgabe 8 <br /><br />$\chi^2$, $C$, Cramer's $V$
 
@@ -275,10 +372,11 @@ Sie haben die Werte der Variablen „Begabung“ klassiert, indem die Werte 1, 2
 
 Berechnen Sie auf Basis einer Kontingenztabelle der rekodierten Variablen „Begabung“ und „Jahrgang“ Folgendes per Hand:
 
-a) Die Anzahl der konkordanten Paare
-b) Die Anzahl der diskordanten Paare
-c) Die Anzahl der Bindungen
-d) Welche Schlüsse kann man nur aufgrund a) und b) und c) bzgl. der statistischen Beziehung ziehen? e) Berechnen Sie aufgrund a) und b) den Wert für Gamma. Besteht ein statistischer Zusammenhang? 
+a) Die Anzahl der **konkordanten** Paare
+b) Die Anzahl der **diskordanten** Paare
+c) Die Anzahl der **Bindungen**
+d) Welche Schlüsse kann man nur aufgrund 1-3) bzgl. der statistischen Beziehung ziehen?
+e) Berechnen Sie aufgrund 1) und 2) den Wert für Gamma. Besteht ein statistischer Zusammenhang? 
 f) Wäre eine andere Statistik geeigneter?
 
 # Aufgabe 10 <br /><br />Regression
@@ -296,12 +394,12 @@ Unser Modell: $$y = a + bx$$ bzw $$y = a + bx + e$$
 
 Regressionsgerade: $$y' = a + bx$$
 
-> - $y$ = der Wert, den wir voraussagen wollen
-> - $y'$ = Der y-Wert der Regressionsgeraden (Prognosewert)
-> - $x$ = den kennen wir schon  
-> - $a$ = der y-Wert bei _x = 0_ (_Niveaukonstante_)    
-> - $b$ = der Wert, um den sich $y$ verändert, wenn sich $x$ um 1 erhöht (_Steigungskoeffizient_)  
-> - $e$ = der vertikale Abstand zur Regressionsgeraden (_Residuum_)
+> - $y$ = Der Wert, den wir voraussagen wollen
+> - $y'$ = Der y-Wert der Regressionsgeraden (_Prognosewert_)
+> - $x$ = Den kennen wir schon  
+> - $a$ = Der $y$-Wert bei $x = 0$ (_Niveaukonstante_)
+> - $b$ = Der Wert, um den sich $y$ verändert, wenn sich $x$ um 1 erhöht (_Steigungskoeffizient_)  
+> - $e$ = Der vertikale Abstand zur Regressionsgeraden (_Residuum_)
 
 ## Beispiel gefällig?
 
@@ -382,7 +480,7 @@ $$ r = \frac
 
 
 
-# Aufgabe 12 <br /><br />Kappa
+# Aufgabe 12 <br /><br />Kappa $\kappa$
 
 ##
 
@@ -399,7 +497,7 @@ Es ist die Statistik „Kappa“ -ohne Software- zu ermitteln und anschließend 
 
 ##
 
-$$ Kappa = \frac{h_b - h_e}{1 - h_e} $$
+$$ \kappa = \frac{h_b - h_e}{1 - h_e} $$
 $$ h_b = \frac{1}{n} \sum^m_{j = 1} f_{j,j} $$
 $$ h_e = \frac{1}{n} \sum^m_{j = 1} f_{e_{j,j}} $$
 
@@ -408,7 +506,7 @@ Werte einsetzen für Fortgeschrittene… <br />
 >- $n = 27$
 >- $h_b = \frac{1}{27} \cdot (8 + 12) \approx 0,741$
 >- $h_e = \frac{1}{27} \cdot (4,\bar{8} + 8,\bar{8}) \approx 0,51$
->- $Kappa = \frac{h_b - h_e}{1 - h_e} = \frac{0,741 - 0,51}{1 - 0,51} \approx 0,47$
+>- $\kappa = \frac{h_b - h_e}{1 - h_e} = \frac{0,741 - 0,51}{1 - 0,51} \approx 0,47$
 
 
 # Aufgabe 13 <br /><br />Kovariation
@@ -430,6 +528,13 @@ Versuchen Sie das Prinzip der Kovariation grafisch in einem Streudiagramm zu ver
 ##
 
 Erläutern Sie die Probleme, die im Rahmen einer multiplen Regression auftreten können. 
+
+## Look at this mindfuck
+
+```{r a15}
+plotly::plot_ly(data = ngo, x = ~deutsch, y = ~englisch, z = ~mathe)
+```
+
 
 # Aufgabe 16<br /><br />Partialkorrelation
 
