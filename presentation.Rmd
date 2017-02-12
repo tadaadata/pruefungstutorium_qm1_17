@@ -528,6 +528,13 @@ Versuchen Sie das Prinzip der Kovariation grafisch in einem Streudiagramm zu ver
 
 Erläutern Sie die Probleme, die im Rahmen einer multiplen Regression auftreten können. 
 
+## Look at this mindfuck
+
+```{r a15}
+plotly::plot_ly(data = ngo, x = ~deutsch, y = ~englisch, z = ~mathe)
+```
+
+
 # Aufgabe 16<br /><br />Partialkorrelation
 
 ##
