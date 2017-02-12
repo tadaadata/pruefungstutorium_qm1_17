@@ -1,3 +1,12 @@
+/* Multiple Columns */
+.col2 {
+    columns: 2 200px;
+  }
+  
+.col3 {
+    columns: 3 150px;
+  }
+
 /* Tables */
 table {
   max-width: 100%;
