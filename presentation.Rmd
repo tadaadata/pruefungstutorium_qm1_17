@@ -479,6 +479,57 @@ $$ r = \frac
           \sqrt{\frac{1}{n-1} \sum_{i=1}^n \frac {\left( {y_i} - \bar{y} \right)^2}{n-1}}}$$
 
 
+## Problem: Was betrachten wir?
+
+```{r a11_03}
+a11_neut <- data.frame(
+  ID = factor(c(1:5)),
+  T1 = c(120, 95, 100, 110, 90),
+  T2 = c(120, 95, 100, 110, 90)
+)
+
+a11_n_long <- a11_neut %>% 
+  gather(Zeitpunkt, Gewicht, T1, T2) %>% 
+  mutate(Zeitpunkt = factor(Zeitpunkt))
+
+
+a11_up <- data.frame(
+  ID = factor(c(1:5)),
+  T1 = c(120, 95, 100, 110, 90),
+  T2 = c(128, 99, 112, 115, 95)
+)
+
+a11_u_long <- a11_up %>% 
+  gather(Zeitpunkt, Gewicht, T1, T2) %>% 
+  mutate(Zeitpunkt = factor(Zeitpunkt))
+
+a11_down <- data.frame(
+  ID = factor(c(1:5)),
+  T1 = c(120, 95, 100, 110, 90),
+  T2 = c(108, 91, 93, 100, 86)
+)
+
+a11_d_long <- a11_down %>% 
+  gather(Zeitpunkt, Gewicht, T1, T2) %>% 
+  mutate(Zeitpunkt = factor(Zeitpunkt))
+```
+
+<div class="col3">
+Unverändert: $r = `r cor(a11_neut$T1, a11_neut$T2)`; r_{pb} = `r cor(as.numeric(a11_n_long$Zeitpunkt), a11_n_long$Gewicht)`$
+`r kable(a11_neut)`
+
+
+Zunahme: $r = `r cor(a11_up$T1, a11_up$T2)`; r_{pb} = `r cor(as.numeric(a11_u_long$Zeitpunkt), a11_u_long$Gewicht)`$
+`r kable(a11_up)`
+
+
+Abnahme: $r = `r cor(a11_down$T1, a11_down$T2)`; r_{pb} = `r cor(as.numeric(a11_d_long$Zeitpunkt), a11_d_long$Gewicht)`$
+`r kable(a11_down)`
+</div>
+
+```{r a11_04}
+rm(a11_neut, a11_up, a11_down, a11_n_long, a11_u_long, a11_d_long)
+```
 
 # Aufgabe 12 <br /><br />Kappa $\kappa$
 
