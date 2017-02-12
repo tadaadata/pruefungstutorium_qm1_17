@@ -345,6 +345,20 @@ a) In welchem der Tests hat die Person am besten abgeschnitten? Und warum?
 b) Welchen Wert könnte man der Person als Gesamttestwert sinnvoll zuordnen?  
 Und welche Informationen sind wichtig für Sie, um eine geeignete Zuordnung zu wählen?
 
+## Oh glob so langweilig
+
+### Test 1
+
+>- Mittelwert: 10; Standardabweichung 2; z-Wert: $\frac{10 - 10}{2} = 0$
+
+### Test 2
+
+>- Mittelwert: 15; Standardabweichung 1; z-Wert: $\frac{10 - 15}{1} = -5$
+
+### Test 3
+
+>- Mittelwert: 20; Standardabweichung 1.5; z-Wert: $\frac{10 - 20}{1.5} = -6.6\bar{6}$
+
 # Aufgabe 8 <br /><br />$\chi^2$, $C$, Cramer's $V$
 
 ##
