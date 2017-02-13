@@ -212,9 +212,9 @@ Standardabweichung:
 $$\sigma = \sqrt{\frac{1}{n-1} \sum^n_{i = 1} (x_i - \bar{x})^2}$$
 </div>
 
->* $\bar{x} = 11.625$
->* $\sigma = \sqrt{\frac{1}{8-1} \cdot (7-11.625)^2 + (9-11.625)^2 + \ldots + (16-11.625)^2}$
->* $\sigma = \sqrt{\frac{1}{7} \cdot 21.39 + 6.89 + \ldots + 19.14} = \sqrt{\frac{1}{7} \cdot 67.875}$
+>* $\bar{x} = 11.625$ und $n = 8$
+>* $\sigma = \sqrt{\frac{1}{8-1} \cdot ((7-11.625)^2 + (9-11.625)^2 + \ldots + (16-11.625)^2)}$
+>* $\sigma = \sqrt{\frac{1}{7} \cdot (21.39 + 6.89 + \ldots + 19.14)} = \sqrt{\frac{1}{7} \cdot 67.875}$
 >* $\sigma = \sqrt{9.696} \approx 3.114$
 
 # Aufgabe 5 <br /><br />z-Standardisierung
@@ -246,7 +246,7 @@ Ein Merkmal ist $N(3, 2)$ - verteilt. Berechnen Sie die Wahrscheinlichkeit dafü
 
 ## Refresher: Normalverteilung
 
-$$\frac{1}{\sqrt{2\sigma^2\pi} } \; e^{ -\frac{(x-\mu)^2}{2\sigma^2} }$$
+$$\mathcal{N}(\mu, \sigma) := \frac{1}{\sqrt{2\sigma^2\pi} } \; e^{ -\frac{(x-\mu)^2}{2\sigma^2} }$$
 
 ```{r a06_normplot}
 label_norm <- function(x) {
