@@ -364,6 +364,30 @@ Und welche Informationen sind wichtig für Sie, um eine geeignete Zuordnung zu w
 Erstellen Sie eine Kontingenztabelle mit dem Zeilenmerkmal „abschalt“ (Abschalten“) und dem Spaltenmerkmal „jahrgang“ („Jahrgangsstufe“). Berechnen Sie die Indifferenztabelle und den $\chi^2$ Wert sowie $C$ und $V$ per Hand.  
 Interpretieren Sie diese Ergebnisse.
 
+## Kontingenztabelle
+
+```{r a08}
+t_8 <- sjt.xtab(ngo$abschalt, ngo$jahrgang, 
+               show.exp = T, show.row.prc = T, show.col.prc = T, 
+               show.legend = T, 
+               use.viewer = F, no.output = T)
+```
+
+`r t_8$knitr`
+
+## $\chi^2$
+
+<div class = "fragment">
+$$\chi^2 = \sum_{\text{Alle Zellen}} \frac{(f_b - f_b)^2}{f_e}$$
+</div><div class = "fragment">
+$$\chi^2 = \frac{(57 - 54)^2}{54} + \frac{(53 - 56)^2}{56} + \ldots + \frac{(22 - 22)^2}{22}$$
+</div><div class = "fragment">
+$$\chi^2 = 0.167 + 0.161 + \ldots + 0$$
+</div><div class = "fragment">
+$$\chi^2 \approx 0.544$$
+</div>
+
+
 # Aufgabe 9 <br /><br />Ordinalskalierte Statistiken
 
 ##
