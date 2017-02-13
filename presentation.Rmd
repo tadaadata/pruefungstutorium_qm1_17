@@ -415,6 +415,27 @@ $$C = \sqrt{\frac{\chi^2}{\chi^2 + n}} = \sqrt{\frac{0.544}{0.544 + 246}} \appro
 
 <span class = "fragment">Und dann noch irgendwas mit $C_{\text{max}}$ und $C_{\text{korr}}$ …?</span>
 
+<div class = "fragment">
+<div id = "left">
+$$
+\begin{aligned}
+C_{\text{max}} &= \sqrt{\frac{r-1}{r}} \\
+&= \sqrt{\frac{2}{3}} \\
+&\approx 0.816
+\end{aligned}
+$$
+</div>
+<div id = "right">
+$$
+\begin{aligned}
+C_{\text{korr}} &= \frac{C}{C_{\text{max}}} \\
+&= \frac{0.002}{0.816} \\
+&\approx 0.0025
+\end{aligned}
+$$
+</div>
+</div>
+
 # Aufgabe 9 <br /><br />Ordinalskalierte Statistiken
 
 ```{r a_09_01}
