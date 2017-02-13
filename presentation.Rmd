@@ -384,10 +384,11 @@ t_8 <- sjt.xtab(ngo$abschalt, ngo$jahrgang,
 
 ## To the math! /o/
 
-<div class = "col2">
+<div id = "left">
 
 `r t_8$knitr`
-
+</div>
+<div id = "right">
 <div class = "fragment">
 \[\begin{aligned}
 \chi^2 &= \sum_{\text{Alle Zellen}} \frac{(f_b - f_b)^2}{f_e} \\
@@ -402,6 +403,7 @@ t_8 <- sjt.xtab(ngo$abschalt, ngo$jahrgang,
 \text{Cramer's} V & = \sqrt{\frac{\chi^2}{n \cdot min(r-1, c-1)}} \\
                   & = \sqrt{\frac{0.544}{246 \cdot 2}}\approx 0.047
 \end{aligned}\]
+</div>
 </div>
 </div>
 
