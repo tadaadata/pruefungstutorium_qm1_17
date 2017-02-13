@@ -407,6 +407,14 @@ t_8 <- sjt.xtab(ngo$abschalt, ngo$jahrgang,
 </div>
 </div>
 
+## Kontingenzkoeffizient $C$
+
+<small>Die bucklige Verwandschaft</small>
+
+$$C = \sqrt{\frac{\chi^2}{\chi^2 + n}} = \sqrt{\frac{0.544}{0.544 + 246}} \approx 0.002$$
+
+<span class = "fragment">Und dann noch irgendwas mit $C_{\text{max}}$ und $C_{\text{korr}}$ …?</span>
+
 # Aufgabe 9 <br /><br />Ordinalskalierte Statistiken
 
 ```{r a_09_01}
@@ -501,7 +509,7 @@ $$
 \text{Somers' } d & = \frac{N_c - N_d}{N_c + N_d + t} \\
 & = \frac{6168 - 3996}{6168 + 3996 + 9836} \\
 & = \frac{2172}{20000} \\
-& \approx 0.109
+& \ldots 0.109
 \end{aligned}
 $$
 </div>
@@ -516,7 +524,7 @@ $$
 \begin{aligned}
 \tau_a &= \frac{N_c - N_d}{\frac{(n-1) \cdot n}{2}} \\
 &= \frac{6168 - 3996}{\frac{249 \cdot 250}{2}} \\
-&\approx \text{NO WAIT!}
+& \ldots \text{NO WAIT!}
 \end{aligned}
 $$
 
