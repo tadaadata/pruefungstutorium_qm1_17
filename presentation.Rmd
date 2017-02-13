@@ -375,16 +375,24 @@ t_8 <- sjt.xtab(ngo$abschalt, ngo$jahrgang,
 
 `r t_8$knitr`
 
-## $\chi^2$
+## To the math! /o/
+
+
 
 <div class = "fragment">
-$$\chi^2 = \sum_{\text{Alle Zellen}} \frac{(f_b - f_b)^2}{f_e}$$
-</div><div class = "fragment">
-$$\chi^2 = \frac{(57 - 54)^2}{54} + \frac{(53 - 56)^2}{56} + \ldots + \frac{(22 - 22)^2}{22}$$
-</div><div class = "fragment">
-$$\chi^2 = 0.167 + 0.161 + \ldots + 0$$
-</div><div class = "fragment">
-$$\chi^2 \approx 0.544$$
+\[\begin{aligned}
+\chi^2 &= \sum_{\text{Alle Zellen}} \frac{(f_b - f_b)^2}{f_e} \\
+ &= \frac{(57 - 54)^2}{54} + \frac{(53 - 56)^2}{56} + \ldots + \frac{(22 - 22)^2}{22} \\
+ &= 0.167 + 0.161 + \ldots + 0 \approx 0.544
+\end{aligned}\]
+
+<br />
+
+<div class = "fragment">
+\[\begin{aligned}
+\text{Cramer's} V & = \sqrt{\frac{\chi^2}{n \cdot min(r-1, c-1)}} \\
+                  & = \sqrt{\frac{0.544}{246 \cdot 2}} \approx 0.047
+\end{aligned}\]
 </div>
 
 
