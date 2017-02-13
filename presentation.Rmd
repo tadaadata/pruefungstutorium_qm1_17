@@ -432,10 +432,10 @@ f) Wäre eine andere Statistik geeigneter?
 <div class="col2">
 `r a09_sjt$knitr`
 
-<br />
+<br /><br /><br />
 
-```
 Bindungen (horizontal):
+```
 --------------------------------
   (1  * (0  + 0))  + (0  * 0)
 + (63 * (46 + 26)) + (46 * 26)
@@ -447,8 +447,8 @@ Bindungen (horizontal):
 
 
 <div class="col2">
+Konkordante Paare:
 ```
-konkordante Paare:            | 
 ------------------------------
   (1  * (46 + 26 + 54 + 24))   
 + (0  * (26 + 24))             
@@ -460,8 +460,8 @@ konkordante Paare:            |
 
 <br />
 
+Diskordante Paare: 
 ```
-diskordante Paare:             
 ------------------------------
   (0  * (63 + 46 + 36 + 54))   
 + (0  * (63 + 36))             
@@ -470,6 +470,7 @@ diskordante Paare:
 ------------------------------
   3996                         
 ```
+</div>
 
 # Aufgabe 10 <br /><br />Regression
 
