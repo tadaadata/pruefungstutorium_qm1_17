@@ -556,8 +556,8 @@ $$
 $$
 \begin{aligned}
 \tau_b &= \frac{N_c - N_d}{\sqrt{(N_c + N_d + t_x)(N_c + N_d + t_y)}} \\
-&= \frac{6168 - 3996}{\sqrt{(10164 + t_x)(10164 + t_y)}} \\
-&\approx 
+&= \frac{6168 - 3996}{\sqrt{(10164 + 9836)(10164 + 5475)}} \\
+&= 0.123 
 \end{aligned}
 $$
 
