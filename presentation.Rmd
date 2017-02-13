@@ -391,7 +391,7 @@ t_8 <- sjt.xtab(ngo$abschalt, ngo$jahrgang,
 <div id = "right">
 <div class = "fragment">
 \[\begin{aligned}
-\chi^2 &= \sum_{\text{Alle Zellen}} \frac{(f_b - f_b)^2}{f_e} \\
+\chi^2 &= \sum_{\text{Alle Zellen}} \frac{(f_b - f_e)^2}{f_e} \\
  &= \frac{(57 - 54)^2}{54} + \ldots + \frac{(22 - 22)^2}{22} \\
  &= 0.167 + \ldots + + 0 \approx 0.544
 \end{aligned}\]
@@ -400,7 +400,7 @@ t_8 <- sjt.xtab(ngo$abschalt, ngo$jahrgang,
 
 <div class = "fragment">
 \[\begin{aligned}
-\text{Cramer's} V & = \sqrt{\frac{\chi^2}{n \cdot min(r-1, c-1)}} \\
+\text{Cramer's} V & = \sqrt{\frac{\chi^2}{n \cdot min(r-1| c-1)}} \\
                   & = \sqrt{\frac{0.544}{246 \cdot 2}}\approx 0.047
 \end{aligned}\]
 </div>
@@ -561,7 +561,7 @@ a11 %>%
   gather(Zeitpunkt, Gewicht, T1, T2) %>% 
   ggplot(aes(x = Zeitpunkt, y = Gewicht, group = ID, color = ID)) +
     geom_line() +
-    geom_jitter(width = .05, height = 0, size = 3) +
+    geom_jitter(width = .02, height = 0, size = 3) +
     scale_color_brewer(palette = "Set1") +
     labs(y = "Gewicht (in kg)") +
     theme(legend.position = "none")
@@ -652,7 +652,7 @@ rm(a11_neut, a11_up, a11_down, a11_n_long, a11_u_long, a11_d_long, a11_plot)
 
 ##
 
-27 Patienten sind von zwei Ärzten untersucht und im Hinblick auf ihren Gesundheitszustand in der folgenden Form als krank bzw. gesund eingestuft worden
+27 Patienten sind von zwei Ärzten untersucht und im Hinblick auf ihren Gesundheitszustand in der folgenden Form als _krank_ bzw. _gesund_ eingestuft worden
 
 | Einschätzung 	|        	| Arzt A 	|        	|
 |--------------	|--------	|--------	|--------	|
@@ -689,7 +689,9 @@ Wie fällt die Kovariation in den Streudiagrammen 1 bis 3 tendenziell aus (im Ve
 
 ## 
 
-Versuchen Sie das Prinzip der Kovariation grafisch in einem Streudiagramm zu veranschaulichen. Zeichnen Sie hierfür ein beliebiges Streudiagramm. Die Grafik setzt sich von der Aufgabe 13 ab (Tipp: denken Sie daran, wie die Variation damals grafisch auf Basis von Quadraten erklärt wurde).
+Versuchen Sie das Prinzip der Kovariation grafisch in einem Streudiagramm zu veranschaulichen. Zeichnen Sie hierfür ein beliebiges Streudiagramm. Die Grafik setzt sich von der Aufgabe 13 ab.
+
+_(Tipp: denken Sie daran, wie die Variation damals grafisch auf Basis von Quadraten erklärt wurde)_
 
 # Aufgabe 15<br /><br />Multiple Regression
 
