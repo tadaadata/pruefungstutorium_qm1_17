@@ -62,7 +62,7 @@ options(digits = 3)
 
 # selfmade ggplot-Theme laden und global setzen
 source("./assets/theme_tut.R")
-theme_set(theme_readthedown())
+theme_set(theme_readthedown(base_size = 16))
 ```
 
 # Na, auch hier?
@@ -303,7 +303,7 @@ $$\int_2^{4.5} \frac{1}{\sqrt{2\sigma^2\pi} } \; e^{ -\frac{(x-\mu)^2}{2\sigma^2
 
 >- In R: `pnorm(4.5, mean = 3, sd = 2) - pnorm(2, mean = 3, sd = 2)`
 
-## Oder für SozialwissenschaftlerInnen…
+## Oder für Humanwissenschaftler\*innen…
 
 >- Werte z-Standardisieren: 
 >- $\frac{2-3}{4.5} = -0.5$
@@ -512,6 +512,11 @@ a11_down <- data.frame(
 a11_d_long <- a11_down %>% 
   gather(Zeitpunkt, Gewicht, T1, T2) %>% 
   mutate(Zeitpunkt = factor(Zeitpunkt))
+
+a11_plot <- rbind(a11_neut, a11_up, a11_down) %>% 
+  mutate(Diät = c(rep("Unverändert", 5),
+                  rep("Zunahme", 5),
+                  rep("Abnahme", 5)))
 ```
 
 <div class="col3">
@@ -527,8 +532,17 @@ Abnahme: $r = `r cor(a11_down$T1, a11_down$T2)`; r_{pb} = `r cor(as.numeric(a11_
 `r kable(a11_down)`
 </div>
 
+## 
+
 ```{r a11_04}
-rm(a11_neut, a11_up, a11_down, a11_n_long, a11_u_long, a11_d_long)
+ggplot(a11_plot, aes(x = T1, y = T2)) +
+  geom_smooth(method = "lm", se = F, color = "red") +
+  geom_point(size = 3) +
+  facet_wrap(~Diät, ncol = 3) +
+  labs(x = "Gewicht (in kg) zu Messzeitpunkt 1",
+       y = "Gewicht (in kg) zu Messzeitpunkt 2")
+  
+rm(a11_neut, a11_up, a11_down, a11_n_long, a11_u_long, a11_d_long, a11_plot)
 ```
 
 # Aufgabe 12 <br /><br />Kappa $\kappa$
