@@ -13,7 +13,7 @@ current_user <- as.list(Sys.info())$user
 
 if (current_user == "Lukas") {
   out_dir <- "~/Sync/public.tadaa-data.de/QM/pruefungstutorien/qm1_wise_17/"
-} else if (current_user == "tobias") {
+} else if (current_user == "tobi") {
   out_dir <- "~/Dokumente/syncthing/public.tadaa-data.de/QM/pruefungstutorien/qm1_wise_17"
 } else {
   out_dir <- ""
