@@ -400,7 +400,7 @@ t_8 <- sjt.xtab(ngo$abschalt, ngo$jahrgang,
 
 <div class = "fragment">
 \[\begin{aligned}
-\text{Cramer's} V & = \sqrt{\frac{\chi^2}{n \cdot min(r-1| c-1)}} \\
+\text{Cramer's} V & = \sqrt{\frac{\chi^2}{n \cdot min(r-1, c-1)}} \\
                   & = \sqrt{\frac{0.544}{246 \cdot 2}}\approx 0.047
 \end{aligned}\]
 </div>
@@ -481,6 +481,71 @@ Diskordante Paare:
 \end{align}
 \]
 </div>
+
+## $\gamma$ und Somers' $d$
+
+<div id = "left">
+$$
+\begin{aligned}
+\gamma & = \frac{N_c - N_d}{N_c + N_d} \\
+& = \frac{6168 - 3996}{6168 + 3996} \\
+& = \frac{2172}{10164} \\
+& \approx 0.214 
+\end{aligned}
+$$
+</div>
+
+<div id = "right">
+$$
+\begin{aligned}
+\text{Somers' } d & = \frac{N_c - N_d}{N_c + N_d + t} \\
+& = \frac{6168 - 3996}{6168 + 3996 + 9836} \\
+& = \frac{2172}{20000} \\
+& \approx 0.109
+\end{aligned}
+$$
+</div>
+
+<span class = "fragment">
+\*GASP*\! Damit konnte ja niemand rechnen!
+</span>
+
+## Tau A 
+
+$$
+\begin{aligned}
+\tau_a &= \frac{N_c - N_d}{\frac{(n-1) \cdot n}{2}} \\
+&= \frac{6168 - 3996}{\frac{249 \cdot 250}{2}} \\
+&\approx \text{NO WAIT!}
+\end{aligned}
+$$
+
+<div class = "fragment">Was ist das Problem?</span>
+
+## Tau B
+
+$$
+\begin{aligned}
+\tau_b &= \frac{N_c - N_d}{\sqrt{(N_c + N_d + t_x)(N_c + N_d + t_y)}} \\
+&= \frac{6168 - 3996}{\sqrt{(10164 + t_x)(10164 + t_y)}} \\
+&\approx \text{NO WAIT!}
+\end{aligned}
+$$
+
+<div class = "fragment">Was ist das Problem?</span>
+
+## Tau C
+
+$$
+\begin{aligned}
+\tau_c &= \frac{N_c - N_d}{\frac{1}{2} n^2 \frac{m-1}{m}} \quad |\ m = min(r-1, c-1) \\
+&= \frac{6168 - 3996}{\frac{1}{2} 250^2 \frac{m-1}{m}} \\
+&\approx 0.07
+\end{aligned}
+$$
+
+<div class = "fragment">Wenigstens durften wir's anwenden ¯\\\_(ツ)_/¯</span>
+
 
 # Aufgabe 10 <br /><br />Regression
 
