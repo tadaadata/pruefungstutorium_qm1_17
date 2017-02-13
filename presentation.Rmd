@@ -432,6 +432,8 @@ f) Wäre eine andere Statistik geeigneter?
 <div class="col2">
 `r a09_sjt$knitr`
 
+<br />
+
 ```
 Bindungen (horizontal):
 --------------------------------
@@ -455,6 +457,8 @@ konkordante Paare:            |
 ------------------------------
   6168                        
 ```
+
+<br />
 
 ```
 diskordante Paare:             
