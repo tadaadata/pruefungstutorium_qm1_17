@@ -2,7 +2,7 @@
 .col2 {
     columns: 2 200px;
   }
-  
+
 .col3 {
     columns: 3 150px;
   }
@@ -23,14 +23,14 @@ td, th {
 }
 */
 
-tbody tr:nth-child(odd) td,
-tbody tr:nth-child(odd) th {
-  background-color: white;
-}
-
 .reveal table th {
   background: #404040;
   color: white;
+}
+
+.reveal sjplot table th {
+  background: #404040;
+  color: black;
 }
 
 

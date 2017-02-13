@@ -375,16 +375,14 @@ Interpretieren Sie diese Ergebnisse.
 
 ```{r a08}
 t_8 <- sjt.xtab(ngo$abschalt, ngo$jahrgang, 
-               show.exp = T, show.row.prc = T, show.col.prc = T, 
-               show.legend = T, 
+               show.exp = T,
+               show.legend = T,
                use.viewer = F, no.output = T)
 ```
 
 `r t_8$knitr`
 
 ## To the math! /o/
-
-
 
 <div class = "fragment">
 \[\begin{aligned}
