@@ -530,7 +530,7 @@ $$
 \text{Somers' } d & = \frac{N_c - N_d}{N_c + N_d + t} \\
 & = \frac{6168 - 3996}{6168 + 3996 + 9836} \\
 & = \frac{2172}{20000} \\
-& \ldots 0.109
+& \approx 0.109
 \end{aligned}
 $$
 </div>
