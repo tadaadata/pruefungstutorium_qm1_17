@@ -232,7 +232,7 @@ values <- ngo %>% filter(jahrgang == "13", geschl == "Weiblich") %>%
 **z-Standardisierung**: <br /><br/ > $$z_i = \frac{x_i - \bar{x}}{\sigma}$$
 </div>
 
-<div class = "fragment">$\bar{x} = `r values$mean`$ \quad\quad $\sigma = `r values$sd`$</div>
+<div class = "fragment">$\bar{x} = `r values$mean` \quad\quad \sigma = `r values$sd`$</div>
 <br />
 <div class = "fragment">$23 \rightarrow \frac{23 - 29.52}{5.78} \approx -1.13$</div>
 <br />
@@ -346,7 +346,7 @@ You get the idea.
 
 Eine Person hat in drei Tests (T1, T2 und T3) folgende drei Punktzahlen erreicht:
 
-    T1=10 T2=10 T3=10
+$$T1=10 \quad T2=10 \quad T3=10$$
   
 Als Mittelwert wurde für T1 der Wert 10, für T2 der Wert 15 und für T3 der Wert 20 ermittelt. Die Standardabweichungen betragen bei T1=2, T2=1 und bei T3=1,5.
 
@@ -561,7 +561,7 @@ $$
 \begin{aligned}
 \tau_b &= \frac{N_c - N_d}{\sqrt{(N_c + N_d + t_x)(N_c + N_d + t_y)}} \\
 &= \frac{6168 - 3996}{\sqrt{(10164 + 9836)(10164 + 5475)}} \\
-&= 0.123 
+&\approx 0.123 
 \end{aligned}
 $$
 
