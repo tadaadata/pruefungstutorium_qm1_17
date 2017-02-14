@@ -258,7 +258,7 @@ z_i = \frac{x_i - \bar{x}}{S_x}
 $$
 </div>
 
-<div class = "fragment">$\bar{x} = `r values$mean` \quad\quad \sigma = `r values$sd`$</div>
+<div class = "fragment">$\bar{x} \approx `r values$mean` \quad\quad S_x \approx `r values$sd`$</div>
 <br />
 <div class = "fragment">$23 \rightarrow \frac{23 - 29.52}{5.78} \approx -1.13$</div>
 <br />
