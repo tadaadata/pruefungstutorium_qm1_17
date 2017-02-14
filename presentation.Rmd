@@ -382,17 +382,19 @@ Und welche Informationen sind wichtig für Sie, um eine geeignete Zuordnung zu w
 
 ## Oh glob so langweilig
 
+<div class = "fragment">
 ### Test 1
 
->- Mittelwert: 10; Standardabweichung 2; z-Wert: $\frac{10 - 10}{2} = 0$
-
+$$\bar{x} = 10  \qquad S_x = 2 \qquad z \frac{10 - 10}{2} = 0$$
+</div><div class = "fragment">
 ### Test 2
 
->- Mittelwert: 15; Standardabweichung 1; z-Wert: $\frac{10 - 15}{1} = -5$
-
+$$\bar{x} = 15  \qquad S_x = 1 \qquad z \frac{10 - 15}{1} = -5$$
+</div><div class = "fragment">
 ### Test 3
 
->- Mittelwert: 20; Standardabweichung 1.5; z-Wert: $\frac{10 - 20}{1.5} = -6.6\bar{6}$
+$$\bar{x} = 20  \qquad S_x = 1.5 \qquad z = \frac{10 - 20}{1.5} = -6.6\bar{6}$$
+</div>
 
 # Aufgabe 8 <br /><br />$\chi^2$, $C$, Cramer's $V$
 
@@ -546,9 +548,9 @@ Diskordante Paare:
 <div id = "left">
 $$
 \begin{aligned}
-\gamma & = \frac{N_c - N_d}{N_c + N_d} \\
-& = \frac{6168 - 3996}{6168 + 3996} \\
-& = \frac{2172}{10164} \\
+\gamma & = \frac{N_c - N_d}{N_c + N_d} \\\\
+& = \frac{6168 - 3996}{6168 + 3996} \\\\
+& = \frac{2172}{10164} \\\\
 & \approx 0.214 
 \end{aligned}
 $$
@@ -557,9 +559,9 @@ $$
 <div id = "right">
 $$
 \begin{aligned}
-\text{Somers' } d & = \frac{N_c - N_d}{N_c + N_d + t} \\
-& = \frac{6168 - 3996}{6168 + 3996 + 9836} \\
-& = \frac{2172}{20000} \\
+\text{Somers' } d & = \frac{N_c - N_d}{N_c + N_d + t} \\\\
+& = \frac{6168 - 3996}{6168 + 3996 + 9836} \\\\
+& = \frac{2172}{20000} \\\\
 & \approx 0.109
 \end{aligned}
 $$
@@ -573,8 +575,8 @@ $$
 
 $$
 \begin{aligned}
-\tau_a &= \frac{N_c - N_d}{\frac{(n-1) \cdot n}{2}} \\
-&= \frac{6168 - 3996}{\frac{249 \cdot 250}{2}} \\
+\tau_a &= \dfrac{N_c - N_d}{\dfrac{(n-1) \cdot n}{2}} \\\\
+&= \frac{6168 - 3996}{\dfrac{249 \cdot 250}{2}} \\\\
 & \ldots \text{NO WAIT!}
 \end{aligned}
 $$
@@ -585,8 +587,8 @@ $$
 
 $$
 \begin{aligned}
-\tau_b &= \frac{N_c - N_d}{\sqrt{(N_c + N_d + t_x)(N_c + N_d + t_y)}} \\
-&= \frac{6168 - 3996}{\sqrt{(10164 + 9836)(10164 + 5475)}} \\
+\tau_b &= \frac{N_c - N_d}{\sqrt{(N_c + N_d + t_x)(N_c + N_d + t_y)}} \\\\
+&= \frac{6168 - 3996}{\sqrt{(10164 + 9836)(10164 + 5475)}} \\\\
 &\approx 0.123 
 \end{aligned}
 $$
@@ -597,8 +599,8 @@ $$
 
 $$
 \begin{aligned}
-\tau_c &= \frac{N_c - N_d}{\frac{1}{2} \cdot n^2 \cdot \frac{m-1}{m}} \quad |\ m = min(r-1, c-1) \\
-&= \frac{6168 - 3996}{\frac{1}{2} \cdot 250^2 \cdot \frac{3-1}{3}} \\
+\tau_c &= \dfrac{N_c - N_d}{\dfrac{1}{2} \cdot n^2 \cdot \dfrac{m-1}{m}} \quad |\ m = min(r-1, c-1) \\\\
+&= \dfrac{6168 - 3996}{\dfrac{1}{2} \cdot 250^2 \cdot \dfrac{3-1}{3}} \\\\
 &\approx \text{NO WAIT!}
 \end{aligned}
 $$
