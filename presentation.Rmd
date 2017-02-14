@@ -229,13 +229,17 @@ values <- ngo %>% filter(jahrgang == "13", geschl == "Weiblich") %>%
 ```
 
 <div class = "fragment">
-z-Standardisierung: $$z_i = \frac{x_i - \bar{x}}{\sigma}$$
+**z-Standardisierung**: <br /><br/ > $$z_i = \frac{x_i - \bar{x}}{\sigma}$$
 </div>
 
->* Werte: $\bar{x} = `r values$mean`$ und $\sigma = `r values$sd`$
->* $23 \rightarrow \frac{23 - 29.52}{5.78} \approx -1.13$
->* $27 \rightarrow \frac{27 - 29.52}{5.78} \approx -0.44$
->* $31 \rightarrow \frac{31 - 29.52}{5.78} \approx 0.26$
+<div class = "fragment">$\bar{x} = `r values$mean`$ \quad\quad $\sigma = `r values$sd`$</div>
+<br />
+<div class = "fragment">$23 \rightarrow \frac{23 - 29.52}{5.78} \approx -1.13$</div>
+<br />
+<div class = "fragment">$27 \rightarrow \frac{27 - 29.52}{5.78} \approx -0.44$</div>
+<br />
+<div class = "fragment">$31 \rightarrow \frac{31 - 29.52}{5.78} \approx 0.26$</div>
+<br />
 
 # Aufgabe 6 <br /><br />Normalverteilung
 
