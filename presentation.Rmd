@@ -183,7 +183,7 @@ Sie haben Werte des Merkmals „**Unterrichtsstunden**“ u.a. zur Berechnung de
 
 ## Mittelwert, Median, Modus
 
-$$\bar{x} = \frac{1}{n} \sum^n_i x_i \approx `r round(mean(ngo$stunzahl), 3)`$$
+$$\bar{x} = \frac{1}{n} \sum^n_i x_i \approx \underline{`r round(mean(ngo$stunzahl), 3)`}$$
 
 ```{r a03, eval = T}
 mvalues <- data.frame(Zentralmaß = factor(c("Mittelwert", "Median", "Modus")),
@@ -200,17 +200,17 @@ ggplot() +
 <div class = "fragment">
 **Variation**
 
-$$\sum^n_{i=1} (x_i - \bar{x})^2 \approx `r round(var(ngo$stunzahl) * (length(ngo$stunzahl) - 1), 3)`$$
+$$\sum^n_{i=1} (x_i - \bar{x})^2 \approx \underline{`r round(var(ngo$stunzahl) * (length(ngo$stunzahl) - 1), 3)`}$$
 </div>
 <div class = "fragment">
 **Varianz**
 
-$${S_x}^2 = \frac{1}{n-1} \sum^n_{i=1} (x_i - \bar{x})^2 \approx `r round(var(ngo$stunzahl), 3)`$$
+$${S_x}^2 = \frac{1}{n-1} \sum^n_{i=1} (x_i - \bar{x})^2 \approx \underline{`r round(var(ngo$stunzahl), 3)`}$$
 </div>
 <div class = "fragment">
 **Standardabweichung**
 
-$$S_x = \sqrt{\frac{1}{n-1} \sum^n_{i=1} (x_i - \bar{x})^2} \approx `r round(sd(ngo$stunzahl), 3)`$$
+$$S_x = \sqrt{\frac{1}{n-1} \sum^n_{i=1} (x_i - \bar{x})^2} \approx \underline{`r round(sd(ngo$stunzahl), 3)`}$$
 </div>
 
 # Aufgabe 4 <br /><br />Standardabweichung
@@ -232,7 +232,7 @@ $$
 S_x &= \sqrt{\frac{1}{8-1} \cdot \left((7-11.625)^2 + \ldots + (16-11.625)^2\right)} \\
 &= \sqrt{\frac{1}{7} \cdot (21.39 + 6.89 + \ldots + 19.14)} \\
 &= \sqrt{\frac{1}{7} \cdot 67.875} \\ 
-&= \sqrt{9.696} \approx 3.114
+&= \sqrt{9.696} \approx \underline{3.114}
 \end{aligned}
 $$
 </div>
@@ -260,11 +260,11 @@ $$
 
 <div class = "fragment">$\bar{x} \approx `r values$mean` \quad\quad S_x \approx `r values$sd`$</div>
 <br />
-<div class = "fragment">$23 \rightarrow \frac{23 - 29.52}{5.78} \approx -1.13$</div>
+<div class = "fragment">$23 \rightarrow \frac{23 - 29.52}{5.78} \approx \underline{-1.13}$</div>
 <br />
-<div class = "fragment">$27 \rightarrow \frac{27 - 29.52}{5.78} \approx -0.44$</div>
+<div class = "fragment">$27 \rightarrow \frac{27 - 29.52}{5.78} \approx \underline{-0.44}$</div>
 <br />
-<div class = "fragment">$31 \rightarrow \frac{31 - 29.52}{5.78} \approx 0.26$</div>
+<div class = "fragment">$31 \rightarrow \frac{31 - 29.52}{5.78} \approx \underline{0.26}$</div>
 <br />
 
 # Aufgabe 6 <br /><br />Normalverteilung
@@ -347,7 +347,7 @@ $$\int_2^{4.5} \frac{1}{\sqrt{2\sigma^2\pi} } \; e^{ -\frac{(x-\mu)^2}{2\sigma^2
 >- $\frac{4.5-3}{4.5} = 0.75$
 >- In SNV-Tabelle nachgucken…
 >- Arithmetik
->- Boom: $0.465$
+>- Boom: $\underline{0.465}$
 
 ## $\mathcal{N}(3, 2)$ — $(-\infty, 4]$
 
@@ -385,15 +385,15 @@ Und welche Informationen sind wichtig für Sie, um eine geeignete Zuordnung zu w
 <div class = "fragment">
 ### Test 1
 
-$$\bar{x} = 10  \qquad S_x = 2 \qquad z \frac{10 - 10}{2} = 0$$
+$$\bar{x} = 10  \qquad S_x = 2 \qquad z \frac{10 - 10}{2} = \underline{0}$$
 </div><div class = "fragment">
 ### Test 2
 
-$$\bar{x} = 15  \qquad S_x = 1 \qquad z \frac{10 - 15}{1} = -5$$
+$$\bar{x} = 15  \qquad S_x = 1 \qquad z \frac{10 - 15}{1} = \underline{-5}$$
 </div><div class = "fragment">
 ### Test 3
 
-$$\bar{x} = 20  \qquad S_x = 1.5 \qquad z = \frac{10 - 20}{1.5} = -6.6\bar{6}$$
+$$\bar{x} = 20  \qquad S_x = 1.5 \qquad z = \frac{10 - 20}{1.5} = \underline{-6.\bar{6}}$$
 </div>
 
 # Aufgabe 8 <br /><br />$\chi^2$, $C$, Cramer's $V$
@@ -425,15 +425,15 @@ t_8 <- sjt.xtab(ngo$abschalt, ngo$jahrgang,
 \[\begin{aligned}
 \chi^2 &= \sum_{\text{Alle Zellen}} \frac{(f_b - f_e)^2}{f_e} \\
  &= \frac{(57 - 54)^2}{54} + \ldots + \frac{(22 - 22)^2}{22} \\
- &= 0.167 + \ldots + + 0 \approx 0.544
+ &= 0.167 + \ldots + 0 \approx \underline{0.544}
 \end{aligned}\]
 
 <br />
 
 <div class = "fragment">
 \[\begin{aligned}
-\text{Cramer's} V & = \sqrt{\frac{\chi^2}{n \cdot min(r-1, c-1)}} \\
-                  & = \sqrt{\frac{0.544}{246 \cdot 2}}\approx 0.047
+\text{Cramer's}\ V & = \sqrt{\frac{\chi^2}{n \cdot min(r-1, c-1)}} \\
+                  & = \sqrt{\frac{0.544}{246 \cdot 2}} \approx \underline{0.047}
 \end{aligned}\]
 </div>
 </div>
@@ -443,26 +443,27 @@ t_8 <- sjt.xtab(ngo$abschalt, ngo$jahrgang,
 
 <small>Die bucklige Verwandschaft</small>
 
-$$C = \sqrt{\frac{\chi^2}{\chi^2 + n}} = \sqrt{\frac{0.544}{0.544 + 246}} \approx 0.002$$
-
+<div class = "fragment">
+$$C = \sqrt{\frac{\chi^2}{\chi^2 + n}} = \sqrt{\frac{0.544}{0.544 + 246}} \approx \underline{0.002}$$
+</div>
 <span class = "fragment">Und dann noch irgendwas mit $C_{\text{max}}$ und $C_{\text{korr}}$ …?</span>
 
 <div class = "fragment">
-<div id = "left">
+<div id = "left" class = "fragment">
 $$
 \begin{aligned}
 C_{\text{max}} &= \sqrt{\frac{r-1}{r}} \\
-&= \sqrt{\frac{2}{3}} \\
-&\approx 0.816
+&= \sqrt{\frac{2}{3}} \\\\
+&\approx \underline{0.816}
 \end{aligned}
 $$
 </div>
-<div id = "right">
+<div id = "right" class = "fragment">
 $$
 \begin{aligned}
 C_{\text{korr}} &= \frac{C}{C_{\text{max}}} \\
-&= \frac{0.002}{0.816} \\
-&\approx 0.0025
+&= \frac{0.002}{0.816} \\\\
+&\approx \underline{0.0025}
 \end{aligned}
 $$
 </div>
@@ -499,70 +500,70 @@ f) Wäre eine andere Statistik geeigneter?
 <div class="col2">
 `r a09_sjt$knitr`
 
-<br /><br /><br />
+<br /><br />
 
 Bindungen (horizontal):
-
-\[
+<div class = "fragment">
+$$
 \begin{align}
-& \quad \ (1  \cdot (0  + 0))  + (0  \cdot 0) \\
+t &= (1  \cdot (0  + 0))  + (0  \cdot 0) \\
 & + (63 \cdot (46 + 26)) + (46 \cdot 26) \\
-& + (36 \cdot (54 + 24)) + (54 \cdot 24) \\
-& = 9836
+& + (36 \cdot (54 + 24)) + (54 \cdot 24) \\\\
+& = \underline{9836}
 \end{align}
-\]
-
+$$
+</div>
 </div>
 
 
 <div class="col2">
 Konkordante Paare:
-
-\[
+<div class = "fragment">
+$$
 \begin{align}
-& \quad \ (1  \cdot (46 + 26 + 54 + 24)) \\
+N_c &= (1  \cdot (46 + 26 + 54 + 24)) \\
 &+ (0  \cdot (26 + 24))  \\
 &+ (63 \cdot (54 + 24))  \\
-&+ (46 \cdot 24)          \\
-& = 6168                        
+&+ (46 \cdot 24)         \\\\
+& = \underline{6168}
 \end{align}
-\]
-
-<br />
+$$
+</div>
 
 Diskordante Paare: 
-
-\[
+<div class = "fragment">
+$$
 \begin{align}
-& \quad \  (0  \cdot (63 + 46 + 36 + 54))  \\
+N_d &= (0 \cdot (63 + 46 + 36 + 54))  \\
 &+ (0  \cdot (63 + 36)) \\
 &+ (26 \cdot (36 + 54)) \\
-&+ (46 \cdot 36)        \\  
-& =  3996 
+&+ (46 \cdot 36)        \\\\  
+& =  \underline{3996}
 \end{align}
-\]
+$$
+</div>
 </div>
 
 ## $\gamma$ und Somers' $d$
 
-<div id = "left">
+<div id = "left" class = "fragment">
 $$
 \begin{aligned}
 \gamma & = \frac{N_c - N_d}{N_c + N_d} \\\\
 & = \frac{6168 - 3996}{6168 + 3996} \\\\
 & = \frac{2172}{10164} \\\\
-& \approx 0.214 
+& \approx \underline{0.214}
 \end{aligned}
 $$
 </div>
 
-<div id = "right">
+<div id = "right" class = "fragment">
 $$
 \begin{aligned}
 \text{Somers' } d & = \frac{N_c - N_d}{N_c + N_d + t} \\\\
 & = \frac{6168 - 3996}{6168 + 3996 + 9836} \\\\
 & = \frac{2172}{20000} \\\\
-& \approx 0.109
+& \approx \underline{0.109}
 \end{aligned}
 $$
 </div>
@@ -577,11 +578,11 @@ $$
 \begin{aligned}
 \tau_a &= \dfrac{N_c - N_d}{\dfrac{(n-1) \cdot n}{2}} \\\\
 &= \frac{6168 - 3996}{\dfrac{249 \cdot 250}{2}} \\\\
-& \ldots \text{NO WAIT!}
+&= \ldots
 \end{aligned}
 $$
 
-<div class = "fragment">Was ist das Problem?</span>
+<div class = "fragment">NO WAIT!<br />Was ist das Problem?</span>
 
 ## Tau B
 
@@ -589,7 +590,7 @@ $$
 \begin{aligned}
 \tau_b &= \frac{N_c - N_d}{\sqrt{(N_c + N_d + t_x)(N_c + N_d + t_y)}} \\\\
 &= \frac{6168 - 3996}{\sqrt{(10164 + 9836)(10164 + 5475)}} \\\\
-&\approx 0.123 
+&\approx \underline{0.123}
 \end{aligned}
 $$
 
@@ -601,12 +602,11 @@ $$
 \begin{aligned}
 \tau_c &= \dfrac{N_c - N_d}{\dfrac{1}{2} \cdot n^2 \cdot \dfrac{m-1}{m}} \quad |\ m = min(r-1, c-1) \\\\
 &= \dfrac{6168 - 3996}{\dfrac{1}{2} \cdot 250^2 \cdot \dfrac{3-1}{3}} \\\\
-&\ldots \text{NO WAIT!}
+&= \ldots
 \end{aligned}
 $$
 
-<div class = "fragment">Was ist das Problem?</span>
-
+<div class = "fragment">NO WAIT!<br />Was ist das Problem?</span>
 
 # Aufgabe 10 <br /><br />Regression
 
@@ -836,19 +836,25 @@ rm(a11_neut, a11_up, a11_down, a11_n_long, a11_u_long, a11_d_long, a11_plot)
 
 Es ist die Statistik „Kappa“ -ohne Software- zu ermitteln und anschließend zu interpretieren.
 
-##
+## Kappa $\kappa$
 
 $$ \kappa = \frac{h_b - h_e}{1 - h_e} $$
-$$ h_b = \frac{1}{n} \sum^m_{j = 1} f_{j,j} $$
-$$ h_e = \frac{1}{n} \sum^m_{j = 1} f_{e_{j,j}} $$
+$$ h_b = \frac{1}{n} \sum^m_{j = 1} f_{j,j} \qquad h_e = \frac{1}{n} \sum^m_{j = 1} f_{e_{j,j}} $$
 
-Werte einsetzen für Fortgeschrittene… <br />
-
->- $n = 27$
->- $h_b = \frac{1}{27} \cdot (8 + 12) \approx 0,741$
->- $h_e = \frac{1}{27} \cdot (4,\bar{8} + 8,\bar{8}) \approx 0,51$
->- $\kappa = \frac{h_b - h_e}{1 - h_e} = \frac{0,741 - 0,51}{1 - 0,51} \approx 0,47$
-
+<div class = "fragment" id = "left">
+$$\begin{aligned}
+n &= 27 \\\\
+h_b &= \frac{1}{27} \cdot (8 + 12) &\approx \underline{0.741} \\\\
+h_e &= \frac{1}{27} \cdot (4.\bar{8} + 8.\bar{8}) &\approx \underline{0.51}
+\end{aligned}$$
+</div>
+<div class = "fragment" id = "right">
+$$\begin{aligned}
+\kappa &= \frac{h_b - h_e}{1 - h_e} \\\\
+&= \frac{0.741 - 0.51}{1 - 0.51} \\\\
+&\approx \underline{0.47}
+\end{aligned}$$
+</div>
 
 # Aufgabe 13 <br /><br />Kovariation
 
