@@ -1,3 +1,9 @@
+/* Title slide */
+.reveal .date {
+  padding-top: 100px;
+  font-size: smaller;
+}
+
 /* Multiple Columns */
 .col2 {
     columns: 2 200px;

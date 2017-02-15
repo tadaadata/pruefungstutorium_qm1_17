@@ -1,5 +1,5 @@
 ---
-title: "Prüfungstutorium QM I"
+title: "Prüfungstutorium QM I (WS 16/17)"
 author: "mit Tobi & Lukas"
 date: "Rendered at `r format(Sys.time(), '%F %H:%M')`"
 output:
