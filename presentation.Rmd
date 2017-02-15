@@ -65,9 +65,9 @@ source("./assets/theme_tut.R")
 theme_set(theme_readthedown(base_size = 16))
 ```
 
-# Na, auch hier?
+# Na, auch hier? {data-background="http://media2.giphy.com/media/5wWf7GSbE2dso4tfsju/giphy.gif"}
 
-##
+## Für die letzte Reihe
 
 - Slides: https://link.jemu.name/qmpW17
 - Alles auf einmal: https://link.jemu.name/qmpW17w
