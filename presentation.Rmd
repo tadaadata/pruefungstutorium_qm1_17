@@ -396,7 +396,7 @@ $$\bar{x} = 15  \qquad S_x = 1 \qquad z \frac{10 - 15}{1} = \underline{-5}$$
 $$\bar{x} = 20  \qquad S_x = 1.5 \qquad z = \frac{10 - 20}{1.5} = \underline{-6.\bar{6}}$$
 </div>
 
-# Aufgabe 8 <br /><br />$\chi^2$, $C$, Cramer's $V$
+# Aufgabe 8 <br /><br />$\chi^2$, Cramer's $V$<br /><small>\*sigh\* …und $C$</small>
 
 ##
 
@@ -448,11 +448,10 @@ $$C = \sqrt{\frac{\chi^2}{\chi^2 + n}} = \sqrt{\frac{0.544}{0.544 + 246}} \appro
 </div>
 <span class = "fragment">Und dann noch irgendwas mit $C_{\text{max}}$ und $C_{\text{korr}}$ …?</span>
 
-<div class = "fragment">
 <div id = "left" class = "fragment">
 $$
 \begin{aligned}
-C_{\text{max}} &= \sqrt{\frac{r-1}{r}} \\
+C_{\text{max}} &= \sqrt{\frac{r-1}{r}} \\\\
 &= \sqrt{\frac{2}{3}} \\\\
 &\approx \underline{0.816}
 \end{aligned}
@@ -461,12 +460,11 @@ $$
 <div id = "right" class = "fragment">
 $$
 \begin{aligned}
-C_{\text{korr}} &= \frac{C}{C_{\text{max}}} \\
+C_{\text{korr}} &= \frac{C}{C_{\text{max}}} \\\\
 &= \frac{0.002}{0.816} \\\\
 &\approx \underline{0.0025}
 \end{aligned}
 $$
-</div>
 </div>
 
 # Aufgabe 9 <br /><br />Ordinalskalierte Statistiken
