@@ -317,7 +317,7 @@ ggplot(data = NULL, aes(x = -4:4)) +
         axis.ticks.y = element_blank())
 ```
 
-## $\mathcal{N}(3, 2)$— $[2, 4.5]$
+## $\mathcal{N}(3, 2) \qquad prob[2, 4.5]$
 
 ```{r a2_norm_teil1}
 ggplot(data = NULL, aes(x = -4:10)) + 
@@ -358,7 +358,7 @@ $$\int_2^{4.5} \frac{1}{\sqrt{2\sigma^2\pi} } \; e^{ -\frac{(x-\mu)^2}{2\sigma^2
 >- Arithmetik
 >- Boom: $\underline{0.465}$
 
-## $\mathcal{N}(3, 2)$ — $(-\infty, 4]$
+## $\mathcal{N}(3, 2) \qquad prob(-\infty, 4]$
 
 ```{r a2_norm_teil2}
 ggplot(data = NULL, aes(x = -4:10)) + 
@@ -442,7 +442,7 @@ t_8 <- sjt.xtab(ngo$abschalt, ngo$jahrgang,
 <div class = "fragment">
 \[\begin{aligned}
 \text{Cramer's}\ V & = \sqrt{\frac{\chi^2}{n \cdot \operatorname{min}(r-1, c-1)}} \\
-                  & = \sqrt{\frac{0.544}{246 \cdot 2}} \approx \underline{0.047}
+                  & = \sqrt{\frac{0.544}{246}} \approx \underline{0.047}
 \end{aligned}\]
 </div>
 </div>
@@ -608,7 +608,7 @@ $$
 $$
 \begin{aligned}
 \tau_c &= \dfrac{N_c - N_d}{\dfrac{1}{2} \cdot n^2 \cdot \dfrac{m-1}{m}} \quad |\ m = \operatorname{min}(r-1, c-1) \\\\
-&= \dfrac{6168 - 3996}{\dfrac{1}{2} \cdot 250^2 \cdot \dfrac{3-1}{3}} \\\\
+&= \dfrac{6168 - 3996}{\dfrac{1}{2} \cdot 250^2 \cdot \dfrac{2-1}{2}} \\\\
 &= \ldots
 \end{aligned}
 $$
@@ -660,6 +660,40 @@ ggplot(zombo, aes(x = Skill_03, y = Skill_08)) +
   theme_readthedown(base_size = 20)
 ```
 
+## Formeln <small>Just in case</small>
+
+<div class = "fragment" id = "left">
+$$
+S_{x,y} = \frac{1}{n-1} \sum^n_{i=1} \left(x_i - \bar{x}\right) \cdot \left(y_i - \bar{y}\right)
+$$
+</div>
+
+<div class = "fragment" id = "right">
+$$
+b = \frac{S_{x,y}}{{S_x}^2}
+$$
+</div>
+
+
+## Gut zu wissen: $r$, $R^2$
+
+<div class = "fragment">
+$$
+r = \frac{S_{x,y}}{S_x \cdot S_y}
+  = \frac{\frac{1}{n-1} \sum^n_{i=1} \left(x_i - \bar{x}\right) \cdot \left(y_i - \bar{y}\right)}
+        {\sqrt{\frac{1}{n-1} \sum^n_{i=1} \left(x_i - \bar{x}\right)^2} \cdot
+        \sqrt{\frac{1}{n-1} \sum^n_{i=1} \left(y_i - \bar{y}\right)^2}}
+$$
+</div>
+
+<div class = "fragment">
+$$
+R^2 = \left(\frac{S_{x,y}}{S_x \cdot S_y}\right)^2
+  = \frac{\sum^n_{i=1} \left(y_i - \bar{y}\right)^2 - \sum^n_{i=1} \left(y_i - y'_i\right)^2}
+         {\sum^n_{i=1} \left(y_i - \bar{y}\right)^2}
+$$
+</div>
+
 # Aufgabe 11 <br /><br />Korrelationskoeffizient $r$
 
 ```{r a11_01}
@@ -710,11 +744,11 @@ $$r = \frac { s_{x, y} }{ s_{x} \cdot s_{y} }$$
 <div class = "fragment">
 In lang:
 
-$$ r = \frac 
-        { \frac{1}{n-1} \sum_{i=1}^n  \left( y_{i} - \bar{y}\right) \left( x_{i} - \bar{x}\right)}
-        { \sqrt{\frac{1}{n-1} \sum_{i=1}^n\frac {\left( {x_i} - \bar{x} \right)^2}{n-1}} 
-          \cdot 
-          \sqrt{\frac{1}{n-1} \sum_{i=1}^n \frac {\left( {y_i} - \bar{y} \right)^2}{n-1}}}$$
+$$
+r = \frac{\frac 1n \sum^n_{i=1} \left(x_i - \bar{x}\right) \cdot \left(y_i - \bar{y}\right)}
+        {\sqrt{\frac 1n \sum^n_{i=1} \left(x_i - \bar{x}\right)^2} \cdot
+        \sqrt{\frac 1n \sum^n_{i=1} \left(y_i - \bar{y}\right)^2}}
+$$
 </div>
 
 ## Kurzer Abstecher: Eta $\eta^2$
