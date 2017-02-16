@@ -65,7 +65,7 @@ source("./assets/theme_tut.R")
 theme_set(theme_readthedown(base_size = 16))
 ```
 
-# Na, auch hier? {data-background="http://media2.giphy.com/media/5wWf7GSbE2dso4tfsju/giphy.gif"}
+# Na, auch hier?
 
 ## Für die letzte Reihe
 
@@ -441,7 +441,7 @@ t_8 <- sjt.xtab(ngo$abschalt, ngo$jahrgang,
 
 <div class = "fragment">
 \[\begin{aligned}
-\text{Cramer's}\ V & = \sqrt{\frac{\chi^2}{n \cdot min(r-1, c-1)}} \\
+\text{Cramer's}\ V & = \sqrt{\frac{\chi^2}{n \cdot \operatorname{min}(r-1, c-1)}} \\
                   & = \sqrt{\frac{0.544}{246 \cdot 2}} \approx \underline{0.047}
 \end{aligned}\]
 </div>
@@ -607,7 +607,7 @@ $$
 
 $$
 \begin{aligned}
-\tau_c &= \dfrac{N_c - N_d}{\dfrac{1}{2} \cdot n^2 \cdot \dfrac{m-1}{m}} \quad |\ m = min(r-1, c-1) \\\\
+\tau_c &= \dfrac{N_c - N_d}{\dfrac{1}{2} \cdot n^2 \cdot \dfrac{m-1}{m}} \quad |\ m = \operatorname{min}(r-1, c-1) \\\\
 &= \dfrac{6168 - 3996}{\dfrac{1}{2} \cdot 250^2 \cdot \dfrac{3-1}{3}} \\\\
 &= \ldots
 \end{aligned}
