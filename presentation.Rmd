@@ -915,6 +915,30 @@ Versuchen Sie das Prinzip der Kovariation grafisch in einem Streudiagramm zu ver
 
 _(Tipp: denken Sie daran, wie die Variation damals grafisch auf Basis von Quadraten erklärt wurde)_
 
+## Quadradatanten
+
+Im Kontext der Kovarianz sind die Quadranten gemeint, die sich aus $\bar{x}$ und $\bar{y}$ ergeben
+
+```{r a14_quads}
+d14 <- data.frame(x = seq(-10, 10, .1), y = (seq(-10, 10, .1) + rnorm(20/.1, 0, 2)))
+
+ggplot(data = d14, aes(x = x, y = y)) +
+  annotate("rect", xmin = -10, xmax = 0,  ymin = -10, ymax = 0,  fill = "red",    alpha = .5) +
+  annotate("rect", xmin = -10, xmax = 0,  ymin = 0,   ymax = 10, fill = "blue",   alpha = .5) +
+  annotate("rect", xmin = 0,   xmax = 10, ymin = -10, ymax = 0,  fill = "green",  alpha = .5) +
+  annotate("rect", xmin = 0,   xmax = 10, ymin = 0,   ymax = 10, fill = "yellow", alpha = .5) +
+  geom_point() +
+  geom_hline(yintercept = 0, size = 3) +
+  geom_vline(xintercept = 0, size = 3) +
+  coord_cartesian(xlim = c(-10, 10), ylim = c(-10, 10)) +
+  labs(x = expression(bar(x)), y = expression(bar(y))) + 
+  theme(axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        axis.title.x = element_text(hjust = .5, vjust = .5))
+
+```
+
+
 # Aufgabe 15<br /><br />Multiple Regression
 
 ##
