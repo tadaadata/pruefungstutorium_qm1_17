@@ -4,6 +4,10 @@
   font-size: smaller;
 }
 
+.reveal .big {
+  font-size: 2em;
+}
+
 /* Multiple Columns */
 .col2 {
     columns: 2 200px;

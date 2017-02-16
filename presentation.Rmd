@@ -69,9 +69,18 @@ theme_set(theme_readthedown(base_size = 16))
 
 ## Für die letzte Reihe
 
-- Slides: https://link.jemu.name/qmpW17
-- Alles auf einmal: https://link.jemu.name/qmpW17w
-- Langer Link: https://public.tadaa-data.de/QM/pruefungstutorien/qm1_wise_17/
+<div class = "fragment">
+### Slides
+
+<span class = "big">[link.jemu.name/qmpW17](https://link.jemu.name/qmpW17)</span>
+</div><div class = "fragment">
+### Alles auf einmal
+
+<span class = "big">[link.jemu.name/qmpW17w](https://link.jemu.name/qmpW17w)</span>
+</div><div class = "fragment">
+### Ordner
+
+<span class = "big">[public.tadaa-data.de/QM](https://public.tadaa-data.de/QM)</span>
 
 ## Agenda
 
@@ -81,10 +90,10 @@ theme_set(theme_readthedown(base_size = 16))
 
 ## Erfahrungsgemäß reicht die Zeit …  
 
-> - … **entweder** für alle **Aufgaben**…  
-> - … **oder** für alle **Fragen**.  
-
-<p class="fragment">Choose wisely.</p>
+<div class = "fragment">… **entweder** für alle **Aufgaben**…</div>
+<div class = "fragment">… **oder** für alle **Fragen** </div>
+<br />
+<div class="fragment">Choose wisely.</div>
 
 # Aufgabe 1 <br><br> Faktorenanalyse
 
@@ -580,7 +589,7 @@ $$
 \end{aligned}
 $$
 
-<div class = "fragment">NO WAIT!<br />Was ist das Problem?</span>
+<div class = "fragment big">NO WAIT!<br />Was ist das Problem?</span>
 
 ## Tau B
 
@@ -604,7 +613,7 @@ $$
 \end{aligned}
 $$
 
-<div class = "fragment">NO WAIT!<br />Was ist das Problem?</span>
+<div class = "fragment big">NO WAIT!<br />Was ist das Problem?</span>
 
 # Aufgabe 10 <br /><br />Regression
 
@@ -836,15 +845,17 @@ Es ist die Statistik „Kappa“ -ohne Software- zu ermitteln und anschließend 
 
 ## Kappa $\kappa$
 
-$$ \kappa = \frac{h_b - h_e}{1 - h_e} $$
+<div class = "fragment">
+$$\kappa = \frac{h_b - h_e}{1 - h_e}$$
+</div><div class = "fragment">
 $$ h_b = \frac{1}{n} \sum^m_{j = 1} f_{j,j} \qquad h_e = \frac{1}{n} \sum^m_{j = 1} f_{e_{j,j}} $$
-
+</div>
 <div class = "fragment" id = "left">
-$$\begin{aligned}
+$$\begin{alignat}{2}
 n &= 27 \\\\
-h_b &= \frac{1}{27} \cdot (8 + 12) &\approx \underline{0.741} \\\\
-h_e &= \frac{1}{27} \cdot (4.\bar{8} + 8.\bar{8}) &\approx \underline{0.51}
-\end{aligned}$$
+h_b &= \frac{1}{27} \cdot (8 + 12) &&\approx \underline{0.741} \\\\
+h_e &= \frac{1}{27} \cdot (4.\bar{8} + 8.\bar{8}) &&\approx  \underline{0.51}
+\end{alignat}$$
 </div>
 <div class = "fragment" id = "right">
 $$\begin{aligned}
