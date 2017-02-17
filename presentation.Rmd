@@ -412,7 +412,7 @@ $$\bar{x} = 20  \qquad S_x = 1.5 \qquad z = \frac{10 - 20}{1.5} = \underline{-6.
 Erstellen Sie eine Kontingenztabelle mit dem Zeilenmerkmal „abschalt“ (Abschalten“) und dem Spaltenmerkmal „jahrgang“ („Jahrgangsstufe“). Berechnen Sie die Indifferenztabelle und den $\chi^2$ Wert sowie $C$ und $V$ per Hand.  
 Interpretieren Sie diese Ergebnisse.
 
-## Kontingenztabelle
+## Kontingenz- und Indifferenztabelle
 
 ```{r a08}
 t_8 <- sjt.xtab(ngo$abschalt, ngo$jahrgang, 
@@ -421,7 +421,19 @@ t_8 <- sjt.xtab(ngo$abschalt, ngo$jahrgang,
                use.viewer = F, no.output = T)
 ```
 
+<div class = "fragment" id = "left">
 `r t_8$knitr`
+</div>
+
+<div class = "fragment" id = "right">
+$$\begin{aligned}
+f_e &= \frac{\text{Zeilensumme} \cdot \text{Spaltensumme}}{n} \\\\
+f_{e_1} &= \frac{138 \cdot 97}{246} \approx 54 \\\\
+f_{e_2} &= \frac{138 \cdot 99}{246} \approx 56 \\\\
+&\ldots
+\end{aligned}$$
+</div>
+
 
 ## To the math! /o/
 
@@ -434,15 +446,15 @@ t_8 <- sjt.xtab(ngo$abschalt, ngo$jahrgang,
 \[\begin{aligned}
 \chi^2 &= \sum_{\text{Alle Zellen}} \frac{(f_b - f_e)^2}{f_e} \\
  &= \frac{(57 - 54)^2}{54} + \ldots + \frac{(22 - 22)^2}{22} \\
- &= 0.167 + \ldots + 0 \approx \underline{0.544}
+ &= 0.167 + \ldots + 0 \\
+ &\approx \underline{0.544}
 \end{aligned}\]
-
-<br />
 
 <div class = "fragment">
 \[\begin{aligned}
 \text{Cramer's}\ V & = \sqrt{\frac{\chi^2}{n \cdot \operatorname{min}(r-1, c-1)}} \\
-                  & = \sqrt{\frac{0.544}{246}} \approx \underline{0.047}
+                  & = \sqrt{\frac{0.544}{246}} \\
+                  &\approx \underline{0.047}
 \end{aligned}\]
 </div>
 </div>
