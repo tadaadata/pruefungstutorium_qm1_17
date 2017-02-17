@@ -615,6 +615,17 @@ $$
 
 <div class = "fragment big">NO WAIT!<br />Was ist das Problem?</span>
 
+## Long story short: Die Tau's
+
+| Tau | Bindungen | Quadratisch | Nicht-Quadratisch |
+|-----|-----------|-------------|-------------------|
+| A   | 👎        | ¯\\\_(ツ)_/¯| ¯\\\_(ツ)_/¯      |
+| B   | 👍        | 👍         | 👎                |
+| C   | 👎        | 👎         | 👍                |
+
+<div class = "fragment">Die Lektion: Einfach nicht benutzen</div>
+<div class = "fragment">…Außer ihr seid euch ganz sicher</div>
+
 # Aufgabe 10 <br /><br />Regression
 
 ## Beantworten Sie folgende Fragen:
