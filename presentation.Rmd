@@ -317,9 +317,9 @@ ggplot(data = NULL, aes(x = -4:4)) +
         axis.ticks.y = element_blank())
 ```
 
-## $\mathcal{N}(3, 2) \qquad prob[2, 4.5]$
+## $\mathcal{N}(3, 2) \qquad prob[2; 4.5]$
 
-```{r a2_norm_teil1}
+```{r a06_norm_teil1}
 ggplot(data = NULL, aes(x = -4:10)) + 
   stat_function(fun = dnorm, args = list(mean = 3, sd = 2)) +
   geom_area(aes(x = seq(2, 4.5, .1), y = dnorm(seq(2, 4.5, .1), 3, 2)), fill = "gray", alpha = .75) +
@@ -345,22 +345,51 @@ $$\int_2^{4.5} \frac{1}{\sqrt{2\sigma^2\pi} } \; e^{ -\frac{(x-\mu)^2}{2\sigma^2
 <div class = "fragment">
 ### in R
 
-- `pnorm(x, mean = m, sd = s)` $= prob(-\infty, x)$ für $\mathcal{N}(m, s)$
+- `pnorm(x, mean = m, sd = s)` $= prob[-\infty; x]$ für $\mathcal{N}(m, s)$
 - `pnorm(4.5, 3, 2) - pnorm(2, 3, 2)`
 </div>
 
 ## Oder für Humanwissenschaftler\*innen…
 
->- Werte z-Standardisieren: 
->- $\frac{2-3}{4.5} = -0.5$
->- $\frac{4.5-3}{4.5} = 0.75$
+>- Werte z-Standardisieren
+
+<div class = "fragment">
+$$\begin{alignat} 
+2 &\rightarrow \frac{2-3}{2} &&= -0.5 \\ 
+3 &\rightarrow \frac{4.5-3}{2} &&= 0.75 
+\end{alignat}$$
+</div>
 >- In SNV-Tabelle nachgucken…
 >- Arithmetik
 >- Boom: $\underline{0.465}$
 
+## Pro tip: Skizzieren
+
+<div class = "fragment">
+$$\begin{aligned}
+prob[-0.5; 0.75] &= prob[0; 0.5] + prob[0; 0.75] \\
+&\approx 0.191 + 0.273 \\
+&\approx \underline{0.465}
+\end{aligned}$$
+</div>
+
+```{r a06_teil1_skizze, fig.height=5}
+ggplot(data = NULL, aes(x = -4:4)) + 
+  stat_function(fun = dnorm) +
+  geom_area(aes(x = seq(-0.5, 0, .1), y = dnorm(seq(-.5, 0, .1))),  fill = "lightblue", alpha = .75) +
+  geom_area(aes(x = seq(0, 0.75, .1), y = dnorm(seq(0, 0.75, .1))), fill = "darkblue",  alpha = .75) +
+  scale_x_continuous(breaks = seq(-4, 4, 1), minor_breaks = seq(-4, 4, .5)) + 
+  labs(x = "x", y = expression(P(x)), title = expression(N(0, 1))) + 
+  theme(panel.grid.major = element_line(size = 0.1), 
+        panel.grid.minor = element_line(linetype = "blank"),
+        axis.text.x = element_text(size = rel(1.3)),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank())
+```
+
 ## $\mathcal{N}(3, 2) \qquad prob(-\infty, 4]$
 
-```{r a2_norm_teil2}
+```{r a06_norm_teil2}
 ggplot(data = NULL, aes(x = -4:10)) + 
   stat_function(fun = dnorm, args = list(mean = 3, sd = 2)) +
   geom_area(aes(x = seq(-4, 4, .1), y = dnorm(seq(-4, 4, .1), 3, 2)), fill = "gray", alpha = .75) +
@@ -383,7 +412,8 @@ Eine Person hat in drei Tests (T1, T2 und T3) folgende drei Punktzahlen erreicht
 
 $$T1=10 \quad T2=10 \quad T3=10$$
   
-Als Mittelwert wurde für T1 der Wert 10, für T2 der Wert 15 und für T3 der Wert 20 ermittelt. Die Standardabweichungen betragen bei T1=2, T2=1 und bei T3=1,5.
+Als **Mittelwert** wurde für T1 der Wert 10, für T2 der Wert 15 und für T3 der Wert 20 ermittelt.  
+Die **Standardabweichungen** betragen bei T1=2, T2=1 und bei T3=1,5.
 
 a) In welchem der Tests hat die Person am besten abgeschnitten? Und warum?
 b) Welchen Wert könnte man der Person als Gesamttestwert sinnvoll zuordnen?  
@@ -409,7 +439,7 @@ $$\bar{x} = 20  \qquad S_x = 1.5 \qquad z = \frac{10 - 20}{1.5} = \underline{-6.
 
 ##
 
-Erstellen Sie eine Kontingenztabelle mit dem Zeilenmerkmal „abschalt“ (Abschalten“) und dem Spaltenmerkmal „jahrgang“ („Jahrgangsstufe“). Berechnen Sie die Indifferenztabelle und den $\chi^2$ Wert sowie $C$ und $V$ per Hand.  
+Erstellen Sie eine Kontingenztabelle mit dem Zeilenmerkmal `abschalt` (**Abschalten**) und dem Spaltenmerkmal `jahrgang` (**Jahrgangsstufe**). Berechnen Sie die Indifferenztabelle und den $\chi^2$ Wert sowie $C$ und $V$ per Hand.  
 Interpretieren Sie diese Ergebnisse.
 
 ## Kontingenz- und Indifferenztabelle
@@ -796,7 +826,7 @@ $$
 $$
 \eta^2 = \frac{\sum^{n_j}_{i=1} \left(y_{j,i} - \bar{y}_j\right)^2 - \sum^k_{j=1}\sum^{n_j}_{i=1} \left(y_{j,i} - \bar{y}_j\right)^2}{\sum^{n_j}_{i=1} \left(y_{j,i} - \bar{y}_j\right)^2}
 $$
-<br />
+<br /><br />
 $$
 \left(\text{PRE} = \frac{E_1 - E_2}{E_1}\right)
 $$
@@ -943,7 +973,8 @@ _(Tipp: denken Sie daran, wie die Variation damals grafisch auf Basis von Quadra
 Im Kontext der Kovarianz sind die Quadranten gemeint, die sich aus $\bar{x}$ und $\bar{y}$ ergeben
 
 ```{r a14_quads}
-d14 <- data.frame(x = seq(-10, 10, .1), y = (seq(-10, 10, .1) + rnorm(20/.1, 0, 2)))
+xval <- seq(-10, 10, .1)
+d14  <- data.frame(x = xval, y = (xval + rnorm(length(xval), 0, 2)))
 
 ggplot(data = d14, aes(x = x, y = y)) +
   annotate("rect", xmin = -10, xmax = 0,  ymin = -10, ymax = 0,  fill = "red",    alpha = .5) +
@@ -953,12 +984,16 @@ ggplot(data = d14, aes(x = x, y = y)) +
   geom_point() +
   geom_hline(yintercept = 0, size = 3) +
   geom_vline(xintercept = 0, size = 3) +
-  coord_cartesian(xlim = c(-10, 10), ylim = c(-10, 10)) +
+  coord_cannotate("label", x = 9.5,  y = 1,  label = "1") +
+  annotate("label", x = -9.5, y = 1,  label = "2") +
+  annotate("label", x = -9.5, y = -1, label = "3") +
+  annotate("label", x = 9.5,  y = -1, label = "4") +
+  artesian(xlim = c(-10, 10), ylim = c(-10, 10)) +
   labs(x = expression(bar(x)), y = expression(bar(y))) + 
   theme(axis.text = element_blank(),
         axis.ticks = element_blank(),
         axis.title.x = element_text(hjust = .5, vjust = .5))
-
+rm(xval)
 ```
 
 
