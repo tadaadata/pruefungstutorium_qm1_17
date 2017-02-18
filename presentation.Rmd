@@ -354,11 +354,12 @@ $$\int_2^{4.5} \frac{1}{\sqrt{2\sigma^2\pi} } \; e^{ -\frac{(x-\mu)^2}{2\sigma^2
 >- Werte z-Standardisieren
 
 <div class = "fragment">
-$$\begin{alignat} 
-2 &\rightarrow \frac{2-3}{2} &&= -0.5 \\ 
-3 &\rightarrow \frac{4.5-3}{2} &&= 0.75 
+$$\begin{alignat}   
+2&\rightarrow \frac{2-3}{2} &&= -0.5 \\ 
+3&\rightarrow \frac{4.5-3}{2} &&= 0.75 
 \end{alignat}$$
 </div>
+
 >- In SNV-Tabelle nachgucken…
 >- Arithmetik
 >- Boom: $\underline{0.465}$
@@ -984,11 +985,11 @@ ggplot(data = d14, aes(x = x, y = y)) +
   geom_point() +
   geom_hline(yintercept = 0, size = 3) +
   geom_vline(xintercept = 0, size = 3) +
-  coord_cannotate("label", x = 9.5,  y = 1,  label = "1") +
+  annotate("label", x = 9.5,  y = 1,  label = "1") +
   annotate("label", x = -9.5, y = 1,  label = "2") +
   annotate("label", x = -9.5, y = -1, label = "3") +
   annotate("label", x = 9.5,  y = -1, label = "4") +
-  artesian(xlim = c(-10, 10), ylim = c(-10, 10)) +
+  coord_cartesian(xlim = c(-10, 10), ylim = c(-10, 10)) +
   labs(x = expression(bar(x)), y = expression(bar(y))) + 
   theme(axis.text = element_blank(),
         axis.ticks = element_blank(),
