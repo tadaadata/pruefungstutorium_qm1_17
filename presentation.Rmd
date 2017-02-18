@@ -764,10 +764,17 @@ $$
 
 <div class = "fragment">
 $$
-R^2 = \left(\frac{S_{x,y}}{S_x \cdot S_y}\right)^2
+R^2 = \left(\frac{E_1 - E_2}{E_1}\right)
   = \frac{\sum^n_{i=1} \left(y_i - \bar{y}\right)^2 - \sum^n_{i=1} \left(y_i - y'_i\right)^2}
          {\sum^n_{i=1} \left(y_i - \bar{y}\right)^2}
 $$
+</div>
+
+<div =<br /> class = "fragment">
+Auch wenn es nicht sofort so aussieht:
+$$R^2 = r^2$$
+<small>Nbr />
+<ein, ihr müsst das nicht herleiten können</small>
 </div>
 
 # Aufgabe 11 <br /><br />Korrelationskoeffizient $r$
