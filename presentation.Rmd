@@ -769,12 +769,12 @@ R^2 = \left(\frac{E_1 - E_2}{E_1}\right)
          {\sum^n_{i=1} \left(y_i - \bar{y}\right)^2}
 $$
 </div>
-
-<div =<br /> class = "fragment">
+<br />
+<div class = "fragment">
 Auch wenn es nicht sofort so aussieht:
 $$R^2 = r^2$$
-<small>Nbr />
-<ein, ihr müsst das nicht herleiten können</small>
+<br />
+<small>Nein, ihr müsst das nicht herleiten können</small>
 </div>
 
 # Aufgabe 11 <br /><br />Korrelationskoeffizient $r$
