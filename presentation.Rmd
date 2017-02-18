@@ -400,12 +400,32 @@ ggplot(data = NULL, aes(x = -4:10)) +
   labs(x = "x", y = expression(P(x)), title = expression(N(3, 2))) + 
   theme(panel.grid.major = element_line(size = 0.1), 
         panel.grid.minor = element_line(linetype = "blank"),
-        axis.text.x = element_text(size = rel(1.3)),
-        axis.text.y = element_blank(),
-        axis.ticks.y = element_blank())
+        axis.text.x = element_text(size = rel(1.3)))
 ```
 
 You get the idea.
+
+## Same old same old
+
+<div class = "fragment">$$prob(-\infty; 0] = prob[0; \infty) = 0.5 $$</div>
+<div class = "fragment">$$4 \rightarrow \frac{4-3}{2} = 0.5$$</div>
+
+<div class = "fragment">
+```{r a06_teil2_skizze, fig.height=5}
+ggplot(data = NULL, aes(x = -4:4)) + 
+  stat_function(fun = dnorm) +
+  geom_area(aes(x = seq(-4, 0, .1), y = dnorm(seq(-4, 0, .1))),  fill = "lightblue", alpha = .75) +
+  geom_area(aes(x = seq(0, 0.5, .1), y = dnorm(seq(0, 0.5, .1))), fill = "darkblue",  alpha = .75) +
+  annotate("label", x = .2,  y = .2, label = "0.191") +
+  annotate("label", x = -.2, y = .2, label = "0.5") +
+  scale_x_continuous(breaks = seq(-4, 4, 1), minor_breaks = seq(-4, 4, .5)) + 
+  labs(x = "x", y = expression(P(x)), title = expression(N(0, 1))) + 
+  theme(panel.grid.major = element_line(size = 0.1), 
+        panel.grid.minor = element_line(linetype = "blank"),
+        axis.text.x = element_text(size = rel(1.3)))
+```
+</div>
+<div class = "fragment">$$\Longrightarrow prob(-\infty; 0.5] = 0.5 + 0.191 \approx 0.691$$</div>
 
 # Aufgabe 7 <br /><br />z-Standardisierung<br /><small>Schon wieder</small>
 
