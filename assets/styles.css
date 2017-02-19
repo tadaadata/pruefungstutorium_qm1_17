@@ -13,6 +13,13 @@
 }
 
 /* level 1 slide modifications */
+
+/* Does not apply to full slide :(
+.reveal section:first-of-type {
+  background-color: #555566;
+}
+*/
+
 .reveal .slide-background .level1 {
     background-color: #555566;
 }
@@ -21,15 +28,10 @@
     color: #fdfdfd;
 }
 
-/* Ordered lists */
+/* Ordered lists should have letters */
 .reveal ol[type="a"] {
     list-style: lower-alpha;
 }
-
-.reveal .left-align {
-    text-align: left;
-}
-
 
 /* Multiple Columns */
 .col2 {

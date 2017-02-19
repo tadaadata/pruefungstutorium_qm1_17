@@ -8,9 +8,9 @@ output:
     theme: simple
     highlight: pygments
     incremental: false
-    transition: slide
+    transition: convex
     widescreen: yes
-    background_transition: slide
+    background_transition: none
     self_contained: false
     fig_height: 7
     fig_retina: 2
