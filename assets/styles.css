@@ -8,6 +8,29 @@
   font-size: 2em;
 }
 
+.reveal .titleslide .slide-background {
+    background-color: #555566;
+}
+
+/* level 1 slide modifications */
+.reveal .slide-background .level1 {
+    background-color: #555566;
+}
+
+.reveal .level1 h1 {
+    color: #fdfdfd;
+}
+
+/* Ordered lists */
+.reveal ol[type="a"] {
+    list-style: lower-alpha;
+}
+
+.reveal .left-align {
+    text-align: left;
+}
+
+
 /* Multiple Columns */
 .col2 {
     columns: 2 200px;

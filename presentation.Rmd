@@ -84,9 +84,9 @@ theme_set(theme_readthedown(base_size = 16))
 
 ## Agenda
 
-<div class = "fragment">1. Aufgaben besprechen <small>Pflichtprogramm</small></div>
-<div class = "fragment">2. Fragen klären <small>Standard</small></div>
-<div class = "fragment">3. Angrenzende Theorie besprechen <small>Bonus</small></div>
+>1. Aufgaben besprechen <small>Pflichtprogramm</small>
+>2. Fragen klären <small>Standard</small>
+>3. Angrenzende Theorie besprechen <small>Bonus</small>
 
 ## Erfahrungsgemäß reicht die Zeit …  
 
