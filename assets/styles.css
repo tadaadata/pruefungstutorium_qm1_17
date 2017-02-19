@@ -1,25 +1,21 @@
+/* Set global slide background which will be overwritten for everything except the title slide */
+
+body {
+    background-color: #555566;
+}
+
 /* Title slide */
 .reveal .date {
   padding-top: 100px;
   font-size: smaller;
 }
 
-.reveal .big {
-  font-size: 2em;
-}
-
-.reveal .titleslide .slide-background {
-    background-color: #555566;
+.reveal .title, .reveal .date, .reveal .author{
+  color: #fdfdfd;
+  text-shadow: 0 0 5px #000;
 }
 
 /* level 1 slide modifications */
-
-/* Does not apply to full slide :(
-.reveal section:first-of-type {
-  background-color: #555566;
-}
-*/
-
 .reveal .slide-background .level1 {
     background-color: #555566;
 }
@@ -27,6 +23,11 @@
 .reveal .level1 h1 {
     color: #fdfdfd;
     text-shadow: 0 0 5px #000;
+}
+
+/* fix level 2 slides at white background */
+.reveal .slide-background .level2 {
+    background-color: #fff;
 }
 
 /* Ordered lists should have letters */
@@ -37,11 +38,11 @@
 /* Multiple Columns */
 .col2 {
     columns: 2 200px;
-  }
+}
 
 .col3 {
     columns: 3 150px;
-  }
+}
 
 #left {
   left:-8.33%;
@@ -68,14 +69,6 @@ table {
   overflow-x: auto;
 }
 
-/* whatever this does; I do't et it rigth... :/
-td, th {
-  padding: .25rem .5rem;
-  background-color: #11111;
-  border: 1px solid black;
-}
-*/
-
 .reveal table th {
   background: #404040;
   color: white;
@@ -86,8 +79,6 @@ td, th {
   color: black;
 }
 
-
-/* reveal.js options */
 /* dotted lists */
 .reveal section ul li {
   text-align: left;
@@ -122,6 +113,10 @@ td, th {
   font-size: 0.8;
 }
 
+/* For when you need something big */
+.reveal .big {
+  font-size: 2em;
+}
 
 /*********************************************
  * NAVIGATION CONTROLS
