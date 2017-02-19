@@ -24,7 +24,7 @@ if (out_dir == "") {
 }
 
 out_docs   <- c(list.files(pattern = "*.html"), "presentation.Rmd")
-out_assets <- c("assets")
+out_assets <- c("assets", "img")
 
 sapply(out_docs,   file.copy, to = out_dir, overwrite = T, recursive = F)
 sapply(out_assets, file.copy, to = out_dir, overwrite = T, recursive = T)
