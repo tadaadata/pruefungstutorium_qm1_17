@@ -473,7 +473,7 @@ Interpretieren Sie diese Ergebnisse.
 ```{r a08}
 t_8 <- sjt.xtab(ngo$abschalt, ngo$jahrgang, 
                show.exp = T,
-               show.legend = T,
+               show.legend = T, show.summary = F,
                use.viewer = F, no.output = T)
 ```
 
