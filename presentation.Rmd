@@ -1059,6 +1059,7 @@ ggplot(data = d14, aes(x = x, y = y)) +
 rm(xval)
 ```
 
+## {data-background="img/beginning_QYYmLRHhX9K7e.gif"}
 
 # Aufgabe 15<br /><br />Multiple Regression
 
@@ -1078,3 +1079,11 @@ plotly::plot_ly(data = ngo, x = ~deutsch, y = ~englisch, z = ~mathe)
 ##
 
 Was versteht man unter dem Begriff „Partialkorrelation“? Geben Sie ein Beispiel.
+
+# Klar soweit?
+
+## Nochmal zum nachlesen
+
+<span class = "big">[public.tadaa-data.de/QM](https://public.tadaa-data.de/QM)</span>
+
+## {data-background="img/unimpressed_YYD3fLEOdcOv6.gif"}
