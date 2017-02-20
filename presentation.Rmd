@@ -778,7 +778,8 @@ $$R^2 = r^2$$
 <small>Nein, ihr müsst das nicht herleiten können</small>
 </div>
 <div class = "fragment" id = "right">
-<img src="img/beginning_pObOoBLMhizQs.gif" width=100px />5</div>
+<img src="img/beginning_pObOoBLMhizQs.gif" width=150px />
+</div>
 
 ## Eigenschaften der Regressionsgeraden
 
@@ -895,6 +896,8 @@ $$
 \left(\text{PRE} = \frac{E_1 - E_2}{E_1}\right)
 $$
 </div>
+<img class = "fragment" src = "img/unimpressed_u7gAmp9lCZWPC.gif" />
+
 
 ## Problem: Was betrachten wir?
 
