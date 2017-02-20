@@ -9,7 +9,7 @@ output:
     theme: simple
     highlight: pygments
     incremental: false
-    transition: convex
+    transition: slide
     widescreen: yes
     background_transition: none
     self_contained: false
@@ -778,15 +778,53 @@ $$R^2 = r^2$$
 <small>Nein, ihr müsst das nicht herleiten können</small>
 </div>
 
+## 
+
+Was bedeutet es, wenn die Regressionsgerade parallel zur X-Achse verläuft?
+
+```{r a10_02, echo=F, fig.height=7, fig.width=12}
+x <- seq(0.1, 20, .1)
+
+quad <- data.frame(
+  x  = x,
+  y  = 200 - 2*(x - 10)^2
+)
+
+a10_r <- round(cor(quad$x, quad$y), 3)
+
+ggplot(quad, aes(x = x, y = y)) +
+  geom_smooth(method = "lm", se = F, color = "red") +
+  scale_x_continuous(limits = c(0, 20)) +
+  scale_y_continuous(limits = c(0, 200)) +
+  labs(title = "Beispiel: Parallelität zur x-Achse") +
+  theme(axis.text = element_text(color = "#ffffff"))
+```
+
+## 
+
+Was bedeutet es, wenn die Regressionsgerade parallel zur X-Achse verläuft?
+
+```{r a10_03, echo=F, fig.height=7, fig.width=12}
+ggplot(quad, aes(x = x, y = y)) +
+  geom_jitter(height = 5, width = 1.5) +
+  geom_smooth(method = "lm", se = F, color = "red") +
+  scale_x_continuous(breaks = seq(0, 20, 5), minor_breaks = seq(0, 20, 2.5), 
+                     labels = c("gering", rep("", 3), "viel")) +
+  scale_y_continuous(breaks = seq(0, 200, 50), minor_breaks = seq(0, 200, 25), 
+                     labels = c("niedrig", rep("", 3), "hoch")) +
+  labs(x = "Stress", y = "Leistung", title = "Beispiel: Yerkes-Dodson-Gesetz",
+       subtitle = paste("r =", a10_r), caption = "Quelle: simulierte Daten")
+```
+
 ## Eigenschaften der Regressionsgeraden
 
 >1. Sie geht immer durch den Punkt $P(\bar{x} | \bar{y})$  
 >2. Die Gerade mit den geringsten Resiudenquadraten.  
 >3. Der Steigungskoeffizient ($b$) gibt die Richtung der Korrelation an.
 
-## Zurück zum Beispiel
+## Zurück zum ersten Beispiel
 
-```{r a10_02, echo=F, fig.height=7, fig.width=12}
+```{r a10_04, echo=F, fig.height=7, fig.width=12}
 ggplot(zombo, aes(x = Skill_03, y = Skill_08)) +
   geom_ribbon(aes(x = seq(1, 2, 0.009434067), ymin = 2.412,
                   ymax = seq(2.412, 3.119, 0.00673333333)),
