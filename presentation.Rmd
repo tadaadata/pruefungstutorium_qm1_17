@@ -783,9 +783,9 @@ $$R^2 = r^2$$
 
 ## Eigenschaften der Regressionsgeraden
 
->1. Sie geht immer durch den Punkt $P(\bar{x} | \bar{y})$  
->2. Die Gerade mit den geringsten Resiudenquadraten.  
->3. Der Steigungskoeffizient ($b$) gibt die Richtung der Korrelation an.
+>1. Sie geht immer durch den Punkt $P(\bar{x} | \bar{y})$
+>2. Die Gerade mit den geringsten Residuenquadraten
+>3. Der Steigungskoeffizient ($b$) gibt die Richtung der Korrelation an
 
 ## Zurück zum Beispiel
 
@@ -824,7 +824,9 @@ a11 <- data.frame(
 
 ##
 
-Geben Sie die Formel des Korrelationskoeffizienten von Pearson an. Reflektieren Sie nochmals die Herleitung. Berechnen Sie die Korrelation aus folgenden Diät-Daten von Männern:
+Geben Sie die Formel des Korrelationskoeffizienten von Pearson an.  
+Reflektieren Sie nochmals die Herleitung.  
+Berechnen Sie die Korrelation aus folgenden Diät-Daten von Männern:
 
 - Gewicht erster Messzeitpunkt: **120, 95, 100, 110, 90**  
 - Gewicht zweiter Messzeitpunkt: **110, 90, 110, 115, 100**
@@ -1080,7 +1082,8 @@ plotly::plot_ly(data = ngo, x = ~deutsch, y = ~englisch, z = ~mathe)
 
 ##
 
-Was versteht man unter dem Begriff „Partialkorrelation“? Geben Sie ein Beispiel.
+Was versteht man unter dem Begriff „Partialkorrelation“?  
+Geben Sie ein Beispiel.
 
 # Klar soweit?
 
