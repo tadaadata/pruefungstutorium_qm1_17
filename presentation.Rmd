@@ -521,12 +521,13 @@ f_{e_2} &= \frac{138 \cdot 99}{246} \approx 56 \\\\
 
 <small>Die bucklige Verwandschaft</small>
 
-<div class = "fragment">
+<div class = "fragment" data-fragment-index="1">
 $$C = \sqrt{\frac{\chi^2}{\chi^2 + n}} = \sqrt{\frac{0.544}{0.544 + 246}} \approx \underline{0.002}$$
 </div>
-<span class = "fragment">Und dann noch irgendwas mit $C_{\text{max}}$ und $C_{\text{korr}}$ …?</span>
+<span class = "fragment" data-fragment-index="2">Und dann noch irgendwas mit $C_{\text{max}}$ und $C_{\text{korr}}$ …?</span>
 
-<div id = "left" class = "fragment">
+<div class = "col3">
+<div class = "fragment" data-fragment-index="3">
 $$
 \begin{aligned}
 C_{\text{max}} &= \sqrt{\frac{r-1}{r}} \\\\
@@ -535,7 +536,10 @@ C_{\text{max}} &= \sqrt{\frac{r-1}{r}} \\\\
 \end{aligned}
 $$
 </div>
-<div id = "right" class = "fragment">
+
+<img class = "fragment" data-fragment-index="5" src="img/annoyed_E7iIfUlWHBmh2.gif" />
+
+<div class = "fragment" data-fragment-index="4">
 $$
 \begin{aligned}
 C_{\text{korr}} &= \frac{C}{C_{\text{max}}} \\\\
@@ -543,6 +547,7 @@ C_{\text{korr}} &= \frac{C}{C_{\text{max}}} \\\\
 &\approx \underline{0.0025}
 \end{aligned}
 $$
+</div>
 </div>
 
 # Aufgabe 9 <br /><br />Ordinalskalierte Statistiken
