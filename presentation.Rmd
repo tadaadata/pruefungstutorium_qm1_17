@@ -781,9 +781,9 @@ $$R^2 = r^2$$
 
 ## Eigenschaften der Regressionsgeraden
 
-> - 1. Sie geht immer durch den Punkt $P(\bar{x} | \bar{y})$  
-> - 2. Die Gerade mit den geringsten Resiudenquadraten.  
-> - 3. Der Steigungskoeffizient ($b$) gibt die Richtung der Korrelation an.
+>1. Sie geht immer durch den Punkt $P(\bar{x} | \bar{y})$  
+>2. Die Gerade mit den geringsten Resiudenquadraten.  
+>3. Der Steigungskoeffizient ($b$) gibt die Richtung der Korrelation an.
 
 ## Zurück zum Beispiel
 
