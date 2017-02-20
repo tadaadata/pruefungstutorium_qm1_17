@@ -716,29 +716,6 @@ Regressionsgerade: $$y' = a + bx$$
 > - $b$ = Der Wert, um den sich $y$ verändert, wenn sich $x$ um 1 erhöht (_Steigungskoeffizient_)  
 > - $e$ = Der vertikale Abstand zur Regressionsgeraden (_Residuum_)
 
-## Beispiel gefällig?
-
-```{r a10_01, echo=F, fig.height=7, fig.width=12}
-ggplot(zombo, aes(x = Skill_03, y = Skill_08)) +
-  geom_ribbon(aes(x = seq(2, 3, 0.009434067), ymin = 3.1189,
-                  ymax = seq(3.1189, 3.826, 0.006670755)),
-              fill = "blue", alpha = 0.3) +
-  geom_hline(yintercept = mean(zombo$Skill_08, na.rm = T), linetype = "longdash", color = "green") +
-  geom_vline(xintercept = mean(zombo$Skill_03, na.rm = T), linetype = "longdash", color = "green") +
-  geom_jitter(color = "black", alpha = 0.7, height = .3, width = .3, size = 1.5) +
-  geom_smooth(method = "lm", se = F, color = "red", size = 1, fullrange = T) +
-  scale_x_continuous(breaks = seq(0, 10, 2), minor_breaks = 1:10, limits = c(0, 10)) +
-  scale_y_continuous(breaks = seq(0, 10, 2), minor_breaks = 1:10, limits = c(0, 10)) +
-  labs(title = "Zusammenhang zwischen körperlicher Fitness und Ausdauer",
-       subtitle = paste("r =", round(cor(zombo$Skill_08, 
-                                         zombo$Skill_03, 
-                                         use = "complete.obs"), 2),
-                        "| a = 1.71 | b = 0.71"),
-       x = get_label(zombo$Skill_03),
-       y = get_label(zombo$Skill_08)) +
-  theme_readthedown(base_size = 20)
-```
-
 ## Formeln <small>Just in case</small>
 
 <div class = "fragment" id = "left">
@@ -759,6 +736,23 @@ b = \frac{S_{x,y}}{{S_x}^2}
 $$
 </div>
 
+## Beispiel gefällig?
+
+```{r a10_01, echo=F, fig.height=7, fig.width=12}
+ggplot(zombo, aes(x = Skill_03, y = Skill_08)) +
+  geom_jitter(color = "black", alpha = 0.7, height = .3, width = .3, size = 1.5) +
+  geom_smooth(method = "lm", se = F, color = "red", size = 1, fullrange = T) +
+  scale_x_continuous(breaks = seq(0, 10, 2), minor_breaks = 1:10, limits = c(0, 10)) +
+  scale_y_continuous(breaks = seq(0, 10, 2), minor_breaks = 1:10, limits = c(0, 10)) +
+  labs(title = "Zusammenhang zwischen körperlicher Fitness und Ausdauer",
+       subtitle = paste("r =", round(cor(zombo$Skill_08, 
+                                         zombo$Skill_03, 
+                                         use = "complete.obs"), 2),
+                        "| a = 1.705 | b = 0.707"),
+       x = get_label(zombo$Skill_03),
+       y = get_label(zombo$Skill_08)) +
+  theme_readthedown(base_size = 20)
+```
 
 ## Gut zu wissen: $r$ & $R^2$
 
@@ -783,6 +777,37 @@ $$R^2 = r^2$$
 <br />
 <small>Nein, ihr müsst das nicht herleiten können</small>
 </div>
+
+## Eigenschaften der Regressionsgeraden
+
+> - 1. Sie geht immer durch den Punkt $P(\bar{x} | \bar{y})$  
+> - 2. Die Gerade mit den geringsten Resiudenquadraten.  
+> - 3. Der Steigungskoeffizient ($b$) gibt die Richtung der Korrelation an.
+
+## Zurück zum Beispiel
+
+```{r a10_02, echo=F, fig.height=7, fig.width=12}
+ggplot(zombo, aes(x = Skill_03, y = Skill_08)) +
+  geom_ribbon(aes(x = seq(1, 2, 0.009434067), ymin = 2.412,
+                  ymax = seq(2.412, 3.119, 0.00673333333)),
+              fill = "blue", alpha = 0.3) +
+  geom_hline(yintercept = mean(zombo$Skill_08, na.rm = T), linetype = "longdash", color = "green") +
+  geom_vline(xintercept = mean(zombo$Skill_03, na.rm = T), linetype = "longdash", color = "green") +
+  geom_jitter(color = "black", alpha = 0.7, height = .3, width = .3, size = 1.5) +
+  geom_smooth(method = "lm", se = F, color = "red", size = .5, fullrange = T) +
+  annotate("text", x = 5.75, y = 5, label = "P(plotmathtocome)", color = "darkgreen", size = 9) +
+  annotate("text", x = 2.15, y = 2.75, label = "b", color = "darkblue", size = 8) +
+  scale_x_continuous(breaks = seq(0, 10, 2), minor_breaks = 1:10, limits = c(0, 10)) +
+  scale_y_continuous(breaks = seq(0, 10, 2), minor_breaks = 1:10, limits = c(0, 10)) +
+  labs(title = "Zusammenhang zwischen körperlicher Fitness und Ausdauer",
+       subtitle = paste("r =", round(cor(zombo$Skill_08, 
+                                         zombo$Skill_03, 
+                                         use = "complete.obs"), 2),
+                        "| a = 1.71 | b = 0.71"),
+       x = get_label(zombo$Skill_03),
+       y = get_label(zombo$Skill_08)) +
+  theme_readthedown(base_size = 20)
+```
 
 # Aufgabe 11 <br /><br />Korrelationskoeffizient $r$
 
