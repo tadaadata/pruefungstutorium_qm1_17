@@ -1,7 +1,7 @@
 ---
 title: "Prüfungstutorium QM I (WS 16/17)"
 author: "mit Tobi & Lukas"
-date: "`r format(Sys.time(), '%F — %H:%M')`"
+date: "`r format(Sys.time(), 'erstellt am %F um %H:%M Uhr')`"
 output:
   revealjs::revealjs_presentation:
     keep_md: true
@@ -163,9 +163,36 @@ Wie viel Prozent der Gesamtvarianz aller 15 in die Faktorenanalyse einbezogenen 
 
 <p class="fragment">$$0.036^2 - 0.1^2 - 0.311^2 + 0.053^2 + \ldots = `r sum(a01$K3^2)`$$</p>
 
+## 
+
+Warum enthält die Komponenten-Matrix vermutlich nur drei Spalten? 
+
+<div class="fragment"><small>anders gefragt: Wonach entscheiden wir, welche Faktoren wir in unser Modell einbeziehen?</small></div>
+
+> - Kaiserkriterium _(Eigenwerte > 1)_
+> - Scree-Test _(Ellenbogenkriterium)_
+
+## Beispiel
+
+```{r a01_e}
+a01 %>% 
+  gather(Faktor, Ladung, K1, K2, K3) %>% 
+  group_by(Faktor) %>% 
+  summarise(Eigenwert = sum(Ladung^2)) %>% 
+  ggplot(aes(Faktor, y = Eigenwert, color = Faktor, group = 1)) +
+    geom_hline(yintercept = 1, color = "green", linetype = "dashed", size = 1) +
+    geom_line(size = 1, color = "black") +
+    geom_point(size = 3.5, color = "black") +
+    geom_point(size = 2.5) +
+    annotate("label", label = "Kaiserkriterium", fill = "green", 
+             alpha = .4, x = 1.5, y = .7, size = 6) +
+    scale_y_continuous(limits = c(0, 5.5), breaks = seq(0, 4.5, 1.5)) +
+    labs(title = "Scree-Test") +
+    theme(legend.position = "none")
+```
+
 ##
 
-Warum enthält die Komponenten-Matrix vermutlich nur drei Spalten?  
 Auf welche Faktoren laden die durch „A1“ bis „A15“ gekennzeichneten Merkmale jeweils am höchsten?
 
 ![](assets/plots/ladungen.png)
