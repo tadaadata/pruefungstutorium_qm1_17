@@ -244,8 +244,8 @@ $$
 \begin{aligned}
 S_x &= \sqrt{\frac{1}{8-1} \cdot \left((7-11.625)^2 + \ldots + (16-11.625)^2\right)} \\
 &= \sqrt{\frac{1}{7} \cdot (21.39 + 6.89 + \ldots + 19.14)} \\
-&= \sqrt{\frac{1}{7} \cdot 67.875} \\ 
-&= \sqrt{9.696} \approx \underline{3.114}
+&= \sqrt{\frac{1}{7} \cdot 67.875} = \sqrt{9.696} \\
+&\approx \underline{3.114}
 \end{aligned}
 $$
 </div>
@@ -420,8 +420,8 @@ ggplot(data = NULL, aes(x = -4:4)) +
   stat_function(fun = dnorm) +
   geom_area(aes(x = seq(-4, 0, .1), y = dnorm(seq(-4, 0, .1))),  fill = "lightblue", alpha = .75) +
   geom_area(aes(x = seq(0, 0.5, .1), y = dnorm(seq(0, 0.5, .1))), fill = "darkblue",  alpha = .75) +
-  annotate("label", x = .2,  y = .2, label = "0.191") +
-  annotate("label", x = -.2, y = .2, label = "0.5") +
+  annotate("label", x = .22,  y = .21, label = "0.191") +
+  annotate("label", x = -.22, y = .19, label = "0.5") +
   scale_x_continuous(breaks = seq(-4, 4, 1), minor_breaks = seq(-4, 4, .5)) + 
   labs(x = "x", y = expression(P(x)), title = expression(N(0, 1))) + 
   theme(panel.grid.major = element_line(size = 0.1), 
