@@ -799,7 +799,7 @@ ggplot(quad, aes(x = x, y = y)) +
   scale_x_continuous(limits = c(0, 20)) +
   scale_y_continuous(limits = c(0, 200)) +
   labs(title = "Beispiel: Parallelität zur x-Achse") +
-  theme(axis.text = element_text(color = "#ffffff"))
+  theme(axis.text = element_blank())
 ```
 
 ## 
