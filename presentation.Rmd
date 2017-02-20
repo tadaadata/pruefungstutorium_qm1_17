@@ -11,7 +11,7 @@ output:
     incremental: false
     transition: slide
     widescreen: yes
-    background_transition: none
+    background_transition: slide
     self_contained: false
     fig_height: 7
     fig_retina: 2
@@ -771,11 +771,14 @@ R^2 &= \frac{E_1 - E_2}{E_1}
 
 </div>
 <br />
-<div class = "fragment">
+<div class = "fragment" id = "left">
 Auch wenn es nicht sofort so aussieht:
 $$R^2 = r^2$$
 <br />
 <small>Nein, ihr müsst das nicht herleiten können</small>
+</div>
+<div class = "fragment" id = "right">
+<img src="img/beginning_pObOoBLMhizQs.gif" width=150px />
 </div>
 
 ## 
@@ -826,8 +829,7 @@ ggplot(quad, aes(x = x, y = y)) +
 
 ```{r a10_04, echo=F, fig.height=7, fig.width=12}
 ggplot(zombo, aes(x = Skill_03, y = Skill_08)) +
-  geom_ribbon(aes(x = seq(1, 2, 0.009434067), ymin = 2.412,
-                  ymax = seq(2.412, 3.119, 0.00673333333)),
+  geom_ribbon(aes(x = seq(1, 2, 0.009434067), ymin = 2.412, ymax = seq(2.412, 3.119, 0.00673333333)),
               fill = "blue", alpha = 0.3) +
   geom_hline(yintercept = mean(zombo$Skill_08, na.rm = T), linetype = "longdash", color = "green") +
   geom_vline(xintercept = mean(zombo$Skill_03, na.rm = T), linetype = "longdash", color = "green") +
@@ -837,7 +839,7 @@ ggplot(zombo, aes(x = Skill_03, y = Skill_08)) +
   annotate("text", x = 0.25, y = 5.1, label = "bar(y)", color = "green", size = 8, parse = T) +
   annotate("text", x = 9.75, y = 8.2, label = "y'", color = "darkred", size = 8) + 
   annotate("label", x = 6.05, y = 4.95, label = "P(bar(x)~'|'~bar(y))",
-           color = "darkgreen", size = 8, parse = T) +
+           fill = "green", size = 8, parse = T, alpha = .7) +
   annotate("text", x = 2.15, y = 2.75, label = "b", color = "darkblue", size = 8) +
   scale_x_continuous(breaks = seq(0, 10, 2), minor_breaks = 1:10, limits = c(0, 10)) +
   scale_y_continuous(breaks = seq(0, 10, 2), minor_breaks = 1:10, limits = c(0, 10)) +
@@ -926,12 +928,12 @@ $$
 <div class = "fragment">
 $$
 \eta^2 = \frac{\sum^{n_j}_{i=1} \left(y_{j,i} - \bar{y}_j\right)^2 - \sum^k_{j=1}\sum^{n_j}_{i=1} \left(y_{j,i} - \bar{y}_j\right)^2}{\sum^{n_j}_{i=1} \left(y_{j,i} - \bar{y}_j\right)^2}
-$$
-<br /><br />
-$$
-\left(\text{PRE} = \frac{E_1 - E_2}{E_1}\right)
+\quad \quad
+\left(\Longrightarrow \text{PRE} = \frac{E_1 - E_2}{E_1}\right)
 $$
 </div>
+<img class = "fragment" src = "img/unimpressed_u7gAmp9lCZWPC.gif" />
+
 
 ## Problem: Was betrachten wir?
 
@@ -1097,6 +1099,7 @@ ggplot(data = d14, aes(x = x, y = y)) +
 rm(xval)
 ```
 
+## {data-background="img/beginning_QYYmLRHhX9K7e.gif"}
 
 # Aufgabe 15<br /><br />Multiple Regression
 
@@ -1116,3 +1119,11 @@ plotly::plot_ly(data = ngo, x = ~deutsch, y = ~englisch, z = ~mathe)
 ##
 
 Was versteht man unter dem Begriff „Partialkorrelation“? Geben Sie ein Beispiel.
+
+# Klar soweit?
+
+## Nochmal zum nachlesen
+
+<span class = "big">[public.tadaa-data.de/QM](https://public.tadaa-data.de/QM)</span>
+
+## {data-background="img/unimpressed_YYD3fLEOdcOv6.gif"}
