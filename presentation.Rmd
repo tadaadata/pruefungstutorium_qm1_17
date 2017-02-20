@@ -4,6 +4,7 @@ author: "mit Tobi & Lukas"
 date: "`r format(Sys.time(), '%F — %H:%M')`"
 output:
   revealjs::revealjs_presentation:
+    keep_md: true
     css: "assets/styles.css"
     theme: simple
     highlight: pygments
