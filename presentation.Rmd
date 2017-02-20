@@ -548,12 +548,13 @@ f_{e_2} &= \frac{138 \cdot 99}{246} \approx 56 \\\\
 
 <small>Die bucklige Verwandschaft</small>
 
-<div class = "fragment">
+<div class = "fragment" data-fragment-index="1">
 $$C = \sqrt{\frac{\chi^2}{\chi^2 + n}} = \sqrt{\frac{0.544}{0.544 + 246}} \approx \underline{0.002}$$
 </div>
-<span class = "fragment">Und dann noch irgendwas mit $C_{\text{max}}$ und $C_{\text{korr}}$ …?</span>
+<span class = "fragment" data-fragment-index="2">Und dann noch irgendwas mit $C_{\text{max}}$ und $C_{\text{korr}}$ …?</span>
 
-<div id = "left" class = "fragment">
+<div class = "col3">
+<div class = "fragment" data-fragment-index="3">
 $$
 \begin{aligned}
 C_{\text{max}} &= \sqrt{\frac{r-1}{r}} \\\\
@@ -562,7 +563,10 @@ C_{\text{max}} &= \sqrt{\frac{r-1}{r}} \\\\
 \end{aligned}
 $$
 </div>
-<div id = "right" class = "fragment">
+
+<img class = "fragment" data-fragment-index="5" src="img/annoyed_E7iIfUlWHBmh2.gif" />
+
+<div class = "fragment" data-fragment-index="4">
 $$
 \begin{aligned}
 C_{\text{korr}} &= \frac{C}{C_{\text{max}}} \\\\
@@ -570,6 +574,7 @@ C_{\text{korr}} &= \frac{C}{C_{\text{max}}} \\\\
 &\approx \underline{0.0025}
 \end{aligned}
 $$
+</div>
 </div>
 
 # Aufgabe 9 <br /><br />Ordinalskalierte Statistiken
@@ -784,18 +789,17 @@ ggplot(zombo, aes(x = Skill_03, y = Skill_08)) +
 ## Gut zu wissen: $r$ & $R^2$
 
 <div class = "fragment">
-
+$$
 \begin{aligned}
 r &= \frac{S_{x,y}}{S_x \cdot S_y}
   &&= \frac{\frac{1}{n-1} \sum^n_{i=1} \left(x_i - \bar{x}\right) \cdot \left(y_i - \bar{y}\right)}
         {\sqrt{\frac{1}{n-1} \sum^n_{i=1} \left(x_i - \bar{x}\right)^2} \cdot
         \sqrt{\frac{1}{n-1} \sum^n_{i=1} \left(y_i - \bar{y}\right)^2}} \\\\
-
 R^2 &= \frac{E_1 - E_2}{E_1}
   &&= \frac{\sum^n_{i=1} \left(y_i - \bar{y}\right)^2 - \sum^n_{i=1} \left(y_i - y'_i\right)^2}
            {\sum^n_{i=1} \left(y_i - \bar{y}\right)^2}
 \end{aligned}
-
+$$
 </div>
 <br />
 <div class = "fragment" id = "left">
@@ -813,12 +817,10 @@ $$R^2 = r^2$$
 Was bedeutet es, wenn die Regressionsgerade parallel zur X-Achse verläuft?
 
 ```{r a10_02, echo=F, fig.height=7, fig.width=12}
-x <- seq(0.1, 20, .1)
+x <- seq(0, 20, .1)
 
-quad <- data.frame(
-  x  = x,
-  y  = 200 - 2*(x - 10)^2
-)
+quad <- data.frame(x  = x,
+                   y  = 200 - 2*(x - 10)^2) + rnorm(length(x), 0, .5)
 
 a10_r <- round(cor(quad$x, quad$y), 3)
 
@@ -827,7 +829,7 @@ ggplot(quad, aes(x = x, y = y)) +
   scale_x_continuous(limits = c(0, 20)) +
   scale_y_continuous(limits = c(0, 200)) +
   labs(title = "Beispiel: Parallelität zur x-Achse") +
-  theme(axis.text = element_text(color = "#ffffff"))
+  theme(axis.text = element_blank())
 ```
 
 ## 
@@ -836,7 +838,7 @@ Was bedeutet es, wenn die Regressionsgerade parallel zur X-Achse verläuft?
 
 ```{r a10_03, echo=F, fig.height=7, fig.width=12}
 ggplot(quad, aes(x = x, y = y)) +
-  geom_jitter(height = 5, width = 1.5) +
+  geom_point() +
   geom_smooth(method = "lm", se = F, color = "red") +
   scale_x_continuous(breaks = seq(0, 20, 5), minor_breaks = seq(0, 20, 2.5), 
                      labels = c("gering", rep("", 3), "viel")) +
@@ -848,9 +850,9 @@ ggplot(quad, aes(x = x, y = y)) +
 
 ## Eigenschaften der Regressionsgeraden
 
->1. Sie geht immer durch den Punkt $P(\bar{x} | \bar{y})$  
->2. Die Gerade mit den geringsten Resiudenquadraten.  
->3. Der Steigungskoeffizient ($b$) gibt die Richtung der Korrelation an.
+>1. Sie geht immer durch den Punkt $P(\bar{x} | \bar{y})$
+>2. Die Gerade mit den geringsten Residuenquadraten
+>3. Der Steigungskoeffizient ($b$) gibt die Richtung der Korrelation an
 
 ## Zurück zum ersten Beispiel
 
@@ -889,7 +891,9 @@ a11 <- data.frame(
 
 ##
 
-Geben Sie die Formel des Korrelationskoeffizienten von Pearson an. Reflektieren Sie nochmals die Herleitung. Berechnen Sie die Korrelation aus folgenden Diät-Daten von Männern:
+Geben Sie die Formel des Korrelationskoeffizienten von Pearson an.  
+Reflektieren Sie nochmals die Herleitung.  
+Berechnen Sie die Korrelation aus folgenden Diät-Daten von Männern:
 
 - Gewicht erster Messzeitpunkt: **120, 95, 100, 110, 90**  
 - Gewicht zweiter Messzeitpunkt: **110, 90, 110, 115, 100**
@@ -1145,7 +1149,8 @@ plotly::plot_ly(data = ngo, x = ~deutsch, y = ~englisch, z = ~mathe)
 
 ##
 
-Was versteht man unter dem Begriff „Partialkorrelation“? Geben Sie ein Beispiel.
+Was versteht man unter dem Begriff „Partialkorrelation“?  
+Geben Sie ein Beispiel.
 
 # Klar soweit?
 
