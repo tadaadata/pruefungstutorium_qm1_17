@@ -2,7 +2,7 @@
  * Title and section header styles
  *********************************************/
 body {
-    background-color: #555566;
+    background-color: #3b3b37;
 }
 
 /* Title slide */
@@ -26,7 +26,7 @@ body {
 
 /* level 1 slide modifications */
 .reveal .slide-background .level1 {
-    background-color: #555566;
+    background-color: #3b3b37;
 }
 
 .reveal .level1 h1 {
@@ -136,36 +136,36 @@ table {
  *********************************************/
 
 .reveal .chalkboard-button a {
-  color: #8B8B8B;
+  color: #666666;
 }
 
 .reveal .controls .navigate-left,
 .reveal .controls .navigate-left.enabled {
-  border-right-color: #8B8B8B; }
+  border-right-color: #666666; }
 
 .reveal .controls .navigate-right,
 .reveal .controls .navigate-right.enabled {
-  border-left-color: #8B8B8B; }
+  border-left-color: #666666; }
 
 .reveal .controls .navigate-up,
 .reveal .controls .navigate-up.enabled {
-  border-bottom-color: #8B8B8B; }
+  border-bottom-color: #666666; }
 
 .reveal .controls .navigate-down,
 .reveal .controls .navigate-down.enabled {
-  border-top-color: #8B8B8B; }
+  border-top-color: #666666; }
 
 .reveal .controls .navigate-left.enabled:hover {
-  border-right-color: #f1f1f1; }
+  border-right-color: #cccccc; }
 
 .reveal .controls .navigate-right.enabled:hover {
-  border-left-color: #f1f1f1; }
+  border-left-color: #cccccc; }
 
 .reveal .controls .navigate-up.enabled:hover {
-  border-bottom-color: #f1f1f1; }
+  border-bottom-color: #cccccc; }
 
 .reveal .controls .navigate-down.enabled:hover {
-  border-top-color: #f1f1f1; }
+  border-top-color: #cccccc; }
 
 /*********************************************
  * PROGRESS BAR
