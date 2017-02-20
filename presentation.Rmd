@@ -771,12 +771,14 @@ R^2 &= \frac{E_1 - E_2}{E_1}
 
 </div>
 <br />
-<div class = "fragment">
+<div class = "fragment" id = "left">
 Auch wenn es nicht sofort so aussieht:
 $$R^2 = r^2$$
 <br />
 <small>Nein, ihr müsst das nicht herleiten können</small>
 </div>
+<div class = "fragment" id = "right">
+<img src="img/beginning_pObOoBLMhizQs.gif" width=100px />5</div>
 
 ## Eigenschaften der Regressionsgeraden
 
