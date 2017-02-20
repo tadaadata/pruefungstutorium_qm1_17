@@ -788,8 +788,7 @@ $$R^2 = r^2$$
 
 ```{r a10_02, echo=F, fig.height=7, fig.width=12}
 ggplot(zombo, aes(x = Skill_03, y = Skill_08)) +
-  geom_ribbon(aes(x = seq(1, 2, 0.009434067), ymin = 2.412,
-                  ymax = seq(2.412, 3.119, 0.00673333333)),
+  geom_ribbon(aes(x = seq(1, 2, 0.009434067), ymin = 2.412, ymax = seq(2.412, 3.119, 0.00673333333)),
               fill = "blue", alpha = 0.3) +
   geom_hline(yintercept = mean(zombo$Skill_08, na.rm = T), linetype = "longdash", color = "green") +
   geom_vline(xintercept = mean(zombo$Skill_03, na.rm = T), linetype = "longdash", color = "green") +
@@ -799,7 +798,7 @@ ggplot(zombo, aes(x = Skill_03, y = Skill_08)) +
   annotate("text", x = 0.25, y = 5.1, label = "bar(y)", color = "green", size = 8, parse = T) +
   annotate("text", x = 9.75, y = 8.2, label = "y'", color = "darkred", size = 8) + 
   annotate("label", x = 6.05, y = 4.95, label = "P(bar(x)~'|'~bar(y))",
-           color = "darkgreen", size = 8, parse = T) +
+           fill = "green", size = 8, parse = T, alpha = .7) +
   annotate("text", x = 2.15, y = 2.75, label = "b", color = "darkblue", size = 8) +
   scale_x_continuous(breaks = seq(0, 10, 2), minor_breaks = 1:10, limits = c(0, 10)) +
   scale_y_continuous(breaks = seq(0, 10, 2), minor_breaks = 1:10, limits = c(0, 10)) +
