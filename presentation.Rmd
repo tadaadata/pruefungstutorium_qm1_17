@@ -754,7 +754,9 @@ $$
 </div>
 
 
-## Gut zu wissen: $r$, $R^2$
+## Gut<div class="fragment">$$a = \bar{y} - b\bar{x}$$</div> 
+
+zu wissen: $r$, $R^2$
 
 <div class = "fragment">
 
