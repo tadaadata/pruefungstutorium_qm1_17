@@ -21,7 +21,7 @@ body {
 
 .reveal .title, .reveal .date, .reveal .author{
   color: #fdfdfd;
-  text-shadow: 0 0 5px #000;
+  /*text-shadow: 0 0 5px #000; causes lag :( */
 }
 
 /* level 1 slide modifications */
@@ -32,7 +32,7 @@ body {
 .reveal .level1 h1 {
     font-size: 2em;
     color: #fdfdfd;
-    text-shadow: 0 0 5px #000;
+    /*text-shadow: 0 0 5px #000; causes lag :( */
 }
 
 /* fix level 2 slides at white background */
