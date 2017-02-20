@@ -890,10 +890,8 @@ $$
 <div class = "fragment">
 $$
 \eta^2 = \frac{\sum^{n_j}_{i=1} \left(y_{j,i} - \bar{y}_j\right)^2 - \sum^k_{j=1}\sum^{n_j}_{i=1} \left(y_{j,i} - \bar{y}_j\right)^2}{\sum^{n_j}_{i=1} \left(y_{j,i} - \bar{y}_j\right)^2}
-$$
-<br /><br />
-$$
-\left(\text{PRE} = \frac{E_1 - E_2}{E_1}\right)
+\quad \quad
+\left(\Longrightarrow \text{PRE} = \frac{E_1 - E_2}{E_1}\right)
 $$
 </div>
 <img class = "fragment" src = "img/unimpressed_u7gAmp9lCZWPC.gif" />
