@@ -11,7 +11,7 @@ output:
     incremental: false
     transition: convex
     widescreen: yes
-    background_transition: none
+    background_transition: slide
     self_contained: false
     fig_height: 7
     fig_retina: 2
