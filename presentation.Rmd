@@ -1253,14 +1253,16 @@ pcor.tbl <- pcor(brand)$estimate
 ```{r a16_02, fig.height=4, fig.width=12}
 ggplot(brand, aes(x = Personen, y = Schaden)) +
   geom_point() +
-  geom_smooth(method = "lm", se = F, color = "red")
+  geom_smooth(method = "lm", se = F, color = "red") +
+  labs(title = "Brandschaden und Personen im Einsatz")
 ```
 
 <div id="left">
 ```{r a16_03, fig.height=4, fig.width=6}
 ggplot(brand, aes(x = Fläche, y = Personen)) +
   geom_point() +
-  geom_smooth(method = "lm", se = F, color = "red")
+  geom_smooth(method = "lm", se = F, color = "red") +
+  labs(title = "Brandfläche und Personen im Einsatz")
 ```
 </div>
 
@@ -1268,7 +1270,8 @@ ggplot(brand, aes(x = Fläche, y = Personen)) +
 ```{r a16_04, fig.height=4, fig.width=6}
 ggplot(brand, aes(x = Fläche, y = Schaden)) +
   geom_point() +
-  geom_smooth(method = "lm", se = F, color = "red")
+  geom_smooth(method = "lm", se = F, color = "red") +
+  labs(labs = "Brandfläche und Brandschaden")
 ```
 </div>
 
@@ -1278,9 +1281,14 @@ ggplot(brand, aes(x = Fläche, y = Schaden)) +
 m1 <- lm(Personen ~ Fläche, brand)
 m2 <- lm(Schaden ~ Fläche, brand)
 
-ggplot() +
-  geom_point(aes(x = m1$residuals, y = m2$residuals)) +
-  geom_smooth(aes(x = m1$residuals, y = m2$residuals), method = "lm", se = F, color = "red") +
+konst <- data.frame(
+  Personen = m1$residuals * sd(brand$Personen) + mean(brand$Personen),
+  Schaden  = m2$residuals * sd(brand$Schaden) + mean(brand$Schaden)
+)
+
+ggplot(konst, aes(x = Personen, y = Schaden)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = F, color = "red") +
   labs(x = "Personen", y = "Schaden", 
        title = "Zusammenhang von Brandschaden und Anzahl Personen im Einsatz",
        subtitle = "unter Konstanthaltung der Brandfläche")
