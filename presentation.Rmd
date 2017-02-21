@@ -1248,6 +1248,30 @@ pcor.tbl <- pcor(brand)$estimate
 </div>
 </small>
 
+## 
+
+```{r a16_02, fig.height=4, fig.width=12}
+ggplot(brand, aes(x = Personen, y = Schaden)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = F, color = "red")
+```
+
+<div id="left">
+```{r a16_03, fig.height=4, fig.width=6}
+ggplot(brand, aes(x = Fläche, y = Personen)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = F, color = "red")
+```
+</div>
+
+<div id="right">
+```{r a16_04, fig.height=4, fig.width=6}
+ggplot(brand, aes(x = Fläche, y = Schaden)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = F, color = "red")
+```
+</div>
+
 # Klar soweit?
 
 ## Nochmal zum nachlesen
