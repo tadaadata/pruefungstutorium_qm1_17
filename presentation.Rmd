@@ -4,6 +4,7 @@ author: "mit Tobi & Lukas"
 date: "`r format(Sys.time(), 'erstellt am %F um %H:%M Uhr')`"
 output:
   revealjs::revealjs_presentation:
+    mathjax: local
     keep_md: true
     css: "assets/styles.css"
     theme: simple
@@ -1209,11 +1210,13 @@ rm(xval)
 
 Erläutern Sie die Probleme, die im Rahmen einer multiplen Regression auftreten können. 
 
-> - MultkoVerderben
+>- Verderben
 >- Jucken im Schritt
 >- Multikolinearität 
->Lo(Unerwartete/Nicht beachtete) Partialkorrelationeno>- Note: Multiples $R^2$ ist… *anders* als bisheriges $R^2$ und $r$ k
- at this mindfuck
+>- (Unerwartete/Nicht beachtete) Partialkorrelationen
+>- Note: Multiples $R^2$ ist… *anders* als bisheriges $R^2$ und $r$ 
+
+## Look at this mindfuck
 
 ```{r a15}
 plotly::plot_ly(data = ngo, x = ~deutsch, y = ~englisch, z = ~mathe)
