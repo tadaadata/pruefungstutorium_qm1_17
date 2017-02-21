@@ -150,18 +150,36 @@ htmlTable(as.matrix(a01[c(9:12),]), col.rgroup = cols)
 <p class="fragment">$$0.571^2 +  0.334^2 - 0.323^2 \approx 0.333$$</p>
 
 
-## Welchen Wert besitzt der drittgrößte Eigenwert?
+## 
 
-Faktor 1 | Faktor 2 | Faktor 3 
----------|----------|---------
+Welchen Wert besitzt der drittgrößte Eigenwert?
+
+<div id="left">
+$$
+\text{Eigenwert} = \sum_{a = 1}^m x_{a}^2
+$$
+</div>
+
+<div class="fragment" id="right">
+   K1     |    K2     |    K3 
+----------|-----------|-----------
 `r sum(a01$K1^2)` | `r sum(a01$K2^2)` | `r sum(a01$K3^2)`
+</div>
+
+![](assets/plots/ladungen.png)
 
 
 ##
 
 Wie viel Prozent der Gesamtvarianz aller 15 in die Faktorenanalyse einbezogenen (standardisierten) Merkmale wird durch den 3. Faktor erklärt?
 
-<p class="fragment">$$0.036^2 - 0.1^2 - 0.311^2 + 0.053^2 + \ldots = `r sum(a01$K3^2)`$$</p>
+<p class="fragment">
+$$
+\frac{\text{Eigenwert}}{\text{Anzahl Items}} \cdot 100 = 
+\frac{`r sum(a01$K3^2)`}{`r length(a01$K3)`} \cdot 100 =
+`r sum(a01$K3^2) / length(a01$K3) * 100`\%
+$$
+</p>
 
 ## 
 
@@ -171,6 +189,7 @@ Warum enthält die Komponenten-Matrix vermutlich nur drei Spalten?
 
 > - Kaiserkriterium _(Eigenwerte > 1)_
 > - Scree-Test _(Ellenbogenkriterium)_
+> - Minimum an Varianzaufklärung _(Naja...)_
 
 ## Beispiel
 
