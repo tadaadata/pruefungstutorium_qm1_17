@@ -1209,10 +1209,11 @@ rm(xval)
 
 Erläutern Sie die Probleme, die im Rahmen einer multiplen Regression auftreten können. 
 
-> - Multikolinearität 
-> - 
-
-## Look at this mindfuck
+> - MultkoVerderben
+>- Jucken im Schritt
+>- Multikolinearität 
+>Lo(Unerwartete/Nicht beachtete) Partialkorrelationeno>- Note: Multiples $R^2$ ist… *anders* als bisheriges $R^2$ und $r$ k
+ at this mindfuck
 
 ```{r a15}
 plotly::plot_ly(data = ngo, x = ~deutsch, y = ~englisch, z = ~mathe)
