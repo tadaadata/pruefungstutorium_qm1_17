@@ -444,7 +444,7 @@ I dare you.
 $$\int_2^{4.5} \frac{1}{\sqrt{2\sigma^2\pi} } \; e^{ -\frac{(x-\mu)^2}{2\sigma^2} } \text{d}x$$
 <br/ ></div>
 <div class = "fragment" id = "right">
-<img src="http://i.imgur.com/4UsFlzv.gif" height=200px />
+<img src="img/fuck.gif" height=200px />
 </div>
 <div class = "fragment">
 ### in R
