@@ -1239,11 +1239,9 @@ pcor.tbl <- pcor(brand)$estimate
 ```
 
 <small>
-<div class="fragment" id="left">
+<div class="fragment col2">
 `r kable(cor.tbl, caption = "Korrelationstabelle")`
-</div>
 
-<div class="fragment" id="right">
 `r kable(pcor.tbl, caption = "Partialkorrelationstabelle")`
 </div>
 </small>
