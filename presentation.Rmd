@@ -311,20 +311,23 @@ values <- ngo %>% filter(jahrgang == "13", geschl == "Weiblich") %>%
 **z-Standardisierung**: 
 <br /><br/ > 
 $$
-z = \frac{x - \text{Zentrum}}{\text{Dispersion}} \longleftrightarrow 
-z = \frac{x - \mu}{\sigma} \longleftrightarrow 
+z = \frac{x - \text{Zentrum}}{\text{Dispersion}} \Longleftrightarrow 
+z = \frac{x - \mu}{\sigma} \Longleftrightarrow 
 z_i = \frac{x_i - \bar{x}}{S_x}
 $$
 </div>
-
-<div class = "fragment">$\bar{x} \approx `r values$mean` \quad\quad S_x \approx `r values$sd`$</div>
 <br />
-<div class = "fragment">$23 \rightarrow \frac{23 - 29.52}{5.78} \approx \underline{-1.13}$</div>
+<div class = "fragment">
+$$\bar{x} \approx `r values$mean` \quad\quad S_x \approx `r values$sd`$$
+</div>
 <br />
-<div class = "fragment">$27 \rightarrow \frac{27 - 29.52}{5.78} \approx \underline{-0.44}$</div>
-<br />
-<div class = "fragment">$31 \rightarrow \frac{31 - 29.52}{5.78} \approx \underline{0.26}$</div>
-<br />
+<div class = "fragment">
+$$\begin{aligned}
+23 &\longrightarrow \frac{23 - 29.52}{5.78} &&\approx \underline{-1.13} \\
+27 &\longrightarrow \frac{27 - 29.52}{5.78} &&\approx \underline{-0.44} \\
+31 &\longrightarrow \frac{31 - 29.52}{5.78} &&\approx \underline{0.26}
+\end{aligned}$$
+</div>
 
 ## {data-background="img/too+easy_kiRrtNFo0UCCQ.gif" data-background-size="60%"}
 
