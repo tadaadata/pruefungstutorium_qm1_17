@@ -42,6 +42,8 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(fig.path = "assets/plots/", fig.align = "center", 
                       fig.retina = 2, echo = F, warning = F, message = F)
+library(MASS)
+library(ppcor)
 library(sjPlot)
 library(sjmisc)
 library(dplyr)
@@ -1223,6 +1225,28 @@ plotly::plot_ly(data = ngo, x = ~deutsch, y = ~englisch, z = ~mathe)
 
 Was versteht man unter dem Begriff „Partialkorrelation“?  
 Geben Sie ein Beispiel.
+
+```{r a16_01}
+brand <- mvrnorm(200, mu = c(5, 12000, 200), 
+                 Sigma = matrix(c(1, .56, .8, .56, 1, .82, .8, .82, 1), ncol = 3),
+                 empirical = TRUE)
+
+brand <- data.frame(brand)
+names(brand) <- c("Personen", "Schaden", "Fläche")
+
+cor.tbl  <- cor(brand)
+pcor.tbl <- pcor(brand)$estimate
+```
+
+<small>
+<div class="fragment" id="left">
+`r kable(cor.tbl, caption = "Korrelationstabelle")`
+</div>
+
+<div class="fragment" id="right">
+`r kable(pcor.tbl, caption = "Partialkorrelationstabelle")`
+</div>
+</small>
 
 # Klar soweit?
 
