@@ -326,6 +326,8 @@ $$
 <div class = "fragment">$31 \rightarrow \frac{31 - 29.52}{5.78} \approx \underline{0.26}$</div>
 <br />
 
+## {data-background="img/too+easy_kiRrtNFo0UCCQ.gif" data-background-size="60%"}
+
 # Aufgabe 6 <br /><br />Normalverteilung
 
 ##
@@ -333,9 +335,20 @@ $$
 Ein Merkmal ist $\mathcal{N}(3, 2)$ - verteilt. Berechnen Sie die Wahrscheinlichkeit dafür, dass Merkmalsträger Werte zwischen **2** und **4.5** besitzen und die Wahrscheinlichkeit dafür, dass Merkmalsträger Werte besitzen, die kleiner als **4** sind.  
 <small>(Anmerkung: Sollte in der Klausur eine solche Frage auftauchen, erhalten Sie eine Standardnormalverteilungstabelle)</small>
 
+<div class = "fragment">
+### Was suchen wir?
+
+>- $P(2 \le x \le 4.5)$ bzw. $prob[2; 4.5]$
+>- $P(x \le 4)$ bzw. $prob(-\infty; 4]$
+>- Jeweils für den Fall $\mathcal{N}(3, 2)$
+
+</div>
+
 ## Refresher: Normalverteilung
 
+<div class = "fragment">
 $$\mathcal{N}(\mu, \sigma) := \frac{1}{\sqrt{2\sigma^2\pi} } \; e^{ -\frac{(x-\mu)^2}{2\sigma^2} }$$
+</div>
 
 ```{r a06_normplot}
 label_norm <- function(x) {
@@ -389,7 +402,7 @@ ggplot(data = NULL, aes(x = -4:10)) +
 <div class = "fragment" id = "left">
 I dare you.
 
-$$\int_2^{4.5} \frac{1}{\sqrt{2\sigma^2\pi} } \; e^{ -\frac{(x-\mu)^2}{2\sigma^2} } dx$$
+$$\int_2^{4.5} \frac{1}{\sqrt{2\sigma^2\pi} } \; e^{ -\frac{(x-\mu)^2}{2\sigma^2} } \text{d}x$$
 <br/ ></div>
 <div class = "fragment" id = "right">
 <img src="http://i.imgur.com/4UsFlzv.gif" height=200px />
@@ -397,7 +410,7 @@ $$\int_2^{4.5} \frac{1}{\sqrt{2\sigma^2\pi} } \; e^{ -\frac{(x-\mu)^2}{2\sigma^2
 <div class = "fragment">
 ### in R
 
-- `pnorm(x, mean = m, sd = s)` $= prob[-\infty; x]$ für $\mathcal{N}(m, s)$
+- `pnorm(x, mean = m, sd = s)` $= prob(-\infty; x]$ für $\mathcal{N}(m, s)$
 - `pnorm(4.5, 3, 2) - pnorm(2, 3, 2)`
 </div>
 
@@ -497,15 +510,15 @@ Und welche Informationen sind wichtig für Sie, um eine geeignete Zuordnung zu w
 <div class = "fragment">
 ### Test 1
 
-$$\bar{x} = 10  \qquad S_x = 2 \qquad z \frac{10 - 10}{2} = \underline{0}$$
+$$T_1 = 10 \qquad\bar{x} = 10  \qquad S_x = 2 \qquad z = \frac{10 - 10}{2} = \underline{0}$$
 </div><div class = "fragment">
 ### Test 2
 
-$$\bar{x} = 15  \qquad S_x = 1 \qquad z \frac{10 - 15}{1} = \underline{-5}$$
+$$T_2 = 10 \qquad \bar{x} = 15  \qquad S_x = 1 \qquad z \frac{10 - 15}{1} = \underline{-5}$$
 </div><div class = "fragment">
 ### Test 3
 
-$$\bar{x} = 20  \qquad S_x = 1.5 \qquad z = \frac{10 - 20}{1.5} = \underline{-6.\bar{6}}$$
+$$T_3 = 10 \quad \bar{x} = 20  \qquad S_x = 1.5 \qquad z = \frac{10 - 20}{1.5} = \underline{-6.\bar{6}}$$
 </div>
 
 # Aufgabe 8 <br /><br />$\chi^2$, Cramer's $V$<br /><small>\*sigh\* …und $C$</small>
