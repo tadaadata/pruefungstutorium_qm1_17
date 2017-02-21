@@ -472,11 +472,11 @@ $$\begin{aligned}
 ## Pro tip: Skizzieren
 
 <div class = "fragment">
-$$\begin{aligned}
-prob[-0.5; 0.75] &= prob[0; 0.5] + prob[0; 0.75] \\
-&\approx 0.191 + 0.273 \\
+$$\begin{align}
+prob[-0.5; 0.75] &= prob[0; 0.5] &&+ prob[0; 0.75] \\
+&\approx 0.191 &&+ 0.273 \\
 &\approx \underline{0.465}
-\end{aligned}$$
+\end{align}$$
 </div>
 
 ```{r a06_teil1_skizze, fig.height=5}
