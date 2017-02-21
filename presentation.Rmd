@@ -1272,6 +1272,20 @@ ggplot(brand, aes(x = Fläche, y = Schaden)) +
 ```
 </div>
 
+## 
+
+```{r a16_05}
+m1 <- lm(Personen ~ Fläche, brand)
+m2 <- lm(Schaden ~ Fläche, brand)
+
+ggplot() +
+  geom_point(aes(x = m1$residuals, y = m2$residuals)) +
+  geom_smooth(aes(x = m1$residuals, y = m2$residuals), method = "lm", se = F, color = "red") +
+  labs(x = "Personen", y = "Schaden", 
+       title = "Zusammenhang von Brandschaden und Anzahl Personen im Einsatz",
+       subtitle = "unter Konstanthaltung der Brandfläche")
+```
+
 # Klar soweit?
 
 ## Nochmal zum nachlesen
