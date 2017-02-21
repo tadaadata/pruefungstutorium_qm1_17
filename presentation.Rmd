@@ -1207,6 +1207,9 @@ rm(xval)
 
 Erläutern Sie die Probleme, die im Rahmen einer multiplen Regression auftreten können. 
 
+> - Multikolinearität 
+> - 
+
 ## Look at this mindfuck
 
 ```{r a15}
