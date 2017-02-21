@@ -34,6 +34,7 @@ vignettes/*.pdf
 .Rproj.user
 
 # Presentation output
+*.md
 *.html
 *_files
 assets
