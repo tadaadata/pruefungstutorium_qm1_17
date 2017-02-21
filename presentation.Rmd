@@ -511,7 +511,7 @@ You get the idea.
 <div class = "fragment">$$4 \rightarrow \frac{4-3}{2} = 0.5$$</div>
 
 <div class = "fragment">
-```{r a06_teil2_skizze, fig.height=5}
+```{r a06_teil2_skizze, fig.height=4}
 ggplot(data = NULL, aes(x = -4:4)) + 
   stat_function(fun = dnorm) +
   geom_area(aes(x = seq(-4, 0, .1), y = dnorm(seq(-4, 0, .1))),  fill = "lightblue", alpha = .75) +
