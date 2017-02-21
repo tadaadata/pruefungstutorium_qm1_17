@@ -1234,9 +1234,6 @@ brand <- mvrnorm(200, mu = c(5, 12000, 200),
 brand <- data.frame(brand)
 names(brand) <- c("Personen", "Schaden", "Fläche")
 
-brand$Schaden <- brand$Schaden + floor(rnorm(200, 0, 3))
-brand$Fläche  <- brand$Fläche  + floor(rnorm(200, 0, 1))
-
 cor.tbl  <- cor(brand)
 pcor.tbl <- pcor(brand)$estimate
 ```
