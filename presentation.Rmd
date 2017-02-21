@@ -234,6 +234,40 @@ Gibt es bei den - im Rahmen der Suche nach einer Einfachstruktur - innerhalb von
 
 Schauen Sie sich den **FKV** Fragebogen an und überlegen Sie, welche Items zu welchem Faktor zusammengefasst werden könnten. Führen Sie anschließend eine **Hauptkomponentenanalyse** für den FKV- Datensatz durch. Prüfen Sie, welche Faktoren Sie zuvor inhaltlich angedacht hatten und welche Faktoren die Testautoren benannt haben (siehe Folie der letzten Veranstaltung). Stimmen die statistischen Daten damit überein?
 
+```{r a02_01}
+pca.alle <- sjt.pca(fkv[-1], show.cronb = F, use.viewer = F, no.output = T)
+pca.some <- sjt.pca(fkv[-1], nmbr.fctr = 5, show.cronb = F, 
+                    show.var = T, use.viewer = F, no.output = T)
+```
+
+## 
+
+<small>
+<small>
+`r pca.alle$knitr`
+</small>
+</small>
+
+## Von den Testautoren festgelegt
+
+5 Faktoren:
+
+- Depressive Verarbeitung
+- Aktive Krankheitsverarbeitung
+- Arzt-Patient-Verhältnis
+- Sinnsuche/Religiösität
+- Verdrängung
+
+##
+
+<small>
+<small>
+<div class="col2">
+`r pca.some$knitr`
+</div>
+</small>
+</small>
+
 # Aufgabe 3 <br /><br />Variabilität
 
 ##
