@@ -96,7 +96,7 @@ theme_set(theme_readthedown(base_size = 16))
 <br />
 <div class="fragment">Choose wisely.</div>
 
-## {data-background="img/excited_MSS0COPq80x68.gif"}
+## {data-background="img/excited_MSS0COPq80x68.gif" data-background-size="60%"}
 
 
 # Aufgabe 1 <br><br> Faktorenanalyse
@@ -1149,7 +1149,7 @@ ggplot(data = d14, aes(x = x, y = y)) +
 rm(xval)
 ```
 
-## {data-background="img/beginning_QYYmLRHhX9K7e.gif"}
+## {data-background="img/beginning_QYYmLRHhX9K7e.gif" data-background-size="60%"}
 
 # Aufgabe 15<br /><br />Multiple Regression
 
@@ -1177,4 +1177,4 @@ Geben Sie ein Beispiel.
 
 <span class = "big">[public.tadaa-data.de/QM](https://public.tadaa-data.de/QM)</span>
 
-## {data-background="img/unimpressed_YYD3fLEOdcOv6.gif"}
+## {data-background="img/mic-drop.gif" data-background-size="60%"}
