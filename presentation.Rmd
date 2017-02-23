@@ -1051,8 +1051,7 @@ $$
 \begin{aligned}
 S_{x,y} &= \frac{1}{n-1} \sum^n_{i=1} \left(x_i - \bar{x}\right) \cdot \left(y_i - \bar{y}\right) \\
 &= \frac{1}{5-1} \cdot \left(((120-103) \cdot (110-105)) + ((95-103) \cdot (90-105)) + ((100-103) \cdot (110-105)) + ((110-103) \cdot (115-105)) + ((90-103) \cdot (100-105)) \right) \\
-&= \frac{1}{5-1} \cdot \left(
-\end{a(17 \cdot 5) + (-8 \cdot -15) + (-3 \cdot 5) + (7 \cdot 10) + (-13 \cdot -5)\right) \\
+&= \frac{1}{5-1} \cdot \left((17 \cdot 5) + (-8 \cdot -15) + (-3 \cdot 5) + (7 \cdot 10) + (-13 \cdot -5)\right) \\
 &= \frac{1}{5-1} \cdot \left( 85 + 120 + -15 + 70 + 65 \right) \\
 &= \frac{1}{4} \cdot 325 = \frac{325}{4} \\
 &= \underline{81.25}
