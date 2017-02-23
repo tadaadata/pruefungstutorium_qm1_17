@@ -1004,11 +1004,69 @@ $$r = \frac { s_{x, y} }{ s_{x} \cdot s_{y} }$$
 In lang:
 
 $$
-r = \frac{\frac 1n \sum^n_{i=1} \left(x_i - \bar{x}\right) \cdot \left(y_i - \bar{y}\right)}
-        {\sqrt{\frac 1n \sum^n_{i=1} \left(x_i - \bar{x}\right)^2} \cdot
-        \sqrt{\frac 1n \sum^n_{i=1} \left(y_i - \bar{y}\right)^2}}
+r = \frac{\frac{1}{n-1} \sum^n_{i=1} \left(x_i - \bar{x}\right) \cdot \left(y_i - \bar{y}\right)}
+        {\sqrt{\frac{1}{n-1} \sum^n_{i=1} \left(x_i - \bar{x}\right)^2} \cdot
+        \sqrt{\frac{1}{n-1} \sum^n_{i=1} \left(y_i - \bar{y}\right)^2}}
 $$
 </div>
+
+## Einmal $r$ per Hand
+
+### Schritt 1: $S_x$ Standardabweichung von $x$
+
+- $x = 120, 95, 100, 110, 90$ mit $\bar{x} = 103$
+
+
+$$
+\begin{aligned}
+S_x &= \sqrt{\frac{1}{n-1} \sum^n_{i=1} \left(x_i - \bar{x}\right)^2} \\
+&= \sqrt{\frac{1}{5-1} \cdot \left((120-103)^2 + (95-103)^2 + (100-103)^2 + (110-103)^2 + (90-103)^2\right)} \\
+&= \sqrt{\frac{1}{4} \cdot \left(289 + 64 + 9 + 49 + 169\right)} \\
+&= \sqrt{\frac{580}{4}} \\
+&\approx \underline{12.04}
+\end{aligned}
+$$
+
+## Einmal $r$ per Hand
+
+### Schritt 2: $S_y$ Standardabweichung von $y$
+
+- $y = 110, 90, 110, 115, 100$ mit $\bar{y} = 105$
+
+$$
+\begin{aligned}
+S_y &= \sqrt{\frac{1}{n-1} \sum^n_{i=1} \left(y_i - \bar{y}\right)^2} \\
+&= \sqrt{\frac{1}{5-1} \cdot \left((110-105)^2 + (90-105)^2 + (110-105)^2 + (115-105)^2 + (100-105)^2\right)} \\
+&= \sqrt{\frac{1}{4} \cdot \left(25 + 225 + 25 + 100 + 25\right)} \\
+&= \sqrt{\frac{400}{4}} \\
+&= \underline{10}
+\end{aligned}
+$$
+
+## Einmal $r$ per Hand
+
+### Schritt 3: $S_{x,y}$ Kovarianz von $x$ und $y$
+
+$$
+\begin{aligned}
+S_{x,y} &= \frac{1}{n-1} \sum^n_{i=1} \left(x_i - \bar{x}\right) \cdot \left(y_i - \bar{y}\right) \\
+&= \frac{1}{5-1} \cdot \left(((120-103) \cdot (110-105)) + ((95-103) \cdot (90-105)) + ((100-103) \cdot (110-105)) + ((110-103) \cdot (115-105)) + ((90-103) \cdot (100-105)) \right) \\
+&= \frac{1}{5-1} \cdot \left(
+\end{a(17 \cdot 5) + (-8 \cdot -15) + (-3 \cdot 5) + (7 \cdot 10) + (-13 \cdot -5)\right) \\
+&= \frac{1}{5-1} \cdot \left( 85 + 120 + -15 + 70 + 65 \right) \\
+&= \frac{1}{4} \cdot 325 = \frac{325}{4} \\
+&= \underline{81.25}
+\end{aligned}
+$$
+
+## Einmal $r$ per Hand
+
+Wir halten fest:
+
+- $S_x = 12.04$
+- $S_y = 10$
+- $S_{x,y} = 81.25$
+- $\Longrightarrow r = \frac{81.25}{12.04 \cdot 10} \approx 0.67$
 
 ## Kurzer Abstecher: Eta $\eta^2$
 
