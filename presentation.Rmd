@@ -561,7 +561,7 @@ $$T_2 = 10 \qquad \bar{x} = 15  \qquad S_x = 1 \qquad z \frac{10 - 15}{1} = \und
 $$T_3 = 10 \quad \bar{x} = 20  \qquad S_x = 1.5 \qquad z = \frac{10 - 20}{1.5} = \underline{-6.\bar{6}}$$
 </div>
 
-# Aufgabe 8 <br /><br />$\chi^2$, Cramer's $V$<br /><small>\*sigh\* …und $C$</small>
+# Aufgabe 8 <br /><br />$\chi^2$, Cramér's $V$<br /><small>\*sigh\* …und $C$</small>
 
 ##
 
@@ -608,8 +608,8 @@ f_{e_2} &= \frac{138 \cdot 99}{246} \approx 56 \\\\
 
 <div class = "fragment">
 \[\begin{aligned}
-\text{Cramer's}\ V & = \sqrt{\frac{\chi^2}{n \cdot \operatorname{min}(r-1, c-1)}} \\
-                  & = \sqrt{\frac{0.544}{246}} \\
+\text{Cramér's}\ V & = \sqrt{\frac{\chi^2}{n \cdot \operatorname{min}(r-1, c-1)}} \\
+                  & = \sqrt{\frac{0.544}{246 \cdot 1}} \\
                   &\approx \underline{0.047}
 \end{aligned}\]
 </div>
@@ -621,7 +621,7 @@ f_{e_2} &= \frac{138 \cdot 99}{246} \approx 56 \\\\
 <small>Die bucklige Verwandschaft</small>
 
 <div class = "fragment" data-fragment-index="1">
-$$C = \sqrt{\frac{\chi^2}{\chi^2 + n}} = \sqrt{\frac{0.544}{0.544 + 246}} \approx \underline{0.002}$$
+$$C = \sqrt{\frac{\chi^2}{\chi^2 + n}} = \sqrt{\frac{0.544}{0.544 + 246}} \approx \underline{0.047}$$
 </div>
 <span class = "fragment" data-fragment-index="2">Und dann noch irgendwas mit $C_{\text{max}}$ und $C_{\text{korr}}$ …?</span>
 
@@ -630,8 +630,8 @@ $$C = \sqrt{\frac{\chi^2}{\chi^2 + n}} = \sqrt{\frac{0.544}{0.544 + 246}} \appro
 $$
 \begin{aligned}
 C_{\text{max}} &= \sqrt{\frac{r-1}{r}} \\\\
-&= \sqrt{\frac{2}{3}} \\\\
-&\approx \underline{0.816}
+&= \sqrt{\frac{2-1}{2}} \\\\
+&\approx \underline{0.707}
 \end{aligned}
 $$
 </div>
@@ -642,8 +642,8 @@ $$
 $$
 \begin{aligned}
 C_{\text{korr}} &= \frac{C}{C_{\text{max}}} \\\\
-&= \frac{0.002}{0.816} \\\\
-&\approx \underline{0.0025}
+&= \frac{0.047}{0.707} \\\\
+&\approx \underline{0.066}
 \end{aligned}
 $$
 </div>
